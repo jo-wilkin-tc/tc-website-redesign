@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# MS Office lock files
+~$*
+
+# Editor / OS cruft
+*.swp
+.idea/
+.vscode/
+
+# Narrative docs live in Word/SharePoint, not the repo
+docs/
+*.docx
+*.pdf

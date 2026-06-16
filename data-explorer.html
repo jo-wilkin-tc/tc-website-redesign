@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Air Quality Explorer — Tracking California</title>
+<meta name="description" content="A demo of the Tracking California Air Quality Explorer — map and chart air pollution and asthma measures by region and year across California.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="assets/styles.css">
+</head>
+<body>
+
+<div class="proto-ribbon">Design prototype — not the live site. <a href="https://trackingcalifornia.org">View the current trackingcalifornia.org →</a></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Tracking California home">
+      <img src="assets/tc-symbol.svg" alt="">
+      <span class="wordmark">Tracking California<small>Informing action for healthier communities</small></span>
+    </a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav">
+      <a href="index.html">Home</a>
+      <a href="data-and-tools.html" class="active">Our Data &amp; Tools</a>
+      <a href="communities.html">Our Communities</a>
+      <a href="topics.html">Topics</a>
+      <a href="resources.html">Resources</a>
+      <a href="about.html">About</a>
+      <a class="nav-search" href="#" aria-label="Search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        Search
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <a href="data-and-tools.html">Data &amp; Tools</a> / Air Quality Explorer</nav>
+  </div>
+
+  <!-- TITLE -->
+  <section class="section" style="padding-top:24px; padding-bottom:0;">
+    <div class="wrap">
+      <p class="eyebrow">Air Quality Explorer · Demo</p>
+      <h1 class="text-blue" style="max-width:18ch;">Air Quality Explorer</h1>
+      <p class="lead" style="max-width:60ch;">Map and chart air pollution and asthma measures by region and year across California. This is a demo of the explorer experience — the controls below are illustrative and don't load live data.</p>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PANEL -->
+  <section class="section" style="padding-top:32px;">
+    <div class="wrap">
+      <div class="filters">
+        <span class="label">Region</span>
+        <button class="pill on">Statewide</button>
+        <button class="pill">San Joaquin Valley</button>
+        <button class="pill">Bay Area</button>
+        <button class="pill">Los Angeles County</button>
+      </div>
+      <div class="filters">
+        <span class="label">Year</span>
+        <button class="pill on">2024</button>
+        <button class="pill">2020</button>
+        <button class="pill">2015</button>
+        <button class="pill">2010</button>
+      </div>
+      <div class="filters">
+        <span class="label">Measure</span>
+        <button class="pill on">PM2.5 annual average</button>
+        <button class="pill">Ozone (days over standard)</button>
+        <button class="pill">Childhood asthma ED visits</button>
+      </div>
+
+      <!-- faux map/chart area -->
+      <div style="background:var(--tc-tint); border:1px solid var(--line); border-radius:var(--radius); aspect-ratio:16/9; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; color:var(--grey); padding:24px;">
+        <div style="font-size:2.2rem; margin-bottom:10px;">🗺️</div>
+        <p style="font-weight:700; color:var(--tc-blue); margin-bottom:.3em;">Interactive map / chart</p>
+        <p class="meta" style="margin:0;">In the live tool, your selections render here as a county-level choropleth map and a trend chart.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS / INSIGHT -->
+  <section class="section tint">
+    <div class="wrap narrow">
+      <p class="eyebrow">What the data shows</p>
+      <h2>Reading this view</h2>
+      <p>Statewide, annual average PM2.5 has trended down over the past decade, but the burden remains uneven — communities in the San Joaquin Valley and parts of Los Angeles County still see levels well above the statewide average, and those same areas tend to report higher rates of childhood asthma emergency-department visits. Switch the measure and year above to compare places and watch the trend change.</p>
+
+      <div class="callout">
+        <p class="eyebrow" style="color:var(--tc-orange)">About this data</p>
+        <p>PM2.5 estimates combine regulatory monitor readings with modeled surface data; asthma measures come from emergency-department records. Definitions, sources, and caveats are in the about-the-data fact sheet.</p>
+        <p style="margin-bottom:0;"><a class="link-arrow" href="#">Read the Air Quality fact sheet</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start; gap:48px;">
+        <div>
+          <p class="eyebrow">Related topics</p>
+          <h2 style="margin-bottom:18px;">Dig deeper</h2>
+          <div class="grid" style="gap:14px;">
+            <a class="tile" href="topic.html"><div class="ic">🌫️</div><h3>Air Quality</h3><p>All air pollution &amp; asthma measures and fact sheets</p></a>
+            <a class="tile" href="topics.html"><div class="ic">🌡️</div><h3>Climate &amp; Health</h3><p>Wildfire smoke, heat, and extreme events</p></a>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow" style="color:var(--tc-green-d)">Related community work</p>
+          <h2 style="margin-bottom:18px;">Data put to work</h2>
+          <div class="grid" style="gap:14px;">
+            <article class="card" style="flex-direction:row;">
+              <div class="pad">
+                <span class="tag green">Community story</span>
+                <h3><a href="community-story.html">Community air monitoring in the field</a></h3>
+                <p>How local trackers fill the gaps official monitors leave behind.</p>
+                <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <img src="assets/tc-logo.svg" alt="Tracking California">
+        <p>Informing action for healthier communities. A research program turning public health, climate, and environmental data into action.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="data-and-tools.html">Data &amp; Tools</a>
+        <a href="topics.html">Topics</a>
+        <a href="communities.html">Our Communities</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="resources.html">Newsletters</a>
+        <a href="resources.html">Publications</a>
+        <a href="resources.html">Commentaries</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="about.html">Who we are</a>
+        <a href="about.html#partners">Partners</a>
+        <a href="about.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 Tracking California. Design prototype for internal review.</span>
+      <span>Open Sans · TC brand palette</span>
+    </div>
+  </div>
+</footer>
+
+<script src="assets/main.js"></script>
+</body>
+</html>
