@@ -63,15 +63,3 @@ document.addEventListener('click', function (e) {
 })();
 
 
-// rotating community photos
-(function () {
-  var el = document.getElementById('comm-rotator');
-  if (!el) return;
-  var imgs = ['assets/img/community-1.jpg','assets/img/community-2.jpg','assets/img/community-3.jpg','assets/img/community-4.jpg'];
-  var i = 0;
-  setInterval(function () {
-    i = (i + 1) % imgs.length;
-    el.style.opacity = 0;
-    setTimeout(function () { el.src = imgs[i]; el.style.opacity = 1; }, 400);
-  }, 4500);
-})();
