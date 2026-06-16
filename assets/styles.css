@@ -497,3 +497,17 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 /* community rotating image */
 .feature-media { position: relative; }
 .feature-media img { transition: opacity .5s ease; }
+
+/* latest-work: one featured item per view, description beside the image */
+.carousel .lwcard { flex: 0 0 100%; scroll-snap-align: start; display: grid;
+  grid-template-columns: 1.05fr 1fr; min-height: 300px; }
+.lwcard .thumb { aspect-ratio: auto; height: 100%; }
+.lwcard .pad { padding: 30px 34px; justify-content: center; }
+.lwcard .pad p { color: var(--grey); margin-bottom: 1em; }
+@media (max-width: 700px) {
+  .carousel .lwcard { grid-template-columns: 1fr; }
+  .lwcard .thumb { aspect-ratio: 16/10; }
+}
+
+/* signup button matches the pill container (fix mismatched ovals) */
+.signup-form .btn { border-radius: 26px; padding-left: 1.6em; padding-right: 1.6em; }
