@@ -98,12 +98,13 @@ p  { margin: 0 0 1.1em; }
 .nav { display: flex; align-items: center; gap: 4px; }
 .nav a {
   color: var(--ink); font-weight: 600; font-size: .96rem; padding: .55em .8em; border-radius: 7px;
+  position: relative;
 }
 .nav a:hover { background: var(--tc-tint); color: var(--tc-blue); }
 .nav a.active { color: var(--tc-blue); }
 .nav a.active::after {
-  content: ""; display: block; height: 2px; background: var(--tc-orange);
-  margin: 3px .8em 0; border-radius: 2px;
+  content: ""; position: absolute; left: .8em; right: .8em; bottom: 7px; height: 2px;
+  background: var(--tc-orange); border-radius: 2px;
 }
 .nav-search {
   display: inline-flex; align-items: center; gap: 6px; margin-left: 8px;
@@ -140,7 +141,7 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------- sections ---------- */
 .section { padding: 56px 0; }
-.section.tint   { background: var(--tc-tint); }
+.section.tint   { background: transparent; }
 .section.tint-g { background: var(--tc-tint-g); }
 .section-head { margin-bottom: 28px; max-width: 62ch; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
@@ -257,7 +258,7 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------- page banner (interior pages) ---------- */
 .page-banner { padding: 48px 0 8px; }
-.page-banner.data   { background: var(--tc-tint); }
+.page-banner.data   { background: transparent; }
 .page-banner.comm   { background: var(--tc-tint-g); }
 .page-banner h1 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
 .page-banner .lead { max-width: 60ch; }
@@ -345,3 +346,40 @@ p  { margin: 0 0 1.1em; }
 /* team headshots — portrait crop, face-safe */
 #team .card .thumb { aspect-ratio: 4/5; }
 #team .card .thumb img { object-position: center 22%; }
+
+
+/* ---------- large promoted section headers (homepage) ---------- */
+.sec-eyebrow {
+  text-transform: uppercase; letter-spacing: .6px;
+  font-size: clamp(1.4rem, 2.3vw, 1.9rem); line-height: 1.15;
+  font-weight: 700; color: var(--tc-orange); margin: 0 0 26px;
+}
+
+/* breathing room between card chips and titles */
+.card .tag, .pad .tag { margin-bottom: 12px; }
+
+/* faint, sporadic logo watermark (home only) */
+.watermark {
+  position: fixed; inset: 0; z-index: -1; pointer-events: none;
+  background-image: url("tc-symbol.svg");
+  background-repeat: repeat; background-size: 210px;
+  opacity: .06;
+}
+
+/* collapse nav to hamburger earlier so the 6 items never crowd mid-size screens */
+@media (max-width: 1000px) {
+  .nav { position: fixed; inset: 76px 0 auto 0; background: #fff; flex-direction: column;
+    align-items: stretch; gap: 0; padding: 8px 16px 20px; border-bottom: 1px solid var(--line);
+    box-shadow: var(--shadow-h); display: none; }
+  .nav.open { display: flex; }
+  .nav a { padding: .8em .4em; border-radius: 0; border-bottom: 1px solid var(--line); position: static; }
+  .nav a.active::after { display: none; }
+  .nav-search { margin: 10px 0 0; justify-content: center; }
+  .nav-toggle { display: inline-flex; }
+  .nav-item { width: 100%; align-items: stretch; }
+  .nav-item > a { width: 100%; }
+  .submenu { position: static; opacity: 1; visibility: visible; transform: none;
+    box-shadow: none; border: 0; border-radius: 0; padding: 0 0 6px 14px; margin: 0;
+    border-bottom: 1px solid var(--line); }
+  .submenu a { font-size: .9rem; border: 0; }
+}

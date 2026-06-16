@@ -10,6 +10,7 @@
 <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
+<div class="watermark" aria-hidden="true"></div>
 
 <div class="proto-ribbon">Design prototype — not the live site. <a href="https://trackingcalifornia.org">View the current trackingcalifornia.org →</a></div>
 
@@ -101,27 +102,11 @@
     </div>
   </section>
 
-  <!-- EXPLORE BY TOPIC -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Explore by topic</p>
-      </div>
-      <div class="grid g4">
-        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-smog"></i></div><h3>Air Quality</h3></a>
-        <a class="tile" href="topics.html"><div class="ic"><i class="fa-solid fa-droplet"></i></div><h3>Water</h3></a>
-        <a class="tile" href="topics.html"><div class="ic"><i class="fa-solid fa-temperature-half"></i></div><h3>Climate &amp; Health</h3></a>
-        <a class="tile" href="topics.html"><div class="ic"><i class="fa-solid fa-wheat-awn"></i></div><h3>Pesticides</h3></a>
-      </div>
-      <div class="section-foot"><a class="link-arrow" href="topics.html">Browse all topics</a></div>
-    </div>
-  </section>
-
   <!-- COMMUNITIES IN ACTION -->
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow" style="color:var(--tc-green-d)">Our communities in action</p>
+        <h2 class="sec-eyebrow" style="color:var(--tc-green-d)">Our communities in action</h2>
       </div>
       <div class="grid g4">
         <article class="card">
@@ -160,12 +145,49 @@
     </div>
   </section>
 
+  <!-- OUR DATASETS & TOOLS -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="sec-eyebrow">Our datasets &amp; tools</h2>
+      </div>
+      <div class="grid g4">
+        <a class="tile" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener"><div class="ic"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>Data Explorer</h3></a>
+        <a class="tile" href="https://ext.trackingcalifornia.org/traffic" target="_blank" rel="noopener"><div class="ic"><i class="fa-solid fa-car-side"></i></div><h3>Traffic Tool</h3></a>
+        <a class="tile" href="data-and-tools.html"><div class="ic"><i class="fa-solid fa-wheat-awn"></i></div><h3>Pesticide Mapping Tool</h3></a>
+        <a class="tile" href="data-and-tools.html"><div class="ic"><i class="fa-solid fa-droplet"></i></div><h3>Water Quality Viewer</h3></a>
+        <a class="tile" href="data-and-tools.html"><div class="ic"><i class="fa-solid fa-flask-vial"></i></div><h3>PFAS Maps</h3></a>
+      </div>
+      <div class="section-foot"><a class="link-arrow" href="data-and-tools.html">See all data &amp; tools</a></div>
+    </div>
+  </section>
+
+  <!-- EXPLORE BY TOPIC -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head">
+        <h2 class="sec-eyebrow">Explore by topic</h2>
+      </div>
+      <div class="grid g4">
+        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-smog"></i></div><h3>Air Quality</h3></a>
+        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-lungs"></i></div><h3>Asthma</h3></a>
+        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-baby"></i></div><h3>Birth Defects</h3></a>
+        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-ribbon"></i></div><h3>Cancer</h3></a>
+        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-child-reaching"></i></div><h3>Childhood Lead Poisoning</h3></a>
+        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-wheat-awn"></i></div><h3>Pesticides</h3></a>
+        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-dna"></i></div><h3>Sickle Cell Disease</h3></a>
+        <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-droplet"></i></div><h3>Water Systems</h3></a>
+      </div>
+      <div class="section-foot"><a class="link-arrow" href="topics.html">Browse all topics</a></div>
+    </div>
+  </section>
+
   <!-- LATEST -->
   <section class="section">
     <div class="wrap">
       <div class="grid g2" style="align-items:start; gap:48px;">
         <div>
-          <p class="eyebrow" style="margin-bottom:18px;">Latest news</p>
+          <h2 class="sec-eyebrow">Latest news</h2>
           <div class="grid" style="gap:18px;">
             <article class="card" style="flex-direction:row;">
               <div class="pad">
@@ -183,7 +205,7 @@
           <div class="section-foot"><a class="link-arrow" href="resources.html">All news &amp; updates</a></div>
         </div>
         <div>
-          <p class="eyebrow" style="margin-bottom:18px;">Recent publications</p>
+          <h2 class="sec-eyebrow">Recent publications</h2>
           <div class="res-list">
             <div class="res-item" style="grid-template-columns:1fr; gap:4px; padding:16px 0;">
               <span class="type type-paper">Peer-reviewed paper</span>
