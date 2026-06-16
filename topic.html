@@ -80,59 +80,89 @@
 
       <!-- SIDEBAR -->
       <aside class="sidenav">
-        <p class="grouptitle">On this page</p>
-        <a href="#overview" class="on">Overview</a>
-        <a href="#why">Why it matters</a>
-        <a href="#findings">Key findings</a>
-        <a href="#explore">Explore the data</a>
-        <a href="#related">Related work</a>
+        <p class="grouptitle">Air Quality</p>
+        <a href="topic.html" class="on">Overview</a>
+        <a href="#">Asthma &amp; Air Pollution</a>
+        <a href="#">Traffic &amp; Roadways</a>
+        <a href="#">Wildfire Smoke</a>
+        <a href="#">Indoor Air</a>
         <p class="grouptitle">Related topics</p>
-        <a href="topic.html">Asthma</a>
-        <a href="topic.html">Wildfire Smoke</a>
-        <a href="topic.html">Traffic &amp; Roads</a>
+        <a href="topic.html">Pesticides</a>
+        <a href="topic.html">Water Systems</a>
       </aside>
 
       <!-- CONTENT -->
-      <div class="prose">
-        <p class="eyebrow">Environment &amp; exposures</p>
-        <h1 id="overview">Air Quality</h1>
-        <h2 style="margin-top:.4em;">California air quality, measured neighborhood by neighborhood</h2>
+      <div>
+        <h2 class="sec-title">Air Quality</h2>
 
-        <p>Millions of Californians live in areas that exceed federal standards for fine particulate matter (PM2.5) and ozone, and the burden is not evenly shared.</p>
+        <img src="assets/img/topic-air.jpg" alt="Air quality in California" style="width:100%; border-radius:10px; margin:0 0 24px;">
 
-        <p>Tracking California compiles regulatory monitor readings, modeled estimates, and community-collected measurements to show how air quality varies across the state, down to the census-tract level. Statewide averages hide patterns such as pollution concentrated along freight corridors, near ports and rail yards, and in agricultural valleys where geography traps emissions.</p>
+        <div class="prose">
+          <p>Tracking California compiles regulatory monitor readings, modeled estimates, and community-collected measurements to show how air quality varies across the state, down to the census-tract level. Statewide averages hide patterns such as pollution concentrated along freight corridors, near ports and rail yards, and in agricultural valleys where geography traps emissions.</p>
 
-        <h3 id="why">Why it matters</h3>
-        <p>Poor air quality is linked to asthma, chronic obstructive pulmonary disease (COPD), heart attacks, low birth weight, and premature death. The most exposed communities are often low-income neighborhoods and communities of color situated near industrial and transportation sources.</p>
+          <p>Fine particulate matter (PM2.5), ozone, and traffic-related pollutants are linked to asthma, chronic respiratory and cardiovascular disease, low birth weight, and premature death. We map exposure alongside health outcomes so communities can see where the burden falls and where action is needed.</p>
 
-        <div class="callout">
-          <p>In parts of the San Joaquin Valley and the Los Angeles freight corridor, PM2.5 exposure is far higher than the statewide average. Mapping exposure alongside health outcomes helps target action where it is needed most.</p>
+          <p>Traffic-related exposure is a particular focus: neighborhoods near major freeways, ports, and freight routes face elevated pollutant levels that regional air-basin averages can mask.</p>
+
+          <div class="callout">
+            <p>The most exposed communities are often low-income neighborhoods and communities of color situated near industrial and transportation sources. Official monitoring networks leave gaps in exactly these places, so combining regulatory data with community-collected measurements is essential to target action fairly.</p>
+          </div>
         </div>
 
-        <div class="figure">
-          <img src="assets/img/topic-air.jpg" alt="Hazy California skyline showing air pollution over an urban area">
-          <p class="cap">Figure 1. Annual average PM2.5 by census tract, 2019–2024. Darker shading indicates higher concentrations. Placeholder chart for prototype.</p>
+        <h3>Key findings</h3>
+        <div class="grid g3">
+          <div class="card pad">
+            <h3>1 in 3 Californians</h3>
+            <p>Live in a census tract that exceeded the annual PM2.5 standard at least once in the past five years.</p>
+          </div>
+          <div class="card pad">
+            <h3>2x asthma ED visits</h3>
+            <p>Asthma emergency-department visit rates run up to twice as high in the most polluted tracts versus the cleanest.</p>
+          </div>
+          <div class="card pad">
+            <h3>Smoke reversing gains</h3>
+            <p>Wildfire smoke now drives a growing share of annual PM2.5, offsetting decades of emissions controls.</p>
+          </div>
         </div>
 
-        <h3 id="findings">Key findings</h3>
-        <ul>
-          <li>Roughly <strong>1 in 3 Californians</strong> live in a census tract that exceeded the annual PM2.5 standard at least once in the past five years.</li>
-          <li>Asthma emergency-department visit rates are <strong>up to twice as high</strong> in the most polluted tracts compared with the cleanest.</li>
-          <li>Wildfire smoke now accounts for a growing share of annual PM2.5 exposure, reversing gains made through emissions controls.</li>
-          <li>Neighborhoods within 500 meters of major freeways show consistently elevated pollutant levels regardless of regional air-basin averages.</li>
-        </ul>
-
-        <h3 id="explore">Explore the data</h3>
-        <div class="callout">
-          <p>Map air quality alongside health outcomes for any community in California. Filter by pollutant, year, and geography, and download the underlying data.</p>
-          <p style="margin-bottom:0;"><a class="btn btn-primary" href="data-explorer.html">Open the Data Explorer <span class="arrow"></span></a></p>
+        <h3>Tools &amp; resources</h3>
+        <div class="grid g4">
+          <a class="tile" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener">
+            <i class="fa-solid fa-magnifying-glass-chart"></i>
+            <span>Data Explorer</span>
+          </a>
+          <a class="tile" href="https://ext.trackingcalifornia.org/traffic" target="_blank" rel="noopener">
+            <i class="fa-solid fa-car-side"></i>
+            <span>Traffic Tool</span>
+          </a>
+          <a class="tile" href="#">
+            <i class="fa-solid fa-file-lines"></i>
+            <span>About the data</span>
+          </a>
+          <a class="tile" href="#">
+            <i class="fa-solid fa-map-location-dot"></i>
+            <span>Air quality map</span>
+          </a>
         </div>
 
-        <p>For methods, the <a href="#">Air Quality fact sheet (PDF)</a> documents data sources, geographic units, and known limitations.</p>
-
-        <h3 id="related">Related community work</h3>
-        <p>Across California, residents gather neighborhood-level readings where official monitors leave gaps.</p>
-        <p><a class="link-arrow" href="community-story.html">Read: Community air monitoring in Oxnard</a></p>
+        <h3>Related pages</h3>
+        <div class="grid g3">
+          <a class="card pad" href="topic.html">
+            <span class="tag">Topic</span>
+            <h3>Pesticides</h3>
+            <p>Agricultural pesticide use and exposure across California communities.</p>
+          </a>
+          <a class="card pad" href="topic.html">
+            <span class="tag">Topic</span>
+            <h3>Water Systems</h3>
+            <p>Drinking water quality and contaminant tracking by community.</p>
+          </a>
+          <a class="card pad" href="community-story.html">
+            <span class="tag">Story</span>
+            <h3>Community air monitoring in Oxnard</h3>
+            <p>Residents gather neighborhood readings where official monitors leave gaps.</p>
+          </a>
+        </div>
 
       </div>
 
@@ -141,34 +171,53 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/tc-logo.svg" alt="Tracking California">
-        <p>Informing action for healthier communities. A research program turning public health, climate, and environmental data into action.</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="data-and-tools.html">Data &amp; Tools</a>
-        <a href="topics.html">Topics</a>
-        <a href="communities.html">Our Communities</a>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <a href="resources.html">Newsletters</a>
-        <a href="resources.html">Publications</a>
-        <a href="resources.html">Commentaries</a>
-      </div>
-      <div>
-        <h4>About</h4>
-        <a href="about.html">Who we are</a>
-        <a href="about.html#partners">Partners</a>
-        <a href="about.html#contact">Contact</a>
+  <div class="footer-cta">
+    <div class="wrap">
+      <div class="grid g3">
+        <div>
+          <h3>Work with us</h3>
+          <p>Partner with Tracking California on community-engaged environmental health research.</p>
+          <a class="btn btn-orange" href="communities.html#involved">Get in touch <span class="arrow"></span></a>
+        </div>
+        <div>
+          <h3>Use our data</h3>
+          <p>Explore datasets, maps, and tools built for California communities.</p>
+          <a class="btn btn-orange" href="data-and-tools.html">Open the Data Explorer <span class="arrow"></span></a>
+        </div>
+        <div>
+          <h3>Join our team</h3>
+          <p>Help advance public health data for healthier communities.</p>
+          <a class="btn btn-orange" href="about.html#contact">See opportunities <span class="arrow"></span></a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Tracking California. Design prototype for internal review.</span>
-      <span>Open Sans · TC brand palette</span>
+  </div>
+  <div class="footer-main">
+    <div class="wrap cols">
+      <div>
+        <p class="footer-label">Stay informed</p>
+        <p>Program updates and the latest research and insights, a few times a year.</p>
+        <form class="signup-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter email address" aria-label="Email address">
+          <button class="btn btn-primary" type="submit">Sign up</button>
+        </form>
+      </div>
+      <div>
+        <p class="footer-label">Connect with us</p>
+        <p><a href="about.html#contact" class="link-arrow">Contact us</a></p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="footer-legal">
+        <img src="assets/tc-logo.svg" alt="Tracking California">
+        <span>© 2026 Tracking California · Design prototype for internal review.</span>
+      </div>
     </div>
   </div>
 </footer>

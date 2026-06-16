@@ -74,16 +74,15 @@
 <main>
 
   <!-- BANNER -->
-  <section class="page-banner data">
+  <section class="page-banner data centered">
     <div class="wrap">
-      <p class="eyebrow">Explore the data</p>
       <h1>Our Data &amp; Tools</h1>
       <p class="lead">Interactive explorers, maps, and downloadable datasets covering air quality, water, climate, and health conditions across California.</p>
     </div>
   </section>
 
   <!-- FLAGSHIP: CALIFORNIA DATA EXPLORER -->
-  <section class="section">
+  <section class="section centered">
     <div class="wrap">
       <div class="callout" style="border-left-color:var(--tc-blue); padding:30px 34px;">
         <p class="eyebrow" style="color:var(--tc-blue)">Flagship tool</p>
@@ -96,30 +95,24 @@
   </section>
 
   <!-- TOOLS GRID -->
-  <section class="section tint">
+  <section class="section tint centered">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Ways in</p>
-        <h2>Tools for working with the data</h2>
-      </div>
+      <h2 class="sec-title">Tools for working with the data</h2>
       <div class="grid g3">
-        <a class="tile" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener"><div class="ic"><i class="fa-solid fa-magnifying-glass-chart"></i></div><h3>Data Explorer</h3><p>Map and chart public health and environmental measures.</p></a>
-        <a class="tile" href="https://ext.trackingcalifornia.org/traffic" target="_blank" rel="noopener"><div class="ic"><i class="fa-solid fa-car-side"></i></div><h3>Traffic Tool</h3><p>Estimate traffic-related air pollution near a location.</p></a>
-        <a class="tile" href="#"><div class="ic"><i class="fa-solid fa-wheat-awn"></i></div><h3>Pesticide Mapping Tool</h3><p>View agricultural pesticide use across California.</p></a>
-        <a class="tile" href="#"><div class="ic"><i class="fa-solid fa-droplet"></i></div><h3>Water Quality Viewer</h3><p>Explore drinking water quality by water system.</p></a>
-        <a class="tile" href="#"><div class="ic"><i class="fa-solid fa-flask-vial"></i></div><h3>PFAS Maps</h3><p>Map PFAS contamination across California.</p></a>
+        <a class="card" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener"><div class="thumb"><img src="assets/tools/data-explorer.png" alt="Data Explorer"></div><div class="pad"><h3>Data Explorer</h3></div></a>
+        <a class="card" href="https://ext.trackingcalifornia.org/traffic" target="_blank" rel="noopener"><div class="thumb"><img src="assets/tools/traffic.jpg" alt="Traffic Tool"></div><div class="pad"><h3>Traffic Tool</h3></div></a>
+        <a class="card" href="#"><div class="thumb"><img src="assets/tools/pesticide.png" alt="Pesticide Mapping Tool"></div><div class="pad"><h3>Pesticide Mapping Tool</h3></div></a>
+        <a class="card" href="#"><div class="thumb"><img src="assets/tools/water.png" alt="Water Quality Viewer"></div><div class="pad"><h3>Water Quality Viewer</h3></div></a>
+        <a class="card" href="#"><div class="thumb"><img src="assets/tools/maps.png" alt="PFAS Maps"></div><div class="pad"><h3>PFAS Maps</h3></div></a>
       </div>
     </div>
   </section>
 
   <!-- EXPLORE BY TOPIC -->
-  <section class="section">
+  <section class="section centered">
     <div class="wrap">
-      <div class="section-head">
-        <p class="eyebrow">Explore by topic</p>
-        <h2>Jump in by what you track</h2>
-        <p>Each topic gathers the relevant measures, maps, and fact sheets.</p>
-      </div>
+      <h2 class="sec-title">Jump in by what you track</h2>
+      <p>Each topic gathers the relevant measures, maps, and fact sheets.</p>
       <div class="grid g4">
         <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-smog"></i></div><h3>Air Quality</h3></a>
         <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-lungs"></i></div><h3>Asthma</h3></a>
@@ -149,34 +142,53 @@
 </main>
 
 <footer class="site-footer">
-  <div class="wrap">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <img src="assets/tc-logo.svg" alt="Tracking California">
-        <p>Informing action for healthier communities. A research program turning public health, climate, and environmental data into action.</p>
-      </div>
-      <div>
-        <h4>Explore</h4>
-        <a href="data-and-tools.html">Data &amp; Tools</a>
-        <a href="topics.html">Topics</a>
-        <a href="communities.html">Our Communities</a>
-      </div>
-      <div>
-        <h4>Resources</h4>
-        <a href="resources.html">Newsletters</a>
-        <a href="resources.html">Publications</a>
-        <a href="resources.html">Commentaries</a>
-      </div>
-      <div>
-        <h4>About</h4>
-        <a href="about.html">Who we are</a>
-        <a href="about.html#partners">Partners</a>
-        <a href="about.html#contact">Contact</a>
+  <div class="footer-cta">
+    <div class="wrap">
+      <div class="grid g3">
+        <div>
+          <h3>Work with us</h3>
+          <p>Partner with Tracking California on community-engaged environmental health research.</p>
+          <a class="btn btn-orange" href="communities.html#involved">Get in touch <span class="arrow"></span></a>
+        </div>
+        <div>
+          <h3>Use our data</h3>
+          <p>Explore datasets, maps, and tools built for California communities.</p>
+          <a class="btn btn-orange" href="data-and-tools.html">Open the Data Explorer <span class="arrow"></span></a>
+        </div>
+        <div>
+          <h3>Join our team</h3>
+          <p>Help advance public health data for healthier communities.</p>
+          <a class="btn btn-orange" href="about.html#contact">See opportunities <span class="arrow"></span></a>
+        </div>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2026 Tracking California. Design prototype for internal review.</span>
-      <span>Open Sans · TC brand palette</span>
+  </div>
+  <div class="footer-main">
+    <div class="wrap cols">
+      <div>
+        <p class="footer-label">Stay informed</p>
+        <p>Program updates and the latest research and insights, a few times a year.</p>
+        <form class="signup-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter email address" aria-label="Email address">
+          <button class="btn btn-primary" type="submit">Sign up</button>
+        </form>
+      </div>
+      <div>
+        <p class="footer-label">Connect with us</p>
+        <p><a href="about.html#contact" class="link-arrow">Contact us</a></p>
+        <div class="socials">
+          <a href="#" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+          <a href="#" aria-label="Bluesky"><i class="fa-brands fa-bluesky"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+    </div>
+    <div class="wrap">
+      <div class="footer-legal">
+        <img src="assets/tc-logo.svg" alt="Tracking California">
+        <span>© 2026 Tracking California · Design prototype for internal review.</span>
+      </div>
     </div>
   </div>
 </footer>

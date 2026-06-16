@@ -17,7 +17,7 @@ document.addEventListener('click', function (e) {
   bar.querySelectorAll('.pill').forEach(p => p.classList.remove('on'));
   pill.classList.add('on');
   const want = pill.dataset.filter;
-  document.querySelectorAll('.res-item').forEach(item => {
+  document.querySelectorAll('[data-type]').forEach(item => {
     const show = want === 'all' || item.dataset.type === want;
     item.classList.toggle('is-hidden', !show);
   });
