@@ -89,22 +89,23 @@ p  { margin: 0 0 1.1em; }
   background: rgba(255,255,255,.92); backdrop-filter: blur(8px);
   border-bottom: 1px solid var(--line);
 }
-.header-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; }
+.header-inner { display: flex; align-items: center; justify-content: space-between; height: 76px; flex-wrap: nowrap; gap: 18px; }
 .brand { display: flex; align-items: center; gap: 10px; }
-.brand img { height: 38px; width: auto; }
+.brand { flex-shrink: 0; }
+.brand img { height: 34px; width: auto; display: block; }
 .brand .wordmark { font-weight: 700; color: var(--tc-blue); font-size: 1.05rem; line-height: 1.05; letter-spacing: .2px; }
 .brand .wordmark small { display: block; font-size: .62rem; font-weight: 600; color: var(--grey);
   letter-spacing: .8px; text-transform: uppercase; }
 
-.nav { display: flex; align-items: center; gap: 4px; }
+.nav { display: flex; align-items: center; gap: 2px; flex-wrap: nowrap; }
 .nav a {
-  color: var(--ink); font-weight: 600; font-size: .96rem; padding: .55em .8em; border-radius: 7px;
-  position: relative;
+  color: var(--ink); font-weight: 600; font-size: .9rem; padding: .5em .55em; border-radius: 7px;
+  position: relative; white-space: nowrap;
 }
 .nav a:hover { background: var(--tc-tint); color: var(--tc-blue); }
 .nav a.active { color: var(--tc-blue); }
 .nav a.active::after {
-  content: ""; position: absolute; left: .8em; right: .8em; bottom: 7px; height: 2px;
+  content: ""; position: absolute; left: .55em; right: .55em; bottom: 6px; height: 2px;
   background: var(--tc-orange); border-radius: 2px;
 }
 .nav-search {
@@ -435,3 +436,47 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 }
 
 .is-hidden { display: none !important; }
+
+
+/* white CTA button (footer band) */
+.btn-white { background: #fff; color: var(--tc-blue); }
+.btn-white:hover { background: var(--tc-tint); color: var(--tc-blue-d); }
+
+/* hero with image */
+.hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+.hero-grid h1 { max-width: none; }
+.hero-media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow-h); }
+
+/* feature row (image + text) */
+.feature { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: center; }
+.feature-media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 14px; box-shadow: var(--shadow); }
+.feature-text .lead { color: var(--tc-green-d); margin-bottom: .6em; }
+
+/* carousel */
+.carousel-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; gap: 16px; }
+.carousel-nav { display: flex; gap: 8px; }
+.car-btn { width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: #fff;
+  color: var(--tc-blue); font-size: 1.5rem; line-height: 1; cursor: pointer; transition: .15s ease; }
+.car-btn:hover { background: var(--tc-blue); color: #fff; border-color: var(--tc-blue); }
+.carousel { display: flex; gap: 22px; overflow-x: auto; scroll-snap-type: x mandatory;
+  scroll-behavior: smooth; padding: 4px 0 14px; }
+.carousel .car-card { flex: 0 0 300px; scroll-snap-align: start; }
+.carousel::-webkit-scrollbar { height: 8px; }
+.carousel::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
+
+/* interactive data/tools explorer widget */
+.explorer { display: grid; grid-template-columns: 280px 1fr; gap: 32px; align-items: start; margin-top: 26px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+.explorer-controls { display: flex; flex-direction: column; gap: 18px; }
+.explorer-controls label { font-weight: 600; color: var(--ink); font-size: .95rem; }
+.explorer-controls select { display: block; width: 100%; margin-top: 8px; padding: .7em .9em;
+  border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; color: var(--ink); cursor: pointer; }
+.explorer-preview { display: grid; grid-template-columns: 1.25fr 1fr; gap: 26px; align-items: center; }
+.explorer-preview img { width: 100%; border: 1px solid var(--line); border-radius: 10px; }
+.explorer-info h3 { margin: .5em 0 .3em; }
+.explorer-info p { color: var(--body); }
+
+@media (max-width: 860px) {
+  .hero-grid, .feature, .explorer, .explorer-preview { grid-template-columns: 1fr; }
+  .hero-media { order: -1; }
+}

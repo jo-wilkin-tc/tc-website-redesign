@@ -17,8 +17,7 @@
 <header class="site-header">
   <div class="wrap header-inner">
     <a class="brand" href="index.html" aria-label="Tracking California home">
-      <img src="assets/tc-symbol.svg" alt="">
-      <span class="wordmark">Tracking California<small>Informing action for healthier communities</small></span>
+      <img class="brand-logo" src="assets/tc-logo.svg" alt="Tracking California">
     </a>
     <button class="nav-toggle" aria-label="Menu">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
@@ -76,88 +75,111 @@
 
   <!-- HERO -->
   <section class="hero">
-    <div class="wrap">
-      <p class="eyebrow">Informing action for healthier communities</p>
-      <h1>Public health data Californians can <span class="accent">actually use.</span></h1>
-      <p class="lead">Public health, climate, and environmental data, turned into tools and partnerships communities can act on.</p>
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Informing action for healthier communities</p>
+        <h1>Public health data Californians can <span class="accent">actually use.</span></h1>
+        <p class="lead">Public health, climate, and environmental data, turned into tools and partnerships communities can act on.</p>
+      </div>
+      <div class="hero-media">
+        <img src="assets/hero.jpg" alt="California landscape">
+      </div>
+    </div>
+  </section>
 
-      <!-- DUAL PILLARS: data + community, equal weight -->
+  <!-- DUAL PILLARS -->
+  <section class="section" style="padding-top:12px;">
+    <div class="wrap">
       <div class="pillars">
         <div class="pillar data">
           <p class="eyebrow">Explore the data</p>
           <h2>Data &amp; Tools</h2>
-          <p>The Data Explorer covers public health. Other tools cover air, water, climate, and pesticides across California.</p>
+          <p>Interactive explorers, maps, and datasets covering air, water, climate, pesticides, and health across California.</p>
           <div class="btn-row">
-            <a class="btn btn-primary" href="data-explorer.html">Open the Data Explorer <span class="arrow"></span></a>
-            <a class="btn btn-ghost" href="data-and-tools.html">Explore our other tools <span class="arrow"></span></a>
+            <a class="btn btn-primary" href="data-and-tools.html">Explore data &amp; tools <span class="arrow"></span></a>
           </div>
         </div>
         <div class="pillar comm">
           <p class="eyebrow">Take action</p>
           <h2>Our Communities</h2>
-          <p>The partnerships, trainings, and tools that turn data into change on the ground — built alongside the people most affected.</p>
-          <a class="btn btn-green" href="communities.html">See our community work <span class="arrow"></span></a>
+          <p>The partnerships, trainings, and tools that turn data into change on the ground &mdash; built alongside the people most affected.</p>
+          <div class="btn-row">
+            <a class="btn btn-green" href="communities.html">See our community work <span class="arrow"></span></a>
+            <a class="btn btn-ghost-green" href="communities.html#involved">Get involved <span class="arrow"></span></a>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- COMMUNITIES IN ACTION -->
-  <section class="section">
+  <!-- OUR LATEST WORK (carousel) -->
+  <section class="section tint">
     <div class="wrap">
-      <div class="section-head">
-        <h2 class="sec-eyebrow" style="color:var(--tc-green-d)">Our communities in action</h2>
+      <div class="carousel-head">
+        <h2 class="sec-title">Our latest work</h2>
+        <div class="carousel-nav">
+          <button class="car-btn" data-car="prev" aria-label="Previous">&lsaquo;</button>
+          <button class="car-btn" data-car="next" aria-label="Next">&rsaquo;</button>
+        </div>
       </div>
-      <div class="grid g4">
-        <article class="card">
-          <div class="thumb"><img src="assets/img/community-monitoring.jpg" alt="Resident on a field air-monitoring visit"></div>
-          <div class="pad">
-            <span class="tag green">Monitoring</span>
-            <h3><a href="community-story.html">Community air monitoring</a></h3>
-            <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"><img src="assets/img/community-partnership.jpg" alt="Tribal partnership gathering"></div>
-          <div class="pad">
-            <span class="tag green">Partnerships</span>
-            <h3><a href="communities.html">Working with communities</a></h3>
-            <div class="card-foot"><a class="link-arrow" href="communities.html">Learn more</a></div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"><img src="assets/img/community-training.jpg" alt="Community gathering for a training session"></div>
-          <div class="pad">
-            <span class="tag green">Capacity building</span>
-            <h3><a href="communities.html">Trainings &amp; tools</a></h3>
-            <div class="card-foot"><a class="link-arrow" href="communities.html">Explore trainings</a></div>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"><img src="assets/img/community-voices.jpg" alt="Residents at a community event"></div>
-          <div class="pad">
-            <span class="tag green">Community voices</span>
-            <h3><a href="community-story.html">Stories from the ground</a></h3>
-            <div class="card-foot"><a class="link-arrow" href="community-story.html">Hear the voices</a></div>
-          </div>
-        </article>
+      <div class="carousel" id="latest-carousel">
+        <a class="card car-card" href="communities.html"><div class="thumb"><img src="assets/img/community-training.jpg" alt=""></div><div class="pad"><span class="tag green">Project</span><h3>Achieving Resilient Communities (ARC)</h3></div></a>
+        <a class="card car-card" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener"><div class="thumb"><img src="assets/tools/data-explorer.png" alt=""></div><div class="pad"><span class="tag">Tool</span><h3>Data Explorer: California environmental health</h3></div></a>
+        <a class="card car-card" href="resources.html"><div class="thumb"><img src="assets/img/infographic.png" alt=""></div><div class="pad"><span class="tag orange">Publication</span><h3>Traffic pollution &amp; childhood asthma in California</h3></div></a>
+        <a class="card car-card" href="https://ext.trackingcalifornia.org/traffic" target="_blank" rel="noopener"><div class="thumb"><img src="assets/tools/traffic.jpg" alt=""></div><div class="pad"><span class="tag">Data</span><h3>Statewide high-resolution traffic dataset</h3></div></a>
+        <a class="card car-card" href="communities.html"><div class="thumb"><img src="assets/img/community-meeting.jpg" alt=""></div><div class="pad"><span class="tag green">Project</span><h3>CHARM Lake County</h3></div></a>
+        <a class="card car-card" href="resources.html"><div class="thumb"><img src="assets/img/topic-climate.jpg" alt=""></div><div class="pad"><span class="tag orange">Publication</span><h3>Heat &amp; health equity in the Central Valley</h3></div></a>
       </div>
     </div>
   </section>
 
-  <!-- OUR DATASETS & TOOLS -->
-  <section class="section">
+  <!-- OUR COMMUNITY WORK (feature) -->
+  <section class="section tint-g">
+    <div class="wrap feature">
+      <div class="feature-media"><img src="assets/img/community-monitoring.jpg" alt="Community air monitoring in the field"></div>
+      <div class="feature-text">
+        <h2 class="sec-title">Our community work</h2>
+        <p class="lead">Data only matters if communities can use it.</p>
+        <p>We partner with community organizations, train local trackers, and build tools alongside the people most affected by environmental hazards &mdash; from air monitoring in Oxnard to drinking-water work in Lake County. Community knowledge shapes the research, and the research supports local action.</p>
+        <a class="link-arrow" href="communities.html">Read more about our community work</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR DATASETS & TOOLS (interactive) -->
+  <section class="section tint">
     <div class="wrap">
-      <div class="section-head">
-        <h2 class="sec-eyebrow">Our datasets &amp; tools</h2>
+      <h2 class="sec-title">Our datasets &amp; tools</h2>
+      <p class="lead">Tell us what you'd like to know.</p>
+      <div class="explorer">
+        <div class="explorer-controls">
+          <label>I want to explore
+            <select id="ex-topic">
+              <option value="air">Air quality</option>
+              <option value="asthma">Asthma</option>
+              <option value="traffic">Traffic &amp; roads</option>
+              <option value="water">Drinking water</option>
+              <option value="pesticides">Pesticides</option>
+            </select>
+          </label>
+          <label>for
+            <select id="ex-scope">
+              <option value="the whole state">the whole state</option>
+              <option value="a county">a county</option>
+              <option value="my neighborhood">my neighborhood</option>
+            </select>
+          </label>
+        </div>
+        <div class="explorer-preview">
+          <img id="ex-img" src="assets/tools/data-explorer.png" alt="Tool preview">
+          <div class="explorer-info">
+            <span class="tag" id="ex-tag">Data Explorer</span>
+            <h3 id="ex-title">Air quality</h3>
+            <p id="ex-desc"></p>
+            <a class="btn btn-primary" id="ex-link" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener">Open <span class="arrow"></span></a>
+          </div>
+        </div>
       </div>
-      <div class="grid g4">
-        <a class="card" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener"><div class="thumb"><img src="assets/tools/data-explorer.png" alt="Data Explorer"></div><div class="pad"><h3>Data Explorer</h3></div></a>
-        <a class="card" href="https://ext.trackingcalifornia.org/traffic" target="_blank" rel="noopener"><div class="thumb"><img src="assets/tools/traffic.jpg" alt="Traffic Tool"></div><div class="pad"><h3>Traffic Tool</h3></div></a>
-        <a class="card" href="#"><div class="thumb"><img src="assets/tools/pesticide.png" alt="Pesticide Mapping Tool"></div><div class="pad"><h3>Pesticide Mapping Tool</h3></div></a>
-        <a class="card" href="#"><div class="thumb"><img src="assets/tools/water.png" alt="Water Quality Viewer"></div><div class="pad"><h3>Water Quality Viewer</h3></div></a>
-      </div>
-      <div class="section-foot"><a class="link-arrow" href="data-and-tools.html">See all data &amp; tools</a></div>
     </div>
   </section>
 
@@ -165,7 +187,7 @@
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <h2 class="sec-eyebrow">Explore by topic</h2>
+        <h2 class="sec-title">Explore by topic</h2>
       </div>
       <div class="grid g4">
         <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-smog"></i></div><h3>Air Quality</h3></a>
@@ -181,37 +203,6 @@
     </div>
   </section>
 
-  <!-- RESEARCH, TOOLS & IDEAS -->
-  <section class="section">
-    <div class="wrap">
-      <div class="grid" style="grid-template-columns:300px 1fr; gap:44px; align-items:start;">
-        <div>
-          <h2 class="sec-title">Our research, tools &amp; ideas</h2>
-          <p><a class="link-arrow" href="resources.html">Publications</a></p>
-          <p><a class="link-arrow" href="resources.html">News &amp; updates</a></p>
-        </div>
-        <div class="grid g3">
-          <a class="card" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener"><div class="thumb"><img src="assets/tools/data-explorer.png" alt="Data Explorer"></div><div class="pad"><h3>Data Explorer: California environmental health</h3></div></a>
-          <a class="card" href="community-story.html"><div class="thumb"><img src="assets/img/community-monitoring.jpg" alt="Community air monitoring"></div><div class="pad"><h3>Community air monitoring in the field</h3></div></a>
-          <a class="card" href="resources.html"><div class="thumb"><img src="assets/img/infographic.png" alt="Childhood lead exposure"></div><div class="pad"><h3>Childhood lead exposure across California</h3></div></a>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- LATEST NEWS -->
-  <section class="section">
-    <div class="wrap">
-      <div class="section-head"><h2 class="sec-title">Latest news</h2></div>
-      <div class="grid g3">
-        <article class="card"><div class="thumb"><img src="assets/img/community-voices.jpg" alt=""></div><div class="pad"><span class="tag">News · May 2026</span><h3><a href="resource-article.html">New name, same program: introducing Tracking California</a></h3></div></article>
-        <article class="card"><div class="thumb"><img src="assets/img/ej-kids.jpg" alt=""></div><div class="pad"><span class="tag">News · April 2026</span><h3><a href="resource-article.html">Trackers in the field: visiting Oxnard and Clear Lake</a></h3></div></article>
-        <article class="card"><div class="thumb"><img src="assets/img/community-meeting.jpg" alt=""></div><div class="pad"><span class="tag">News · March 2026</span><h3><a href="resource-article.html">Achieving Resilient Communities: year one</a></h3></div></article>
-      </div>
-      <div class="section-foot"><a class="link-arrow" href="resources.html">All news &amp; updates</a></div>
-    </div>
-  </section>
-
 </main>
 
 <footer class="site-footer">
@@ -221,17 +212,17 @@
         <div>
           <h3>Work with us</h3>
           <p>Partner with Tracking California on community-engaged environmental health research.</p>
-          <a class="btn btn-orange" href="communities.html#involved">Get in touch <span class="arrow"></span></a>
+          <a class="btn btn-white" href="communities.html#involved">Get in touch <span class="arrow"></span></a>
         </div>
         <div>
-          <h3>Use our data</h3>
-          <p>Explore datasets, maps, and tools built for California communities.</p>
-          <a class="btn btn-orange" href="data-and-tools.html">Open the Data Explorer <span class="arrow"></span></a>
+          <h3>Learn more about our program</h3>
+          <p>Who we are, our mission, and the team behind Tracking California.</p>
+          <a class="btn btn-white" href="about.html">Learn more <span class="arrow"></span></a>
         </div>
         <div>
           <h3>Join our team</h3>
           <p>Help advance public health data for healthier communities.</p>
-          <a class="btn btn-orange" href="about.html#contact">See opportunities <span class="arrow"></span></a>
+          <a class="btn btn-white" href="about.html#contact">See opportunities <span class="arrow"></span></a>
         </div>
       </div>
     </div>
