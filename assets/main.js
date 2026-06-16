@@ -29,7 +29,8 @@ document.addEventListener('click', function (e) {
   if (!btn) return;
   const car = btn.closest('.section').querySelector('.carousel');
   if (!car) return;
-  car.scrollBy({ left: btn.dataset.car === 'prev' ? -644 : 644, behavior: 'smooth' });
+  const step = car.clientWidth; // one view = 2 cards
+  car.scrollBy({ left: btn.dataset.car === 'prev' ? -step : step, behavior: 'smooth' });
 });
 
 // Interactive datasets & tools explorer
@@ -59,4 +60,18 @@ document.addEventListener('click', function (e) {
     if (e.target.id === 'ex-topic' || e.target.id === 'ex-scope') render();
   });
   if (document.getElementById('ex-topic')) render();
+})();
+
+
+// rotating community photos
+(function () {
+  var el = document.getElementById('comm-rotator');
+  if (!el) return;
+  var imgs = ['assets/img/community-1.jpg','assets/img/community-2.jpg','assets/img/community-3.jpg','assets/img/community-4.jpg'];
+  var i = 0;
+  setInterval(function () {
+    i = (i + 1) % imgs.length;
+    el.style.opacity = 0;
+    setTimeout(function () { el.src = imgs[i]; el.style.opacity = 1; }, 400);
+  }, 4500);
 })();
