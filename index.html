@@ -23,11 +23,45 @@
     </button>
     <nav class="nav">
       <a href="index.html" class="active">Home</a>
-      <a href="data-and-tools.html">Our Data &amp; Tools</a>
-      <a href="communities.html">Our Communities</a>
-      <a href="topics.html">Topics</a>
-      <a href="resources.html">Resources</a>
-      <a href="about.html">About</a>
+      <div class="nav-item">
+        <a href="data-and-tools.html">Our Data &amp; Tools <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="data-and-tools.html">Overview</a>
+          <a href="data-explorer.html">Data Explorer</a>
+          <a href="topics.html">Browse by topic</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="communities.html">Our Communities <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="communities.html">Overview</a>
+          <a href="community-story.html">Community stories</a>
+          <a href="communities.html#involved">Get involved</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="topics.html">Topics <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="topics.html">All topics</a>
+          <a href="topic.html">Air Quality (example)</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="resources.html">Resources <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="resources.html">All resources</a>
+          <a href="resource-article.html">Latest article</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="about.html">About <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="about.html">Overview</a>
+          <a href="about.html#team">Team</a>
+          <a href="about.html#partners">Partners</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+      </div>
       <a class="nav-search" href="#" aria-label="Search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         Search
@@ -43,7 +77,7 @@
     <div class="wrap">
       <p class="eyebrow">Informing action for healthier communities</p>
       <h1>Public health data Californians can <span class="accent">actually use.</span></h1>
-      <p class="lead">We turn public health, climate, and environmental data into tools, evidence, and partnerships — so communities and decision-makers can act on what the numbers show.</p>
+      <p class="lead">Public health, climate, and environmental data, turned into tools and partnerships communities can act on.</p>
 
       <!-- DUAL PILLARS: data + community, equal weight -->
       <div class="pillars">
@@ -69,13 +103,12 @@
       <div class="section-head">
         <p class="eyebrow">Explore by topic</p>
         <h2>What we track</h2>
-        <p>Environmental hazards and the health outcomes connected to them — mapped down to the community level.</p>
       </div>
       <div class="grid g4">
-        <a class="tile" href="topic.html"><div class="ic">🌫️</div><h3>Air Quality</h3><p>Pollution, asthma, traffic-related exposure</p></a>
-        <a class="tile" href="topics.html"><div class="ic">💧</div><h3>Water</h3><p>Drinking water quality &amp; access</p></a>
-        <a class="tile" href="topics.html"><div class="ic">🌡️</div><h3>Climate &amp; Health</h3><p>Heat, wildfire smoke, extreme events</p></a>
-        <a class="tile" href="topics.html"><div class="ic">🌾</div><h3>Pesticides</h3><p>Agricultural use &amp; exposure</p></a>
+        <a class="tile" href="topic.html"><div class="ic">🌫️</div><h3>Air Quality</h3></a>
+        <a class="tile" href="topics.html"><div class="ic">💧</div><h3>Water</h3></a>
+        <a class="tile" href="topics.html"><div class="ic">🌡️</div><h3>Climate &amp; Health</h3></a>
+        <a class="tile" href="topics.html"><div class="ic">🌾</div><h3>Pesticides</h3></a>
       </div>
       <div class="section-foot"><a class="link-arrow" href="topics.html">Browse all topics</a></div>
     </div>
@@ -87,7 +120,7 @@
       <div class="section-head">
         <p class="eyebrow" style="color:var(--tc-green-d)">Our communities in action</p>
         <h2>Data put to work, locally</h2>
-        <p>Community work is half of what we do. Here's how partners use the data, trainings, and tools we build together.</p>
+        <p>Community work is half of what we do.</p>
       </div>
       <div class="grid g4">
         <article class="card">
@@ -95,7 +128,6 @@
           <div class="pad">
             <span class="tag green">Monitoring</span>
             <h3><a href="community-story.html">Community air monitoring</a></h3>
-            <p>Local trackers gather neighborhood-level data where official monitors don't reach.</p>
             <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
           </div>
         </article>
@@ -104,7 +136,6 @@
           <div class="pad">
             <span class="tag green">Partnerships</span>
             <h3><a href="communities.html">Working with communities</a></h3>
-            <p>Co-designing research questions with the people the data is about.</p>
             <div class="card-foot"><a class="link-arrow" href="communities.html">Learn more</a></div>
           </div>
         </article>
@@ -113,7 +144,6 @@
           <div class="pad">
             <span class="tag green">Capacity building</span>
             <h3><a href="communities.html">Trainings &amp; tools</a></h3>
-            <p>Workshops and toolkits that help residents read and use public health data.</p>
             <div class="card-foot"><a class="link-arrow" href="communities.html">Explore trainings</a></div>
           </div>
         </article>
@@ -122,7 +152,6 @@
           <div class="pad">
             <span class="tag green">Community voices</span>
             <h3><a href="community-story.html">Stories from the ground</a></h3>
-            <p>The human moments behind the numbers, told by partners themselves.</p>
             <div class="card-foot"><a class="link-arrow" href="community-story.html">Hear the voices</a></div>
           </div>
         </article>
@@ -142,15 +171,13 @@
               <div class="pad">
                 <p class="meta">May 2026</p>
                 <h3><a href="resource-article.html">New Name, Same Program: Introducing Tracking California</a></h3>
-                <p>Why the California Environmental Health Tracking Program is now Tracking California.</p>
-              </div>
+                </div>
             </article>
             <article class="card" style="flex-direction:row;">
               <div class="pad">
                 <p class="meta">April 2026</p>
                 <h3><a href="resource-article.html">Trackers in the field — visiting Oxnard and Clear Lake</a></h3>
-                <p>Notes from a summer of community monitoring visits across the state.</p>
-              </div>
+                </div>
             </article>
           </div>
           <div class="section-foot"><a class="link-arrow" href="resources.html">All news &amp; updates</a></div>
@@ -187,7 +214,7 @@
       <div class="signup">
         <div>
           <h2>Get the newsletter</h2>
-          <p>A quarterly round-up of new data, tools, and community stories. No spam.</p>
+          <p>A quarterly round-up of new data, tools, and community stories.</p>
         </div>
         <a class="btn btn-primary" href="#">Subscribe <span class="arrow"></span></a>
       </div>

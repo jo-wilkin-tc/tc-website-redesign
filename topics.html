@@ -23,11 +23,45 @@
     </button>
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="data-and-tools.html">Our Data &amp; Tools</a>
-      <a href="communities.html">Our Communities</a>
-      <a href="topics.html" class="active">Topics</a>
-      <a href="resources.html">Resources</a>
-      <a href="about.html">About</a>
+      <div class="nav-item">
+        <a href="data-and-tools.html">Our Data &amp; Tools <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="data-and-tools.html">Overview</a>
+          <a href="data-explorer.html">Data Explorer</a>
+          <a href="topics.html">Browse by topic</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="communities.html">Our Communities <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="communities.html">Overview</a>
+          <a href="community-story.html">Community stories</a>
+          <a href="communities.html#involved">Get involved</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="topics.html" class="active">Topics <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="topics.html">All topics</a>
+          <a href="topic.html">Air Quality (example)</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="resources.html">Resources <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="resources.html">All resources</a>
+          <a href="resource-article.html">Latest article</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="about.html">About <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="about.html">Overview</a>
+          <a href="about.html#team">Team</a>
+          <a href="about.html#partners">Partners</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+      </div>
       <a class="nav-search" href="#" aria-label="Search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         Search
@@ -43,7 +77,7 @@
     <div class="wrap">
       <p class="eyebrow">Explore by topic</p>
       <h1>Topics</h1>
-      <p class="lead">A browsable index of everything we track — the environmental exposures Californians face and the health conditions connected to them, mapped down to the community level.</p>
+      <p class="lead">The environmental exposures and health conditions we track, down to the community level.</p>
     </div>
   </section>
 
@@ -53,15 +87,15 @@
       <div class="section-head">
         <p class="eyebrow">Environment &amp; exposures</p>
         <h2>What's in the air, water, and ground</h2>
-        <p>The hazards in the places people live, work, and go to school — and the data we collect to measure them.</p>
+        <p>Hazards in the places people live, work, and go to school, and the data we collect to measure them.</p>
       </div>
       <div class="grid g4">
-        <a class="tile" href="topic.html"><div class="ic">🌫️</div><h3>Air Quality</h3><p>Pollution, ozone, and traffic-related exposure</p></a>
-        <a class="tile" href="topic.html"><div class="ic">💧</div><h3>Water</h3><p>Drinking water quality &amp; access</p></a>
-        <a class="tile" href="topic.html"><div class="ic">🌡️</div><h3>Climate &amp; Health</h3><p>Extreme heat and a changing climate</p></a>
-        <a class="tile" href="topic.html"><div class="ic">🌾</div><h3>Pesticides</h3><p>Agricultural use and community exposure</p></a>
-        <a class="tile" href="topic.html"><div class="ic">🔥</div><h3>Wildfire Smoke</h3><p>Smoke events and air quality impacts</p></a>
-        <a class="tile" href="topic.html"><div class="ic">🚗</div><h3>Traffic &amp; Roads</h3><p>Roadway proximity and vehicle emissions</p></a>
+        <a class="tile" href="topic.html"><div class="ic">🌫️</div><h3>Air Quality</h3><p>Particulate matter and ozone</p></a>
+        <a class="tile" href="topic.html"><div class="ic">💧</div><h3>Water</h3><p>Drinking water quality and access</p></a>
+        <a class="tile" href="topic.html"><div class="ic">🌡️</div><h3>Climate &amp; Health</h3></a>
+        <a class="tile" href="topic.html"><div class="ic">🌾</div><h3>Pesticides</h3></a>
+        <a class="tile" href="topic.html"><div class="ic">🔥</div><h3>Wildfire Smoke</h3></a>
+        <a class="tile" href="topic.html"><div class="ic">🚗</div><h3>Traffic &amp; Roads</h3></a>
       </div>
     </div>
   </section>
@@ -72,17 +106,17 @@
       <div class="section-head">
         <p class="eyebrow">Health conditions</p>
         <h2>The outcomes we follow</h2>
-        <p>Conditions tracked across California communities — often linked to the environmental exposures above.</p>
+        <p>Conditions tracked across California communities, often linked to the exposures above.</p>
       </div>
       <div class="grid g4">
         <a class="tile" href="topic.html"><div class="ic">🫁</div><h3>Asthma</h3><p>Emergency visits and hospitalizations</p></a>
-        <a class="tile" href="topic.html"><div class="ic">🎗️</div><h3>Cancer</h3><p>Incidence patterns across the state</p></a>
-        <a class="tile" href="topic.html"><div class="ic">❤️</div><h3>Heart Attacks</h3><p>Acute cardiovascular events</p></a>
+        <a class="tile" href="topic.html"><div class="ic">🎗️</div><h3>Cancer</h3></a>
+        <a class="tile" href="topic.html"><div class="ic">❤️</div><h3>Heart Attacks</h3></a>
         <a class="tile" href="topic.html"><div class="ic">🧒</div><h3>Childhood Lead Poisoning</h3><p>Blood lead levels in young children</p></a>
-        <a class="tile" href="topic.html"><div class="ic">🥵</div><h3>Heat-Related Illness</h3><p>ER visits during extreme heat</p></a>
-        <a class="tile" href="topic.html"><div class="ic">👶</div><h3>Birth Defects</h3><p>Surveillance of birth outcomes</p></a>
-        <a class="tile" href="topic.html"><div class="ic">😮‍💨</div><h3>COPD</h3><p>Chronic respiratory disease burden</p></a>
-        <a class="tile" href="topic.html"><div class="ic">🚨</div><h3>Carbon Monoxide Poisoning</h3><p>Exposure-related ER visits</p></a>
+        <a class="tile" href="topic.html"><div class="ic">🥵</div><h3>Heat-Related Illness</h3></a>
+        <a class="tile" href="topic.html"><div class="ic">👶</div><h3>Birth Defects</h3></a>
+        <a class="tile" href="topic.html"><div class="ic">😮‍💨</div><h3>COPD</h3></a>
+        <a class="tile" href="topic.html"><div class="ic">🚨</div><h3>Carbon Monoxide Poisoning</h3></a>
       </div>
     </div>
   </section>

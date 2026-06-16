@@ -23,11 +23,45 @@
     </button>
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="data-and-tools.html" class="active">Our Data &amp; Tools</a>
-      <a href="communities.html">Our Communities</a>
-      <a href="topics.html">Topics</a>
-      <a href="resources.html">Resources</a>
-      <a href="about.html">About</a>
+      <div class="nav-item">
+        <a href="data-and-tools.html" class="active">Our Data &amp; Tools <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="data-and-tools.html">Overview</a>
+          <a href="data-explorer.html">Data Explorer</a>
+          <a href="topics.html">Browse by topic</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="communities.html">Our Communities <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="communities.html">Overview</a>
+          <a href="community-story.html">Community stories</a>
+          <a href="communities.html#involved">Get involved</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="topics.html">Topics <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="topics.html">All topics</a>
+          <a href="topic.html">Air Quality (example)</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="resources.html">Resources <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="resources.html">All resources</a>
+          <a href="resource-article.html">Latest article</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="about.html">About <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="about.html">Overview</a>
+          <a href="about.html#team">Team</a>
+          <a href="about.html#partners">Partners</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+      </div>
       <a class="nav-search" href="#" aria-label="Search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         Search
@@ -43,7 +77,7 @@
     <div class="wrap">
       <p class="eyebrow">Explore the data</p>
       <h1>Our Data &amp; Tools</h1>
-      <p class="lead">Interactive explorers, maps, and downloadable datasets covering air quality, water, climate, and dozens of health conditions — mapped down to the community level across California.</p>
+      <p class="lead">Interactive explorers, maps, and downloadable datasets covering air quality, water, climate, and health conditions across California.</p>
     </div>
   </section>
 
@@ -53,7 +87,7 @@
       <div class="callout" style="border-left-color:var(--tc-blue); padding:30px 34px;">
         <p class="eyebrow" style="color:var(--tc-blue)">Flagship tool</p>
         <h2 style="margin-bottom:.4em;">California Data Explorer</h2>
-        <p style="max-width:62ch;">Our most-used tool. Map and chart public health and environmental measures by county, city, and neighborhood — compare places, watch trends over time, and download what you find. No login, no spreadsheets required.</p>
+        <p style="max-width:62ch;">Map and chart public health and environmental measures by county, city, and neighborhood. Compare places, view trends over time, and download the data.</p>
         <a class="btn btn-primary" href="data-explorer.html">Open the Data Explorer <span class="arrow"></span></a>
       </div>
     </div>
@@ -65,15 +99,14 @@
       <div class="section-head">
         <p class="eyebrow">Ways in</p>
         <h2>Tools for working with the data</h2>
-        <p>Whether you want a quick map, a full dataset, or the methods behind the numbers — start here.</p>
       </div>
       <div class="grid g3">
-        <a class="tile" href="data-explorer.html"><div class="ic">📊</div><h3>Data Explorer</h3><p>Map and chart measures by place and over time</p></a>
-        <a class="tile" href="data-explorer.html"><div class="ic">🗺️</div><h3>Interactive Maps</h3><p>See where hazards and health outcomes cluster</p></a>
-        <a class="tile" href="data-explorer.html"><div class="ic">⬇️</div><h3>Query &amp; download</h3><p>Build a custom query and export CSV data</p></a>
-        <a class="tile" href="topics.html"><div class="ic">📄</div><h3>About-the-Data fact sheets</h3><p>Sources, methods, and caveats for each measure</p></a>
-        <a class="tile" href="topics.html"><div class="ic">🩺</div><h3>Health condition indicators</h3><p>Asthma, heat illness, and more by community</p></a>
-        <a class="tile" href="data-explorer.html"><div class="ic">🧭</div><h3>Community air monitoring</h3><p>Neighborhood data official monitors miss</p></a>
+        <a class="tile" href="data-explorer.html"><div class="ic">📊</div><h3>Data Explorer</h3></a>
+        <a class="tile" href="data-explorer.html"><div class="ic">🗺️</div><h3>Interactive Maps</h3></a>
+        <a class="tile" href="data-explorer.html"><div class="ic">⬇️</div><h3>Query &amp; download</h3><p>Build a custom query and export CSV data.</p></a>
+        <a class="tile" href="topics.html"><div class="ic">📄</div><h3>About-the-Data fact sheets</h3><p>Sources, methods, and caveats for each measure.</p></a>
+        <a class="tile" href="topics.html"><div class="ic">🩺</div><h3>Health condition indicators</h3><p>Asthma, heat illness, and others by community.</p></a>
+        <a class="tile" href="data-explorer.html"><div class="ic">🧭</div><h3>Community air monitoring</h3></a>
       </div>
     </div>
   </section>
@@ -84,7 +117,7 @@
       <div class="section-head">
         <p class="eyebrow">Explore by topic</p>
         <h2>Jump in by what you track</h2>
-        <p>Each topic pulls together the relevant measures, maps, and fact sheets in one place.</p>
+        <p>Each topic gathers the relevant measures, maps, and fact sheets.</p>
       </div>
       <div class="grid g4">
         <a class="tile" href="topic.html"><div class="ic">🌫️</div><h3>Air Quality</h3><p>Pollution, asthma, traffic-related exposure</p></a>
@@ -102,7 +135,7 @@
       <div class="callout">
         <p class="eyebrow">Getting started</p>
         <h2 style="margin-bottom:.4em;">New to the data? Start here.</h2>
-        <p style="max-width:64ch;">Pick a topic or open the Data Explorer, choose a region and a measure, and the tool builds the map and chart for you. Every measure links to an about-the-data fact sheet explaining where the numbers come from, how they're calculated, and how to read them responsibly.</p>
+        <p style="max-width:64ch;">Pick a topic or open the Data Explorer, choose a region and a measure, and the tool builds the map and chart. Every measure links to an about-the-data fact sheet covering where the numbers come from and how they're calculated.</p>
         <p style="margin-bottom:0;"><a class="link-arrow" href="data-explorer.html">Open the Data Explorer</a> &nbsp;·&nbsp; <a class="link-arrow" href="topics.html">Browse topics</a></p>
       </div>
     </div>

@@ -23,11 +23,45 @@
     </button>
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="data-and-tools.html">Our Data &amp; Tools</a>
-      <a href="communities.html">Our Communities</a>
-      <a href="topics.html">Topics</a>
-      <a href="resources.html">Resources</a>
-      <a href="about.html" class="active">About</a>
+      <div class="nav-item">
+        <a href="data-and-tools.html">Our Data &amp; Tools <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="data-and-tools.html">Overview</a>
+          <a href="data-explorer.html">Data Explorer</a>
+          <a href="topics.html">Browse by topic</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="communities.html">Our Communities <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="communities.html">Overview</a>
+          <a href="community-story.html">Community stories</a>
+          <a href="communities.html#involved">Get involved</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="topics.html">Topics <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="topics.html">All topics</a>
+          <a href="topic.html">Air Quality (example)</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="resources.html">Resources <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="resources.html">All resources</a>
+          <a href="resource-article.html">Latest article</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="about.html" class="active">About <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="about.html">Overview</a>
+          <a href="about.html#team">Team</a>
+          <a href="about.html#partners">Partners</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+      </div>
       <a class="nav-search" href="#" aria-label="Search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         Search
@@ -53,9 +87,8 @@
       <div class="prose narrow">
         <p class="eyebrow">Who we are</p>
         <h2>Our mission</h2>
-        <p>Tracking California exists to make environmental health data understandable, accessible, and useful — so that communities, researchers, and decision-makers can act on what the numbers show.</p>
+        <p>Tracking California makes environmental health data understandable, accessible, and useful — so communities, researchers, and decision-makers can act on it.</p>
         <p>Formerly the California Environmental Health Tracking Program, we track environmental hazards and the health outcomes connected to them across California. We bring together data on air quality, water, climate, pesticides, and dozens of health conditions, and we work directly with the communities those numbers describe.</p>
-        <p>We believe data should not sit in a report. It should reach the people best positioned to use it — and it should be shaped by them in the first place.</p>
       </div>
     </div>
   </section>
@@ -66,7 +99,7 @@
       <div class="section-head">
         <p class="eyebrow">What we do</p>
         <h2>Two equal pillars</h2>
-        <p>Our work stands on two halves that depend on each other: rigorous data and tools, and the community partnerships that put them to work.</p>
+        <p>Two halves that depend on each other: data and tools, and community partnerships.</p>
       </div>
       <div class="grid g2">
         <div class="prose">
@@ -98,70 +131,37 @@
   </section>
 
   <!-- TEAM -->
-  <section class="section tint">
+  <section class="section tint" id="team">
     <div class="wrap">
       <div class="section-head">
         <p class="eyebrow">Our team</p>
-        <h2>The people behind the program</h2>
-        <p>A multidisciplinary team spanning epidemiology, spatial data science, public health, and community engagement.</p>
+        <h2>Our staff</h2>
       </div>
       <div class="grid g4">
-        <article class="card">
-          <div class="thumb"></div>
-          <div class="pad">
-            <h3>Dr. Maria Alvarez</h3>
-            <p class="meta">Program Director</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"></div>
-          <div class="pad">
-            <h3>Dr. James Okafor</h3>
-            <p class="meta">Senior Research Scientist</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"></div>
-          <div class="pad">
-            <h3>Priya Nair</h3>
-            <p class="meta">Research Scientist, Epidemiology</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"></div>
-          <div class="pad">
-            <h3>Daniel Reyes</h3>
-            <p class="meta">Data Scientist</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"></div>
-          <div class="pad">
-            <h3>Sofia Mendoza</h3>
-            <p class="meta">Community Engagement Lead</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"></div>
-          <div class="pad">
-            <h3>Aisha Khan</h3>
-            <p class="meta">GIS &amp; Spatial Analyst</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"></div>
-          <div class="pad">
-            <h3>Thomas Lee</h3>
-            <p class="meta">Communications Manager</p>
-          </div>
-        </article>
-        <article class="card">
-          <div class="thumb"></div>
-          <div class="pad">
-            <h3>Grace Whitfield</h3>
-            <p class="meta">Program Coordinator</p>
-          </div>
-        </article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Shubhayu Saha, PhD, MA</h3><p class="meta">Executive Director</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Alexa Wilkie, MHS, MS</h3><p class="meta">Deputy Director</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Jhaqueline Valle Palominos, MPH</h3><p class="meta">Division Director</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Max Richardson, MPH, MCP</h3><p class="meta">Policy Director</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Michelle Wong, MPH</h3><p class="meta">Health Communications Director</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Renata Valladares, MSGH</h3><p class="meta">Program Manager</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Niani Coker, MPH, CHES</h3><p class="meta">Program Specialist</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Isabella Kaser, MPH</h3><p class="meta">Climate Resilience Project Manager</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>David Chang, MA</h3><p class="meta">Project Coordinator</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Jo Wilkin, PhD, MSc</h3><p class="meta">Research Scientist</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Catherine Carpenter, MAS</h3><p class="meta">Research Data Analyst</p></div></article>
+        <article class="card"><div class="thumb"></div><div class="pad">
+          <h3>Scarlet Sands-Bliss, MS</h3><p class="meta">Research Data Analyst</p></div></article>
       </div>
     </div>
   </section>
@@ -194,7 +194,7 @@
         <div>
           <p class="eyebrow">Contact</p>
           <h2>Get in touch</h2>
-          <p>Questions about our data, a potential partnership, or a media request? We'd be glad to hear from you.</p>
+          <p>Questions, partnership ideas, or media requests — get in touch.</p>
           <p><a class="btn btn-primary" href="mailto:info@trackingcalifornia.org">Email the team <span class="arrow"></span></a></p>
         </div>
         <div class="prose">

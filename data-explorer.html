@@ -23,11 +23,45 @@
     </button>
     <nav class="nav">
       <a href="index.html">Home</a>
-      <a href="data-and-tools.html" class="active">Our Data &amp; Tools</a>
-      <a href="communities.html">Our Communities</a>
-      <a href="topics.html">Topics</a>
-      <a href="resources.html">Resources</a>
-      <a href="about.html">About</a>
+      <div class="nav-item">
+        <a href="data-and-tools.html" class="active">Our Data &amp; Tools <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="data-and-tools.html">Overview</a>
+          <a href="data-explorer.html">Data Explorer</a>
+          <a href="topics.html">Browse by topic</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="communities.html">Our Communities <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="communities.html">Overview</a>
+          <a href="community-story.html">Community stories</a>
+          <a href="communities.html#involved">Get involved</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="topics.html">Topics <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="topics.html">All topics</a>
+          <a href="topic.html">Air Quality (example)</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="resources.html">Resources <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="resources.html">All resources</a>
+          <a href="resource-article.html">Latest article</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <a href="about.html">About <span class="caret">▾</span></a>
+        <div class="submenu">
+          <a href="about.html">Overview</a>
+          <a href="about.html#team">Team</a>
+          <a href="about.html#partners">Partners</a>
+          <a href="about.html#contact">Contact</a>
+        </div>
+      </div>
       <a class="nav-search" href="#" aria-label="Search">
         <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
         Search
@@ -47,7 +81,7 @@
     <div class="wrap">
       <p class="eyebrow">Air Quality Explorer · Demo</p>
       <h1 class="text-blue" style="max-width:18ch;">Air Quality Explorer</h1>
-      <p class="lead" style="max-width:60ch;">Map and chart air pollution and asthma measures by region and year across California. This is a demo of the explorer experience — the controls below are illustrative and don't load live data.</p>
+      <p class="lead" style="max-width:60ch;">Map and chart air pollution and asthma measures by region and year across California. This is a demo — the controls below are illustrative and don't load live data.</p>
     </div>
   </section>
 
@@ -89,7 +123,7 @@
     <div class="wrap narrow">
       <p class="eyebrow">What the data shows</p>
       <h2>Reading this view</h2>
-      <p>Statewide, annual average PM2.5 has trended down over the past decade, but the burden remains uneven — communities in the San Joaquin Valley and parts of Los Angeles County still see levels well above the statewide average, and those same areas tend to report higher rates of childhood asthma emergency-department visits. Switch the measure and year above to compare places and watch the trend change.</p>
+      <p>Statewide, annual average PM2.5 has trended down over the past decade, but the burden remains uneven. Communities in the San Joaquin Valley and parts of Los Angeles County still see levels above the statewide average, and those areas tend to report higher rates of childhood asthma emergency-department visits.</p>
 
       <div class="callout">
         <p class="eyebrow" style="color:var(--tc-orange)">About this data</p>
