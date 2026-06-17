@@ -527,3 +527,9 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 
 /* chips size to their text, not the card width */
 .card .pad .tag { align-self: flex-start; }
+
+/* ===== accessibility ===== */
+.skip-link { position: absolute; left: -9999px; top: 0; z-index: 200; background: var(--tc-blue);
+  color: #fff; padding: 10px 16px; border-radius: 0 0 8px 0; font-weight: 600; }
+.skip-link:focus { left: 0; }
+:focus-visible { outline: 3px solid var(--tc-orange); outline-offset: 2px; border-radius: 2px; }
