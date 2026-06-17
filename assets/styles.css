@@ -620,3 +620,9 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .pm-detail .pm-role { color: var(--grey); margin: 0 0 16px; }
 .pm-detail .pm-how-label { text-transform: uppercase; letter-spacing: .8px; font-size: .75rem; font-weight: 700; color: var(--grey); margin: 0 0 6px; }
 @media (max-width: 760px) { .partners-md { grid-template-columns: 1fr; } }
+
+/* topic page: infographic key findings */
+.finding { background: var(--tc-tint); border-radius: 12px; padding: 24px; }
+.finding .fbig { font-family: 'Roboto Slab', Georgia, serif; font-size: 2.3rem; font-weight: 700; color: var(--tc-blue); line-height: 1; margin-bottom: 8px; }
+.finding h4 { margin: 0 0 8px; font-size: 1.02rem; color: var(--ink); }
+.finding p { margin: 0; font-size: .92rem; color: var(--body); }
