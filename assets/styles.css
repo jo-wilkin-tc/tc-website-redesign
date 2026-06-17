@@ -143,8 +143,8 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------- sections ---------- */
 .section { padding: 56px 0; }
-.section.tint   { background: var(--tc-tint); }
-.section.tint-g { background: var(--tc-tint-g); }
+.section.tint   { background: transparent; }
+.section.tint-g { background: transparent; }
 .section-head { margin-bottom: 28px; max-width: 62ch; }
 .section-head.center { margin-left: auto; margin-right: auto; text-align: center; }
 .section-head p { margin-bottom: 0; color: var(--grey); }
@@ -260,8 +260,8 @@ p  { margin: 0 0 1.1em; }
 
 /* ---------- page banner (interior pages) ---------- */
 .page-banner { padding: 48px 0 8px; }
-.page-banner.data   { background: var(--tc-tint); }
-.page-banner.comm   { background: var(--tc-tint-g); }
+.page-banner.data   { background: transparent; }
+.page-banner.comm   { background: transparent; }
 .page-banner h1 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); }
 .page-banner .lead { max-width: 60ch; }
 .page-banner.data h1   { color: var(--tc-blue); }
@@ -415,7 +415,7 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .card.staff .bio strong { color: #fff; display:block; margin-bottom: 6px; font-family:'Roboto Slab',serif; }
 
 /* ===== rich footer (PHI-inspired) ===== */
-.site-footer { background: #fff; color: var(--body); padding: 0; margin-top: 72px; font-size: .95rem; }
+.site-footer { background: #fff; color: var(--body); padding: 56px 0 28px; margin-top: 72px; border-top: 1px solid var(--line); font-size: .95rem; }
 .footer-cta { background: var(--navy); color: #fff; padding: 56px 0; }
 .footer-cta h3 { color: #fff; font-size: 1.55rem; margin: 0 0 .5em; }
 .footer-cta p { color: #c4cfdd; margin: 0 0 1.3em; }
@@ -515,3 +515,12 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 
 /* footer CTA button text always white */
 .footer-cta .btn, .footer-cta .btn .arrow::after { color: #fff !important; }
+
+
+/* ===== lighter single footer ===== */
+.footer-top { display: grid; grid-template-columns: 1.6fr 1fr; gap: 48px; padding-bottom: 34px; border-bottom: 1px solid var(--line); }
+.footer-cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; padding: 32px 0; }
+.footer-cols h4 { color: var(--ink); font-size: .8rem; text-transform: uppercase; letter-spacing: .8px; margin: 0 0 12px; font-family: 'Open Sans', sans-serif; font-weight: 700; }
+.footer-cols a { display: block; color: var(--body); margin: 8px 0; }
+.footer-cols a:hover { color: var(--tc-blue); }
+@media (max-width: 760px) { .footer-top { grid-template-columns: 1fr; gap: 26px; } .footer-cols { grid-template-columns: 1fr 1fr; } }
