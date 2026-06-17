@@ -3,21 +3,20 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Page not found — Tracking California</title>
-<meta name="description" content="Tracking California turns public health, climate, and environmental data into tools and partnerships that help communities take action.">
+<title>Our Data — Tracking California</title>
+<meta name="description" content="Data briefs, data insights, and the open code behind the datasets Tracking California builds.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="assets/styles.css">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Page not found — Tracking California">
-<meta property="og:description" content="Tracking California turns public health, climate, and environmental data into tools and partnerships that help communities take action.">
+<meta property="og:title" content="Our Data — Tracking California">
+<meta property="og:description" content="Tracking California is a research program turning public health, climate, and environmental data into action across California.">
 <meta property="og:image" content="https://jo-wilkin-tc.github.io/tc-website-redesign/assets/hero.jpg">
-<meta property="og:url" content="https://jo-wilkin-tc.github.io/tc-website-redesign/index.html">
+<meta property="og:url" content="https://jo-wilkin-tc.github.io/tc-website-redesign/data.html">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<div class="watermark" aria-hidden="true"></div>
 
 <div class="proto-ribbon">Design prototype — not the live site. <a href="https://trackingcalifornia.org">View the current trackingcalifornia.org →</a></div>
 
@@ -32,7 +31,7 @@
     <nav class="nav">
       <a href="index.html">Home</a>
       <div class="nav-item">
-        <a href="data-and-tools.html">Data &amp; Tools <span class="caret">▾</span></a>
+        <a href="data-and-tools.html" class="active">Data &amp; Tools <span class="caret">▾</span></a>
         <div class="submenu">
           <a href="data-and-tools.html">Tools</a>
           <a href="data.html">Our Data</a>
@@ -79,14 +78,72 @@
 </header>
 
 <main id="main">
-  <section class="section" style="text-align:center; padding:90px 0;">
+
+  <!-- BANNER -->
+  <section class="page-banner data">
     <div class="wrap">
-      <p class="eyebrow">404</p>
-      <h1>Page not found</h1>
-      <p class="lead" style="max-width:48ch; margin:0 auto 24px;">The page you're looking for doesn't exist or may have moved.</p>
-      <a class="btn btn-primary" href="index.html">Back to home <span class="arrow"></span></a>
+      <h1>Our Data</h1>
+      <p class="lead">Briefs, insights, and the open code behind the datasets we build.</p>
     </div>
   </section>
+
+  <!-- DATA INSIGHTS -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="sec-title">Data insights</h2>
+      <div class="grid g3">
+        <article class="card"><div class="thumb"><img src="assets/img/infographic.png" alt=""></div><div class="pad"><span class="tag">Data insight</span><h3><a href="#">Childhood lead exposure across California</a></h3></div></article>
+        <article class="card"><div class="thumb"><img src="assets/img/topic-climate.jpg" alt=""></div><div class="pad"><span class="tag">Data insight</span><h3><a href="#">Heat and health equity in the Central Valley</a></h3></div></article>
+        <article class="card"><div class="thumb"><img src="assets/img/topic-air.jpg" alt=""></div><div class="pad"><span class="tag">Data insight</span><h3><a href="#">Traffic pollution and childhood asthma</a></h3></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- DATA BRIEFS -->
+  <section class="section tint">
+    <div class="wrap">
+      <h2 class="sec-title">Data briefs</h2>
+      <div class="filters">
+        <span class="label">Filter</span>
+        <button class="pill on" data-filter="all">All</button>
+        <button class="pill" data-filter="heat">Heat-related illness</button>
+        <button class="pill" data-filter="unhoused">Unhoused populations</button>
+        <button class="pill" data-filter="ncdm">NCDMs</button>
+      </div>
+      <div class="grid g3">
+        <article class="card" data-type="heat"><div class="pad"><span class="tag orange">Heat-related illness &middot; 2026</span><h3><a href="#">Who is most at risk from extreme heat</a></h3><p>Where heat illness concentrates across California, and the communities most exposed.</p><div class="card-foot"><a class="link-arrow" href="#">Download brief (PDF)</a></div></div></article>
+        <article class="card" data-type="unhoused"><div class="pad"><span class="tag orange">Unhoused populations &middot; 2026</span><h3><a href="#">Health and the unhoused: data gaps and needs</a></h3><p>What current data can and can't tell us about the health of unhoused Californians.</p><div class="card-foot"><a class="link-arrow" href="#">Download brief (PDF)</a></div></div></article>
+        <article class="card" data-type="ncdm"><div class="pad"><span class="tag orange">NCDMs &middot; 2026</span><h3><a href="#">Understanding Nationally Consistent Data &amp; Measures</a></h3><p>A plain-language guide to the CDC's NCDM indicators and how we use them.</p><div class="card-foot"><a class="link-arrow" href="#">Download brief (PDF)</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN SCIENCE -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="sec-title">Open science</h2>
+      <p class="lead">The open code and pipelines that generate our datasets.</p>
+      <div class="grid g3">
+        <article class="card"><div class="pad"><div class="tic"><i class="fa-brands fa-github"></i></div><h3>Traffic Dataset</h3><p>Code and pipeline behind our statewide, high-resolution traffic dataset.</p><div class="card-foot"><a class="link-arrow" href="#">View repository</a></div></div></article>
+        <article class="card"><div class="pad"><div class="tic"><i class="fa-brands fa-github"></i></div><h3>Pesticide Field-Level Mapping</h3><p>Open code for field-level pesticide-use mapping across California.</p><div class="card-foot"><a class="link-arrow" href="#">View repository</a></div></div></article>
+        <article class="card"><div class="pad"><div class="tic"><i class="fa-brands fa-github"></i></div><h3>Asthma Indicators</h3><p>Data pipeline for our asthma surveillance indicators.</p><div class="card-foot"><a class="link-arrow" href="#">View repository</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEED A BESPOKE DATASET -->
+  <section class="section tint">
+    <div class="wrap">
+      <div class="signup">
+        <div>
+          <h2 style="color:var(--tc-blue-d);">Need a bespoke dataset? We can do that for you.</h2>
+          <p>We assemble, link, and document custom datasets for community projects and research. Tell us what you need.</p>
+        </div>
+        <a class="btn btn-primary" href="about.html#contact">Get in touch <span class="arrow"></span></a>
+      </div>
+    </div>
+  </section>
+
 </main>
 
 <footer class="site-footer">
