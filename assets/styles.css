@@ -399,7 +399,7 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .section.centered, .section.centered .section-head { text-align: center; }
 .section.centered .section-head { margin-left: auto; margin-right: auto; }
 .section.centered .tile { text-align: center; }
-.section.centered .tile .ic { justify-content: center; }
+.section.centered .tile .ic { width: 100%; justify-content: center; }
 .page-banner.centered { text-align: center; }
 .page-banner.centered .lead { margin-left: auto; margin-right: auto; }
 
