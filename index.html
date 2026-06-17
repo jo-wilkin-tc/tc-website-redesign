@@ -7,6 +7,7 @@
 <meta name="description" content="Tracking California turns public health, climate, and environmental data into tools and partnerships that help communities take action.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="assets/styles.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Tracking California — Public health data Californians can actually use">
@@ -141,16 +142,17 @@
     </div>
   </section>
 
-  <!-- OUR COMMUNITY WORK (feature) -->
+  <!-- OUR COMMUNITY WORK (partner map) -->
   <section class="section">
-    <div class="wrap feature">
-      <div class="feature-media"><img src="assets/img/community-2.jpg" alt="Tracking California community work"></div>
-      <div class="feature-text">
-        <h2 class="sec-title">Building capacity across communities</h2>
-        <p class="lead">Want to know how to build climate resilience? Learn how to use the latest data to track air quality? Partner on a grant to build new tools for your community? We do all this at Tracking California.</p>
-        <p>We build data, tools, research, and networks alongside the communities most affected by environmental hazards &mdash; from air monitoring in Oxnard to drinking-water work in Lake County.</p>
-        <a class="link-arrow" href="communities.html">Read more about our community work</a>
+    <div class="wrap">
+      <h2 class="sec-title">Building capacity across communities</h2>
+      <p class="lead">Want to know how to build climate resilience? Learn how to use the latest data to track air quality? Partner on a grant to build new tools for your community? We do all this at Tracking California.</p>
+      <p>We build data, tools, research, and networks alongside the communities most affected by environmental hazards. Select a partner on the map to see the work we do together.</p>
+      <div class="map-row">
+        <div id="ca-map" class="ca-map" role="img" aria-label="Map of California showing Tracking California community partners"></div>
+        <div class="map-panel" id="map-panel"></div>
       </div>
+      <div style="margin-top:24px;"><a class="link-arrow" href="communities.html">Read more about our community work</a></div>
     </div>
   </section>
 
@@ -278,5 +280,46 @@
 </footer>
 
 <script src="assets/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  if (!window.L || !document.getElementById('ca-map')) return;
+  var PARTNERS = [
+    { id:'ccejn', name:'Central California Environmental Justice Network', short:'CCEJN', loc:'Central Valley',
+      logo:'assets/logos/ccejn.png', coords:[36.746,-119.772],
+      projects:[['FRESSCA','communities.html'],['San Joaquin Valley Heat','communities.html'],['Community Air Monitoring','communities.html']] },
+    { id:'ccv', name:'Comit\u00e9 C\u00edvico del Valle', short:'CCV', loc:'Brawley, Imperial County',
+      logo:'assets/logos/ccv.png', coords:[32.978,-115.530],
+      projects:[['Brawley Health ACTION','communities.html'],['Imperial Air (IVAN)','communities.html'],['AIRE Digital Stories','communities.html']] },
+    { id:'bigvalley', name:'Big Valley Band of Pomo Indians', short:'Big Valley', loc:'Clear Lake, Lake County',
+      logo:'assets/logos/big-valley.png', coords:[39.020,-122.915],
+      projects:[['CHARM Lake County','communities.html'],['MLS-TRIAD','communities.html']] }
+  ];
+  var map = L.map('ca-map', { scrollWheelZoom:false }).setView([37.4,-119.4], 6);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    { attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:18 }).addTo(map);
+  var markers = {};
+  PARTNERS.forEach(function (p) {
+    var m = L.circleMarker(p.coords, { radius:10, color:'#fff', weight:2, fillColor:'#4B72B8', fillOpacity:1 }).addTo(map);
+    m.bindTooltip(p.short, { direction:'top', offset:[0,-6] });
+    m.on('click', function () { select(p.id); });
+    markers[p.id] = m;
+  });
+  function select(id) {
+    var sel;
+    PARTNERS.forEach(function (p) {
+      var on = p.id === id; if (on) sel = p;
+      markers[p.id].setStyle({ fillColor: on ? '#FBB036' : '#4B72B8', radius: on ? 13 : 10 });
+    });
+    var html = '<img src="' + sel.logo + '" alt="' + sel.name + '" class="mp-logo">' +
+      '<h3>' + sel.name + '</h3><p class="meta">' + sel.loc + '</p>' +
+      '<p class="mp-projects-label">Projects together</p><ul class="mp-projects">' +
+      sel.projects.map(function (pr) { return '<li><a href="' + pr[1] + '">' + pr[0] + '</a></li>'; }).join('') +
+      '</ul>';
+    document.getElementById('map-panel').innerHTML = html;
+  }
+  select('ccejn');
+})();
+</script>
 </body>
 </html>
