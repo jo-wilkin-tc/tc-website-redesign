@@ -465,8 +465,8 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .carousel::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
 
 /* interactive data/tools explorer widget */
-.explorer { display: grid; grid-template-columns: 280px 1fr; gap: 36px; align-items: start; margin-top: 28px;
-  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 36px; box-shadow: var(--shadow); }
+.explorer { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; margin-top: 28px; min-height: 520px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 48px; box-shadow: var(--shadow); }
 .explorer-controls { display: flex; flex-direction: column; gap: 18px; }
 .explorer-controls label { font-weight: 600; color: var(--ink); font-size: .95rem; }
 .explorer-controls select { display: block; width: 100%; margin-top: 8px; padding: .7em .9em;
