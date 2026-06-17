@@ -31,9 +31,9 @@
     <nav class="nav">
       <a href="index.html">Home</a>
       <div class="nav-item">
-        <a href="data-and-tools.html" class="active">Data &amp; Tools <span class="caret">▾</span></a>
+        <a href="data-and-tools.html" class="active">Our Tools &amp; Data <span class="caret">▾</span></a>
         <div class="submenu">
-          <a href="data-and-tools.html">Tools</a>
+          <a href="data-and-tools.html">Our Tools</a>
           <a href="data.html">Our Data</a>
           <a href="topics.html">Browse by topic</a>
         </div>
@@ -91,10 +91,27 @@
   <section class="section">
     <div class="wrap">
       <h2 class="sec-title">Data insights</h2>
-      <div class="grid g3">
-        <article class="card"><div class="thumb"><img src="assets/img/infographic.png" alt=""></div><div class="pad"><span class="tag">Data insight</span><h3><a href="#">Childhood lead exposure across California</a></h3></div></article>
-        <article class="card"><div class="thumb"><img src="assets/img/topic-climate.jpg" alt=""></div><div class="pad"><span class="tag">Data insight</span><h3><a href="#">Heat and health equity in the Central Valley</a></h3></div></article>
-        <article class="card"><div class="thumb"><img src="assets/img/topic-air.jpg" alt=""></div><div class="pad"><span class="tag">Data insight</span><h3><a href="#">Traffic pollution and childhood asthma</a></h3></div></article>
+      <p class="lead">Short, visual data stories drawn from our datasets.</p>
+      <div class="insight-dash">
+        <p class="insight-eyebrow">Tracking California &middot; 20 years of heat-related illness</p>
+        <div class="insight-stats">
+          <div class="insight-stat"><p class="lab">Peak ED rate (2017)</p><p class="num">20.1</p><p class="sub">per 100k, statewide</p></div>
+          <div class="insight-stat"><p class="lab">Change 2005&rarr;2023</p><p class="num">+60%</p><p class="sub">ED visits, CA overall</p></div>
+          <div class="insight-stat"><p class="lab">Highest-burden county</p><p class="num">Imperial</p><p class="sub">116/100k (2023)</p></div>
+          <div class="insight-stat"><p class="lab">Race disparity gap</p><p class="num">5&ndash;7&times;</p><p class="sub">Black vs. Asian Californians</p></div>
+        </div>
+        <div class="insight-tabs" id="insight-tabs">
+          <button class="pill on" data-view="counties">Top counties (2017)</button>
+          <button class="pill" data-view="race">By race/ethnicity</button>
+          <button class="pill" data-view="age">By age group</button>
+          <button class="pill" data-view="trend">Statewide trend</button>
+        </div>
+        <div class="insight-chart" id="insight-chart"></div>
+        <div class="insight-notes">
+          <div class="insight-note"><h4>2017: a crisis year</h4><p>California's worst heat year on record saw ED visits more than double the 2005 baseline, driven by prolonged summer heat across inland regions.</p></div>
+          <div class="insight-note"><h4>The inland divide</h4><p>Imperial, Yuba, and Shasta consistently face rates 5&ndash;8&times; higher than coastal counties like San Francisco and San Mateo.</p></div>
+          <div class="insight-note"><h4>Who bears the burden</h4><p>Black Californians face ED visit rates 2&ndash;3&times; higher than Asian/PI residents; adults 65+ are hospitalized at nearly twice the rate of working-age adults.</p></div>
+        </div>
       </div>
     </div>
   </section>
@@ -103,6 +120,7 @@
   <section class="section tint">
     <div class="wrap">
       <h2 class="sec-title">Data briefs</h2>
+      <p class="lead">Concise, downloadable summaries on priority public-health topics.</p>
       <div class="filters">
         <span class="label">Filter</span>
         <button class="pill on" data-filter="all">All</button>
@@ -171,7 +189,7 @@
     <div class="footer-cols">
       <div>
         <h4>Explore</h4>
-        <a href="data-and-tools.html">Tools</a>
+        <a href="data-and-tools.html">Our Tools</a>
         <a href="data.html">Our Data</a>
         <a href="topics.html">Topics</a>
         <a href="communities.html">Our Communities</a>
@@ -197,5 +215,30 @@
 </footer>
 
 <script src="assets/main.js"></script>
+<script>
+(function () {
+  var box = document.getElementById('insight-chart'); if (!box) return;
+  var DATA = {
+    counties: { unit: 'ED visits per 100k, 2017 (peak year)', rows: [['Imperial',125.7],['Plumas',87.5],['Tehama',80.8],['Shasta',76.8],['Lake',67.5],['Amador',67.1],['Butte',59.6],['Yuba',58.5],['Calaveras',55.8],['Glenn',54.8],['Colusa',51.0],['Kern',44.0]] },
+    race: { unit: 'ED visits per 100k by race/ethnicity', rows: [['Black',18.2],['Hispanic',12.1],['White',9.8],['Asian / PI',3.4]] },
+    age: { unit: 'ED visits per 100k by age group', rows: [['65 and over',24.5],['18\u201364',11.2],['Under 5',8.3],['5\u201317',6.1]] },
+    trend: { unit: 'Statewide ED visits per 100k by year', rows: [['2005',12.5],['2010',13.8],['2015',15.2],['2017',20.1],['2020',16.2],['2023',19.9]] }
+  };
+  function color(v) { return v >= 80 ? '#b5451b' : v >= 60 ? '#d97a2b' : v >= 40 ? '#e9a23b' : '#4B72B8'; }
+  function render(key) {
+    var d = DATA[key]; var max = Math.max.apply(null, d.rows.map(function (r) { return r[1]; }));
+    box.innerHTML = '<p class="bar-caption">' + d.unit + '</p>' + d.rows.map(function (r) {
+      var w = (r[1] / max * 100).toFixed(1);
+      return '<div class="bar-row"><span class="blabel">' + r[0] + '</span><div class="bar-track"><div class="bar-fill" style="width:' + w + '%; background:' + color(r[1]) + ';"></div></div><span class="bval">' + r[1] + '</span></div>';
+    }).join('');
+  }
+  document.getElementById('insight-tabs').addEventListener('click', function (e) {
+    var b = e.target.closest('.pill[data-view]'); if (!b) return;
+    this.querySelectorAll('.pill').forEach(function (p) { p.classList.remove('on'); });
+    b.classList.add('on'); render(b.dataset.view);
+  });
+  render('counties');
+})();
+</script>
 </body>
 </html>

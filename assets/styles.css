@@ -576,3 +576,33 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .tool-embed iframe { width: 100%; height: 700px; border: 1px solid var(--line); border-radius: 14px; display: block; }
 .tic { color: var(--tc-blue); font-size: 1.7rem; line-height: 1; margin-bottom: 14px; }
 .tic.soon { color: var(--grey); }
+
+/* ===== data insight dashboard ===== */
+.insight-dash { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 30px; box-shadow: var(--shadow); }
+.insight-eyebrow { text-transform: uppercase; letter-spacing: 1.2px; font-size: .75rem; font-weight: 700; color: var(--grey); margin: 0 0 18px; }
+.insight-stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-bottom: 24px; }
+.insight-stat { background: var(--tc-tint); border-radius: 10px; padding: 16px 18px; }
+.insight-stat .lab { font-size: .78rem; color: var(--grey); margin: 0 0 6px; }
+.insight-stat .num { font-family: 'Roboto Slab', serif; font-size: 1.7rem; font-weight: 700; color: var(--ink); line-height: 1.05; margin: 0; }
+.insight-stat .sub { font-size: .78rem; color: var(--grey); margin: 6px 0 0; }
+.insight-tabs { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+.bar-caption { font-size: .82rem; color: var(--grey); margin: 0 0 12px; }
+.bar-row { display: grid; grid-template-columns: 120px 1fr 56px; gap: 12px; align-items: center; margin: 7px 0; font-size: .85rem; }
+.bar-row .blabel { text-align: right; color: var(--body); }
+.bar-track { background: var(--tc-tint); border-radius: 5px; height: 18px; overflow: hidden; }
+.bar-fill { height: 100%; border-radius: 5px; transition: width .4s ease; }
+.bar-row .bval { color: var(--grey); font-variant-numeric: tabular-nums; }
+.insight-notes { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 26px; }
+.insight-note { border-left: 3px solid var(--tc-orange); padding-left: 16px; }
+.insight-note:nth-child(2) { border-left-color: var(--tc-blue); }
+.insight-note:nth-child(3) { border-left-color: var(--tc-green); }
+.insight-note h4 { margin: 0 0 6px; font-size: 1rem; }
+.insight-note p { margin: 0; font-size: .88rem; color: var(--body); }
+@media (max-width: 760px) {
+  .insight-stats, .insight-notes { grid-template-columns: 1fr 1fr; }
+  .bar-row { grid-template-columns: 86px 1fr 46px; }
+}
+
+/* topics page: centered icons + titles in the blue tiles */
+.centered-tiles .tile { text-align: center; }
+.centered-tiles .tile .ic { width: 100%; justify-content: center; }
