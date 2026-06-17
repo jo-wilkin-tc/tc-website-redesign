@@ -465,14 +465,15 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .carousel::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
 
 /* interactive data/tools explorer widget */
-.explorer { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; margin-top: 28px; min-height: 600px;
-  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 48px; box-shadow: var(--shadow); }
-.explorer-controls { display: flex; flex-direction: column; gap: 18px; }
+.explorer { display: flex; flex-direction: column; gap: 24px; margin-top: 28px; min-height: 600px;
+  background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); }
+.explorer-controls { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-end; }
 .explorer-controls label { font-weight: 600; color: var(--ink); font-size: .95rem; }
-.explorer-controls select { display: block; width: 100%; margin-top: 8px; padding: .7em .9em;
+.explorer-controls select { display: block; min-width: 240px; margin-top: 8px; padding: .7em .9em;
   border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; color: var(--ink); cursor: pointer; }
-.explorer-preview { display: grid; grid-template-columns: 1.7fr 1fr; gap: 30px; align-items: center; }
-.explorer-preview img { width: 100%; border: 1px solid var(--line); border-radius: 10px; }
+.explorer-preview { flex: 1; display: flex; flex-direction: column; gap: 18px; min-height: 0; }
+.explorer-preview img { flex: 1; width: 100%; object-fit: cover; object-position: top center; min-height: 0;
+  border: 1px solid var(--line); border-radius: 10px; }
 .explorer-info h3 { margin: .5em 0 .3em; }
 .explorer-info p { color: var(--body); }
 
@@ -560,3 +561,11 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .mp-head h3 { margin: 0; font-size: 1.1rem; }
 .mp-head .meta { margin: 2px 0 0; }
 .mp-projects-inline { margin: 0; line-height: 1.8; }
+
+
+/* explorer info row under the big screenshot */
+.explorer-info { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+.explorer-info .ex-text h3 { margin: .2em 0; }
+.explorer-info .ex-text p { margin: 0; color: var(--grey); }
+.explorer-info .btn { flex-shrink: 0; }
+@media (max-width: 600px) { .explorer-info { flex-direction: column; align-items: flex-start; } }
