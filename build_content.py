@@ -130,7 +130,7 @@ vids=[json.load(open(p)) for p in glob.glob(os.path.join(SRC,"parts/videos/*.jso
 for v in vids:
     res.append(dict(type="video",label="Video",cls="type-report",
         title=v["title"],meta="Video",href=v.get("url") or "#",ext=True,
-        img=yt_thumb(v.get("url")) or "assets/img/community-monitoring.jpg",date="z"))
+        img=yt_thumb(v.get("url")) or "assets/img/community-monitoring.jpg",date="0000-00-00"))
 
 # news (internal reader pages)
 NEWS=[]
