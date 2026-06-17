@@ -147,10 +147,21 @@
     <div class="wrap">
       <h2 class="sec-title">Building capacity across communities</h2>
       <p class="lead">Want to know how to build climate resilience? Learn how to use the latest data to track air quality? Partner on a grant to build new tools for your community? We do all this at Tracking California.</p>
-      <p>We build data, tools, research, and networks alongside the communities most affected by environmental hazards. Select a partner on the map to see the work we do together.</p>
+      <div class="map-filters" id="map-filters">
+        <button class="pill on" data-worktype="all">All work</button>
+        <button class="pill" data-worktype="Air quality monitoring">Air quality monitoring</button>
+        <button class="pill" data-worktype="Resilience building">Resilience building</button>
+        <button class="pill" data-worktype="Grant planning">Grant planning</button>
+        <button class="pill" data-worktype="Technical assistance">Technical assistance</button>
+        <button class="pill" data-worktype="Training &amp; capacity building">Training &amp; capacity building</button>
+        <button class="pill" data-worktype="Community reporting">Community reporting</button>
+      </div>
       <div class="map-row">
         <div id="ca-map" class="ca-map" role="img" aria-label="Map of California showing Tracking California community partners"></div>
-        <div class="map-panel" id="map-panel"></div>
+        <div class="map-side">
+          <p class="map-intro">We build data, tools, research, and networks alongside the communities most affected by environmental hazards. Select a partner on the map to see the work we do together.</p>
+          <div class="map-panel" id="map-panel"></div>
+        </div>
       </div>
       <div style="margin-top:24px;"><a class="link-arrow" href="communities.html">Read more about our community work</a></div>
     </div>
@@ -287,37 +298,77 @@
   var PARTNERS = [
     { id:'ccejn', name:'Central California Environmental Justice Network', short:'CCEJN', loc:'Central Valley',
       logo:'assets/logos/ccejn.png', coords:[36.746,-119.772],
+      types:['Air quality monitoring','Resilience building','Technical assistance','Training & capacity building'],
       projects:[['FRESSCA','communities.html'],['San Joaquin Valley Heat','communities.html'],['Community Air Monitoring','communities.html']] },
     { id:'ccv', name:'Comit\u00e9 C\u00edvico del Valle', short:'CCV', loc:'Brawley, Imperial County',
       logo:'assets/logos/ccv.png', coords:[32.978,-115.530],
+      types:['Air quality monitoring','Community reporting','Technical assistance','Grant planning'],
       projects:[['Brawley Health ACTION','communities.html'],['Imperial Air (IVAN)','communities.html'],['AIRE Digital Stories','communities.html']] },
     { id:'bigvalley', name:'Big Valley Band of Pomo Indians', short:'Big Valley', loc:'Clear Lake, Lake County',
       logo:'assets/logos/big-valley.png', coords:[39.020,-122.915],
-      projects:[['CHARM Lake County','communities.html'],['MLS-TRIAD','communities.html']] }
+      types:['Resilience building','Grant planning','Technical assistance'],
+      projects:[['CHARM Lake County','communities.html'],['MLS-TRIAD','communities.html']] },
+    { id:'micop', name:'Mixteco/Ind\u00edgena Community Organizing Project (MICOP)', short:'MICOP', loc:'Oxnard, Ventura County',
+      logo:'assets/logos/micop.png', coords:[34.197,-119.177],
+      types:['Air quality monitoring','Training & capacity building','Technical assistance'], projects:[] },
+    { id:'cause', name:'Central Coast Alliance United for a Sustainable Economy (CAUSE)', short:'CAUSE', loc:'Ventura & Santa Barbara',
+      logo:'assets/logos/cause.png', coords:[34.275,-119.293],
+      types:['Resilience building','Grant planning','Technical assistance'], projects:[] },
+    { id:'nbjwj', name:'North Bay Jobs with Justice', short:'NBJwJ', loc:'Santa Rosa, Sonoma County',
+      logo:'assets/logos/nbjwj.png', coords:[38.440,-122.714],
+      types:['Resilience building','Grant planning','Training & capacity building'],
+      projects:[['MLS-TRIAD','communities.html']] },
+    { id:'cfase', name:'Coalition for a Safe Environment', short:'CFASE', loc:'Wilmington, Los Angeles',
+      logo:'assets/logos/cfase.png', coords:[33.780,-118.264],
+      types:['Air quality monitoring','Community reporting','Technical assistance'], projects:[] },
+    { id:'casa', name:'Casa Familiar', short:'Casa Familiar', loc:'San Ysidro, San Diego County',
+      logo:'assets/logos/casa.png', coords:[32.551,-117.043],
+      types:['Resilience building','Technical assistance','Grant planning'], projects:[] }
   ];
-  var map = L.map('ca-map', { scrollWheelZoom:false }).setView([37.4,-119.4], 6);
+  var map = L.map('ca-map', { scrollWheelZoom:false }).setView([37.3,-119.4], 6);
   L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
     { attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:18 }).addTo(map);
   var markers = {};
   PARTNERS.forEach(function (p) {
-    var m = L.circleMarker(p.coords, { radius:10, color:'#fff', weight:2, fillColor:'#4B72B8', fillOpacity:1 }).addTo(map);
+    var m = L.circleMarker(p.coords, { radius:9, color:'#fff', weight:2, fillColor:'#4B72B8', fillOpacity:1 });
     m.bindTooltip(p.short, { direction:'top', offset:[0,-6] });
     m.on('click', function () { select(p.id); });
     markers[p.id] = m;
   });
+  function byId(id){ for (var i=0;i<PARTNERS.length;i++){ if(PARTNERS[i].id===id) return PARTNERS[i]; } }
   function select(id) {
-    var sel;
+    var sel = byId(id);
     PARTNERS.forEach(function (p) {
-      var on = p.id === id; if (on) sel = p;
-      markers[p.id].setStyle({ fillColor: on ? '#FBB036' : '#4B72B8', radius: on ? 13 : 10 });
+      if (!map.hasLayer(markers[p.id])) return;
+      var on = p.id === id;
+      markers[p.id].setStyle({ fillColor: on ? '#FBB036' : '#4B72B8', radius: on ? 12 : 9 });
     });
     var html = '<img src="' + sel.logo + '" alt="' + sel.name + '" class="mp-logo">' +
       '<h3>' + sel.name + '</h3><p class="meta">' + sel.loc + '</p>' +
-      '<p class="mp-projects-label">Projects together</p><ul class="mp-projects">' +
-      sel.projects.map(function (pr) { return '<li><a href="' + pr[1] + '">' + pr[0] + '</a></li>'; }).join('') +
-      '</ul>';
+      '<p class="mp-label">Areas of work</p><div class="mp-areas">' +
+      sel.types.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>';
+    if (sel.projects.length) {
+      html += '<p class="mp-label">Projects together</p><ul class="mp-projects">' +
+        sel.projects.map(function (pr) { return '<li><a href="' + pr[1] + '">' + pr[0] + '</a></li>'; }).join('') + '</ul>';
+    }
     document.getElementById('map-panel').innerHTML = html;
   }
+  function applyFilter(type) {
+    var visible = [];
+    PARTNERS.forEach(function (p) {
+      var show = type === 'all' || p.types.indexOf(type) >= 0;
+      if (show) { if (!map.hasLayer(markers[p.id])) markers[p.id].addTo(map); visible.push(markers[p.id]); }
+      else if (map.hasLayer(markers[p.id])) map.removeLayer(markers[p.id]);
+    });
+    if (visible.length) map.fitBounds(L.featureGroup(visible).getBounds().pad(0.25));
+  }
+  document.getElementById('map-filters').addEventListener('click', function (e) {
+    var b = e.target.closest('.pill[data-worktype]'); if (!b) return;
+    this.querySelectorAll('.pill').forEach(function (x) { x.classList.remove('on'); });
+    b.classList.add('on');
+    applyFilter(b.dataset.worktype);
+  });
+  applyFilter('all');
   select('ccejn');
 })();
 </script>
