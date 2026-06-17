@@ -465,7 +465,7 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .carousel::-webkit-scrollbar-thumb { background: var(--line); border-radius: 4px; }
 
 /* interactive data/tools explorer widget */
-.explorer { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; margin-top: 28px; min-height: 520px;
+.explorer { display: grid; grid-template-columns: 300px 1fr; gap: 40px; align-items: center; margin-top: 28px; min-height: 600px;
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 48px; box-shadow: var(--shadow); }
 .explorer-controls { display: flex; flex-direction: column; gap: 18px; }
 .explorer-controls label { font-weight: 600; color: var(--ink); font-size: .95rem; }
@@ -537,7 +537,7 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 /* ===== community partner map ===== */
 .map-row { display: grid; grid-template-columns: 1.5fr 1fr; gap: 32px; align-items: stretch; margin-top: 26px; }
 .ca-map { height: 460px; border-radius: 14px; border: 1px solid var(--line); overflow: hidden; position: relative; z-index: 0; }
-.map-panel { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 28px; box-shadow: var(--shadow); }
+.map-panel { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 26px; box-shadow: var(--shadow); max-height: 460px; overflow: auto; }
 .map-panel .mp-logo { max-height: 66px; width: auto; margin-bottom: 16px; }
 .map-panel h3 { margin: 0 0 .2em; }
 .mp-projects-label { text-transform: uppercase; letter-spacing: .8px; font-size: .75rem; font-weight: 700; color: var(--grey); margin: 20px 0 8px; }
@@ -552,3 +552,11 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .map-intro { font-size: 1.12rem; line-height: 1.55; color: var(--body); margin: 0 0 18px; }
 .mp-label { font-size: 1rem; font-weight: 700; color: var(--ink); margin: 20px 0 8px; }
 .mp-areas { display: flex; flex-wrap: wrap; gap: 6px; }
+
+
+/* partner panel: logo + name side by side, inline projects */
+.mp-head { display: flex; align-items: center; gap: 14px; margin-bottom: 6px; }
+.mp-head .mp-logo { max-height: 52px; width: auto; margin-bottom: 0; flex-shrink: 0; }
+.mp-head h3 { margin: 0; font-size: 1.1rem; }
+.mp-head .meta { margin: 2px 0 0; }
+.mp-projects-inline { margin: 0; line-height: 1.8; }

@@ -352,13 +352,12 @@
       var on = p.id === id;
       markers[p.id].setStyle({ fillColor: on ? '#FBB036' : '#4B72B8', radius: on ? 12 : 9 });
     });
-    var html = '<img src="' + sel.logo + '" alt="' + sel.name + '" class="mp-logo">' +
-      '<h3>' + sel.name + '</h3><p class="meta">' + sel.loc + '</p>' +
+    var html = '<div class="mp-head"><img src="' + sel.logo + '" alt="' + sel.name + '" class="mp-logo"><div><h3>' + sel.name + '</h3><p class="meta">' + sel.loc + '</p></div></div>' +
       '<p class="mp-label">Areas of work</p><div class="mp-areas">' +
       sel.types.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>';
     if (sel.projects.length) {
-      html += '<p class="mp-label">Projects together</p><ul class="mp-projects">' +
-        sel.projects.map(function (pr) { return '<li><a href="' + pr[1] + '">' + pr[0] + '</a></li>'; }).join('') + '</ul>';
+      html += '<p class="mp-label">Projects together</p><p class="mp-projects-inline">' +
+        sel.projects.map(function (pr) { return '<a href="' + pr[1] + '">' + pr[0] + '</a>'; }).join(' &middot; ') + '</p>';
     }
     document.getElementById('map-panel').innerHTML = html;
   }
