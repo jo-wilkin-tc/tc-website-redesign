@@ -7,6 +7,7 @@
 <meta name="description" content="The partnerships, trainings, advocacy, and stories behind Tracking California's community work — gathered in one place, because data only matters if communities can use it.">
 <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <link rel="stylesheet" href="assets/styles.css">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Our Communities — Tracking California">
@@ -82,7 +83,6 @@
   <!-- BANNER -->
   <section class="page-banner comm">
     <div class="wrap">
-      <p class="eyebrow" style="color:var(--tc-green-d)">Take action</p>
       <h1>Our Communities</h1>
       <p class="lead">Our partnerships, trainings, advocacy support, and community stories, gathered in one place.</p>
     </div>
@@ -108,8 +108,18 @@
         <h2>How we work alongside communities</h2>
         <p>Programs built with the people most affected by environmental and health hazards.</p>
       </div>
+      <div class="filters">
+        <span class="label">Filter</span>
+        <button class="pill on" data-filter="all">All</button>
+        <button class="pill" data-filter="monitoring">Monitoring</button>
+        <button class="pill" data-filter="reporting">Reporting</button>
+        <button class="pill" data-filter="capacity">Capacity building</button>
+        <button class="pill" data-filter="advocacy">Advocacy</button>
+        <button class="pill" data-filter="co-design">Co-design</button>
+        <button class="pill" data-filter="youth">Youth</button>
+      </div>
       <div class="grid g3">
-        <article class="card">
+        <article class="card" data-type="monitoring">
           <div class="thumb"><img src="assets/img/community-monitoring.jpg" alt="Resident on a field air-monitoring visit"></div>
           <div class="pad">
             <span class="tag green">Monitoring</span>
@@ -118,7 +128,7 @@
             <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
           </div>
         </article>
-        <article class="card">
+        <article class="card" data-type="reporting">
           <div class="thumb"><img src="assets/img/community-meeting.jpg" alt="Residents at a public meeting"></div>
           <div class="pad">
             <span class="tag green">Reporting</span>
@@ -127,7 +137,7 @@
             <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
           </div>
         </article>
-        <article class="card">
+        <article class="card" data-type="capacity">
           <div class="thumb"><img src="assets/img/community-training.jpg" alt="Community gathering for a training session"></div>
           <div class="pad">
             <span class="tag green">Capacity building</span>
@@ -136,7 +146,7 @@
             <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
           </div>
         </article>
-        <article class="card">
+        <article class="card" data-type="advocacy">
           <div class="thumb"><img src="assets/img/community-voices.jpg" alt="Residents at a community event"></div>
           <div class="pad">
             <span class="tag green">Advocacy</span>
@@ -145,7 +155,7 @@
             <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
           </div>
         </article>
-        <article class="card">
+        <article class="card" data-type="co-design">
           <div class="thumb"><img src="assets/img/community-partnership.jpg" alt="Tribal partnership gathering"></div>
           <div class="pad">
             <span class="tag green">Co-design</span>
@@ -154,7 +164,7 @@
             <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
           </div>
         </article>
-        <article class="card">
+        <article class="card" data-type="youth">
           <div class="thumb"><img src="assets/img/ej-kids.jpg" alt="Young people in an environmental-justice program"></div>
           <div class="pad">
             <span class="tag green">Youth</span>
@@ -167,23 +177,15 @@
     </div>
   </section>
 
-  <!-- OUR PARTNERS -->
+  <!-- OUR PARTNERS (map) -->
   <section class="section">
     <div class="wrap">
       <div class="section-head">
-        <p class="eyebrow" style="color:var(--tc-green-d)">Our partners</p>
-        <h2>Built with organizations across California</h2>
-        <p>Community-based organizations, clinics, school districts, and local advocates.</p>
+        <h2 class="sec-title">Our partners</h2>
       </div>
-      <div class="grid g4">
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/micop.png" alt="MICOP" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/chisne.png" alt="Comité Cívico del Valle" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/nco.png" alt="Northern California partner" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/nbjwj.png" alt="NBJWJ" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/latinos-united.png" alt="Latinos United" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/ucd.png" alt="UC Davis" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/cdph.png" alt="California Department of Public Health" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/micop.png" alt="MICOP" style="max-height:54px; width:auto;"></div>
+      <div class="map-row">
+        <div id="ca-map-comm" class="ca-map" role="img" aria-label="Map of California showing Tracking California community partners"></div>
+        <div class="map-panel" id="map-panel-comm"></div>
       </div>
     </div>
   </section>
@@ -235,7 +237,7 @@
       <div class="signup" style="background:var(--tc-tint-g);">
         <div>
           <h2 style="color:var(--tc-green-d);">Work with us</h2>
-          <p>If you are a community group, clinic, or local agency with a question the data might answer, get in touch.</p>
+          <p>We do more than data. We partner on resilience building, capacity training, community monitoring, and grant support. If you're a community group, clinic, or local agency, let's work together.</p>
         </div>
         <a class="btn btn-green" href="about.html#contact">Partner with Tracking California <span class="arrow"></span></a>
       </div>
@@ -294,5 +296,39 @@
 </footer>
 
 <script src="assets/main.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  if (!window.L || !document.getElementById('ca-map-comm')) return;
+  var P = [
+    { name:'Central California Environmental Justice Network', loc:'Central Valley', logo:'assets/logos/ccejn.png', coords:[36.746,-119.772], desc:'A network advancing environmental justice across the San Joaquin Valley.' },
+    { name:'Comit\u00e9 C\u00edvico del Valle', loc:'Brawley, Imperial County', logo:'assets/logos/ccv.png', coords:[32.978,-115.530], desc:'Air-quality and environmental-health advocacy in Imperial County.' },
+    { name:'Big Valley Band of Pomo Indians', loc:'Clear Lake, Lake County', logo:'assets/logos/big-valley.png', coords:[39.020,-122.915], desc:'A tribal nation leading climate and water resilience at Clear Lake.' },
+    { name:'Mixteco/Ind\u00edgena Community Organizing Project (MICOP)', loc:'Oxnard, Ventura County', logo:'assets/logos/micop.png', coords:[34.197,-119.177], desc:'Organizing with Indigenous farmworker communities in Ventura County.' },
+    { name:'Central Coast Alliance United for a Sustainable Economy (CAUSE)', loc:'Ventura & Santa Barbara', logo:'assets/logos/cause.png', coords:[34.275,-119.293], desc:'Grassroots environmental and economic justice on the Central Coast.' },
+    { name:'North Bay Jobs with Justice', loc:'Santa Rosa, Sonoma County', logo:'assets/logos/nbjwj.png', coords:[38.440,-122.714], desc:'Worker- and community-led climate resilience in Sonoma County.' },
+    { name:'Coalition for a Safe Environment', loc:'Wilmington, Los Angeles', logo:'assets/logos/cfase.png', coords:[33.780,-118.264], desc:'Clean-air advocacy around the Los Angeles harbor in Wilmington.' },
+    { name:'Casa Familiar', loc:'San Ysidro, San Diego County', logo:'assets/logos/casa.png', coords:[32.551,-117.043], desc:'Community development and environmental health in San Ysidro.' }
+  ];
+  var map = L.map('ca-map-comm', { scrollWheelZoom:false }).setView([37.3,-119.4], 6);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', { attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:18 }).addTo(map);
+  var markers = [], group = [];
+  P.forEach(function (p, i) {
+    var m = L.circleMarker(p.coords, { radius:9, color:'#fff', weight:2, fillColor:'#8CA083', fillOpacity:1 }).addTo(map);
+    m.bindTooltip(p.name, { direction:'top', offset:[0,-6] });
+    m.on('click', function () { select(i); });
+    markers.push(m); group.push(m);
+  });
+  function select(i) {
+    markers.forEach(function (m, j) { m.setStyle({ fillColor: j===i ? '#FBB036' : '#8CA083', radius: j===i ? 12 : 9 }); });
+    var p = P[i];
+    document.getElementById('map-panel-comm').innerHTML =
+      '<div class="mp-head"><img src="' + p.logo + '" alt="' + p.name + '" class="mp-logo"><div><h3>' + p.name + '</h3><p class="meta">' + p.loc + '</p></div></div>' +
+      '<p class="mp-desc">' + p.desc + '</p>';
+  }
+  map.fitBounds(L.featureGroup(group).getBounds().pad(0.2));
+  select(0);
+})();
+</script>
 </body>
 </html>

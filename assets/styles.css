@@ -467,9 +467,9 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 /* interactive data/tools explorer widget */
 .explorer { display: flex; flex-direction: column; gap: 24px; margin-top: 28px; min-height: 600px;
   background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 32px; box-shadow: var(--shadow); }
-.explorer-controls { display: flex; flex-wrap: wrap; gap: 22px; align-items: flex-end; }
-.explorer-controls label { font-weight: 600; color: var(--ink); font-size: .95rem; }
-.explorer-controls select { display: block; min-width: 240px; margin-top: 8px; padding: .7em .9em;
+.explorer-controls { display: flex; flex-wrap: wrap; gap: 22px 28px; align-items: center; }
+.explorer-controls label { display: inline-flex; align-items: center; gap: 10px; font-weight: 600; color: var(--ink); font-size: .95rem; }
+.explorer-controls select { min-width: 220px; margin-top: 0; padding: .7em .9em;
   border: 1px solid var(--line); border-radius: 8px; font: inherit; background: #fff; color: var(--ink); cursor: pointer; }
 .explorer-preview { flex: 1; display: flex; flex-direction: column; gap: 18px; min-height: 0; }
 .explorer-preview img { flex: 1; width: 100%; object-fit: cover; object-position: top center; min-height: 0;
@@ -569,3 +569,5 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .explorer-info .ex-text p { margin: 0; color: var(--grey); }
 .explorer-info .btn { flex-shrink: 0; }
 @media (max-width: 600px) { .explorer-info { flex-direction: column; align-items: flex-start; } }
+
+.mp-desc { margin: 4px 0 0; color: var(--body); line-height: 1.6; }
