@@ -173,17 +173,11 @@
     <div class="wrap">
       <div class="section-head">
         <h2 class="sec-title">Who we work with</h2>
-        <p>Our work is made possible through partnerships with public agencies, universities, and community-based organizations across California.</p>
+        <p>Public agencies, universities, tribes, and community-based organizations across California.</p>
       </div>
-      <div class="grid g4">
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/cdph.png" alt="California Department of Public Health" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/micop.png" alt="MICOP" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/nbjwj.png" alt="NBJWJ" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/latinos-united.png" alt="Latinos United" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/ucd.png" alt="UC Davis" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/nco.png" alt="NCO" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/chisne.png" alt="CHISNE" style="max-height:54px; width:auto;"></div>
-        <div class="tile" style="display:flex; align-items:center; justify-content:center; min-height:92px;"><img src="assets/logos/cdph.png" alt="California Department of Public Health" style="max-height:54px; width:auto;"></div>
+      <div class="partners-md">
+        <ul class="pm-list" id="pm-list"></ul>
+        <div class="pm-detail" id="pm-detail"></div>
       </div>
     </div>
   </section>
@@ -258,5 +252,31 @@
 </footer>
 
 <script src="assets/main.js"></script>
+<script>
+(function () {
+  var list = document.getElementById('pm-list'); if (!list) return;
+  var P = [
+    { name:'California Department of Public Health', logo:'assets/logos/cdph.png', who:"California's state public health agency.", how:"We co-develop the state's environmental public health tracking data, indicators, and tools." },
+    { name:'UC Davis', logo:'assets/logos/ucd.png', who:'University research partner.', how:'Joint research on environmental exposures and health outcomes.' },
+    { name:'MICOP', logo:'assets/logos/micop.png', who:'Mixteco/Ind\u00edgena Community Organizing Project, Ventura County.', how:'Community air monitoring and AIRE digital storytelling with Indigenous farmworker communities.' },
+    { name:'Central California Environmental Justice Network', logo:'assets/logos/ccejn.png', who:'Environmental justice network in the San Joaquin Valley.', how:'Air monitoring, heat resilience, and the FRESSCA study.' },
+    { name:'Comit\u00e9 C\u00edvico del Valle', logo:'assets/logos/ccv.png', who:'Environmental health advocacy in Imperial County.', how:'Brawley Health ACTION and IVAN community reporting.' },
+    { name:'North Bay Jobs with Justice', logo:'assets/logos/nbjwj.png', who:'Worker and community resilience, Sonoma County.', how:'The MLS-TRIAD tribal resilience initiative.' },
+    { name:'Big Valley Band of Pomo Indians', logo:'assets/logos/big-valley.png', who:'A tribal nation at Clear Lake, Lake County.', how:'The CHARM harmful-algal-bloom monitoring project.' },
+    { name:'Casa Familiar', logo:'assets/logos/casa.png', who:'Community development in San Ysidro, San Diego County.', how:'Resilience building and bespoke data support.' }
+  ];
+  list.innerHTML = P.map(function (p, i) { return '<li><button data-i="' + i + '"' + (i===0?' class="on"':'') + '>' + p.name + '</button></li>'; }).join('');
+  function sel(i) {
+    list.querySelectorAll('button').forEach(function (b, j) { b.classList.toggle('on', j === i); });
+    var p = P[i];
+    document.getElementById('pm-detail').innerHTML =
+      '<img src="' + p.logo + '" alt="' + p.name + '" class="pm-logo">' +
+      '<h3>' + p.name + '</h3><p class="pm-role">' + p.who + '</p>' +
+      '<p class="pm-how-label">How we work together</p><p>' + p.how + '</p>';
+  }
+  list.addEventListener('click', function (e) { var b = e.target.closest('button[data-i]'); if (!b) return; sel(+b.dataset.i); });
+  sel(0);
+})();
+</script>
 </body>
 </html>

@@ -606,3 +606,17 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 /* topics page: centered icons + titles in the blue tiles */
 .centered-tiles .tile { text-align: center; }
 .centered-tiles .tile .ic { width: 100%; justify-content: center; }
+
+/* About: partners list -> detail */
+.partners-md { display: grid; grid-template-columns: 320px 1fr; gap: 32px; align-items: start; }
+.pm-list { list-style: none; margin: 0; padding: 0; border: 1px solid var(--line); border-radius: 12px; overflow: hidden; }
+.pm-list li + li { border-top: 1px solid var(--line); }
+.pm-list button { width: 100%; text-align: left; background: #fff; border: 0; padding: 14px 18px; font: inherit; font-weight: 600; color: var(--ink); cursor: pointer; transition: .12s ease; }
+.pm-list button:hover { background: var(--tc-tint); }
+.pm-list button.on { background: var(--tc-tint); color: var(--tc-blue); box-shadow: inset 3px 0 0 var(--tc-orange); }
+.pm-detail { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 30px; box-shadow: var(--shadow); min-height: 240px; }
+.pm-detail .pm-logo { max-height: 64px; width: auto; margin-bottom: 16px; }
+.pm-detail h3 { margin: 0 0 .3em; }
+.pm-detail .pm-role { color: var(--grey); margin: 0 0 16px; }
+.pm-detail .pm-how-label { text-transform: uppercase; letter-spacing: .8px; font-size: .75rem; font-weight: 700; color: var(--grey); margin: 0 0 6px; }
+@media (max-width: 760px) { .partners-md { grid-template-columns: 1fr; } }
