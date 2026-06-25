@@ -85,21 +85,22 @@ body("Optional, decide separately: Spanish / bilingual support adds about 30 to 
 
 # ---- Timeline ----
 heading("Timeline")
-body("Order of work. Calendar time assumes one developer plus part-time review; it shortens with more people.")
+body("The rebuild runs as two parallel tracks: the technical build and a content and design track led by the team. The two depend on each other (design decisions must be made before they can be built as Tina blocks; content must be drafted before it can be migrated). Week numbers are cumulative from the start.")
 table(
-    ["Phase", "Focus", "Weeks"],
+    ["Phase", "Build (technical)", "Content and design", "Week"],
     [
-        ["0", "Decisions, framework test, review strategy work", "1-2"],
-        ["1", "Rebuild in framework, templates and components", "3-4"],
-        ["2", "TinaCMS, content structure, previews", "3-4"],
-        ["3", "Content migration and strategic-planning content", "3-5"],
-        ["4", "Search, accessibility, SEO, testing (and bilingual, if included)", "2-4"],
-        ["5", "Hosting, launch, staff training", "1-2"],
+        ["0", "Decisions, framework test, review strategy work", "Think through redesign ideas before Tina blocks are built; agree a design direction and review the strategic framing", "1-2"],
+        ["1", "Rebuild in framework, templates and components", "Identify new sections of the site to bring in and update; begin highlighting and drafting new copy", "3-6"],
+        ["2", "TinaCMS, content structure, previews", "Lock the redesign decisions so they can be built as Tina blocks; continue copy development", "6-8"],
+        ["3", "Content migration and strategic-planning content", "Bring in the new sections and new copy alongside migration; align content with the strategic framing", "8-12"],
+        ["4", "Search, accessibility, SEO, testing (and bilingual, if included)", "Review and finalise copy and design across the site", "12-14"],
+        ["5", "Hosting, soft launch, staff training", "Determine and document the processes for ongoing website updates; brief content owners", "16-18"],
+        ["6", "Full launch, then maintenance and updates", "Full launch, then maintenance and updates", "20-22"],
     ],
-    [0.7, 5.2, 0.9],
+    [0.6, 2.65, 2.65, 0.6],
 )
 body("")
-body("Total calendar time: about 13 to 21 weeks part-time, or less with dedicated time.", bold=True)
+body("End to end: about 22 weeks, including the parallel content and design work. The technical build is one track within this; the content and design track is team effort and is not included in the developer-hours above.", bold=True)
 
 # ---- Decisions needed ----
 heading("Decisions needed before we start")
