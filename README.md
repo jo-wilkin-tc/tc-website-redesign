@@ -14,7 +14,7 @@ is easy for anyone to open, read, and tweak.
 
 | Page | File | Purpose |
 |------|------|---------|
-| Home | `index.html` | Two-pillar hero (Data + Community as equals) |
+| Home | `index.html` | Hero + Uncover → Translate → Partner → Transform framework, priority areas (air/water/heat) |
 | Our Data & Tools | `data-and-tools.html` | Landing for data explorers & tools |
 | ↳ Data explorer | `data-explorer.html` | Single-tool "inner page" template |
 | Our Communities | `communities.html` | Front door surfacing community work |
@@ -23,14 +23,16 @@ is easy for anyone to open, read, and tweak.
 | ↳ Topic | `topic.html` | Deep-content template (sidebar layout) |
 | Resources | `resources.html` | Unified, filterable library (newsletters, commentaries, papers, reports, fact sheets) |
 | ↳ Article | `resource-article.html` | Single article/commentary read view |
-| About | `about.html` | Mission, team, partners, contact |
+| Work with us | `work-with-us.html` | Funder/partner-facing: value prop, priority areas, competitive advantages |
+| About | `about.html` | Mission, framework, team, partners, contact |
 
 Shared assets in `assets/`: `styles.css` (the design system), `main.js` (mobile nav +
 resources filter), the TC logo/symbol, and the hero image.
 
 ## Design decisions baked in
 
-- **Data and Community shown as equal halves** of the tagline ("informing action for healthier communities").
+- **Positioning framework front and centre** — Uncover → Translate → Partner → Transform — reflecting the program's strategic framework, with data/research led first (rather than data and community as co-equal halves).
+- **A funder/partner pathway** (`work-with-us.html`) targeting the funding strategy: distinctive value prop (technical expertise + community trust), priority areas (air, water, heat), and competitive advantages (low IDC, agency credibility, prime-or-sub).
 - **"Our Communities"** is a top-level front door that *surfaces* work currently buried inside project pages — it links out, it doesn't duplicate.
 - **Resources** is one modern, filterable hub rather than separate Newsletters / Publications silos.
 - TC brand palette, Open Sans, US spellings, clean and text-forward.
