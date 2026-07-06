@@ -646,7 +646,7 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
   line-height: 1.35; color: var(--ink); margin: 0; font-weight: 500; }
 .valueprop .hl { color: var(--tc-blue); }
 
-/* ===== work-with-us (funder-facing) ===== */
+/* ===== work-with-us / partner pathway (About page) ===== */
 .wwu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; margin-top: 8px; }
 .wwu-card { border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 24px;
   background: #fff; box-shadow: var(--shadow); }
