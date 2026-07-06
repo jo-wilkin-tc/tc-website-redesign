@@ -223,6 +223,7 @@ p  { margin: 0 0 1.1em; }
 .callout { background: var(--tc-tint); border-left: 4px solid var(--tc-orange);
   padding: 18px 22px; border-radius: 0 8px 8px 0; margin: 1.6em 0; }
 .callout p:last-child { margin-bottom: 0; }
+.callout .hl { color: var(--tc-blue); font-weight: 700; }
 
 /* ---------- filter bar (resources) ---------- */
 .filters { display: flex; flex-wrap: wrap; gap: 10px; margin: 0 0 30px; align-items: center; }
