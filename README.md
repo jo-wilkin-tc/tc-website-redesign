@@ -42,6 +42,38 @@ resources filter), the TC logo/symbol, and the hero image.
 - **Resources has no landing page** — the dropdown goes straight to Our Library (publications/news) or Health Topics.
 - TC brand palette, Open Sans, US spellings, clean and text-forward.
 
+## Mega-menu trial
+
+An alternative navigation is published alongside the standard prototype so the two can be
+compared side by side:
+
+| | URL |
+|---|---|
+| Standard nav | `…github.io/tc-website-redesign/` |
+| Mega-menu trial | `…github.io/tc-website-redesign/megamenu/` |
+
+It restructures five top-level items into three, each opening a full-width panel:
+
+- **Our Work** — Data & Tools · Communities · Projects
+- **Our Resources** — Read (news, articles & reports, newsletters) · Browse (videos, health
+  topics, full library)
+- **Who We Are** — About Us, staff, partners · Work with us · TC in numbers
+
+Same content throughout — nothing is added or removed, only regrouped. The Resources links use
+`resources.html?filter=news|paper|newsletter|video` deep links into the existing library filter,
+so no pages were split.
+
+```bash
+python3 build_megamenu.py    # regenerate megamenu/ (idempotent)
+rm -rf megamenu/             # bin the trial
+```
+
+`build_megamenu.py` copies each root page into `megamenu/`, swaps the header, and rewrites asset
+paths to `../` so `assets/` (29 MB) and `pagefind/` are **shared, not duplicated** — the trial
+adds ~560 KB. Trial styling lives in `assets/megamenu.css` / `assets/megamenu.js`, loaded only by
+`megamenu/` pages, so `styles.css` and `main.js` are untouched and the standard prototype cannot
+regress. Edit the panel content in `build_megamenu.py` and rerun.
+
 ## Viewing locally
 
 Just open `index.html` in a browser, or serve the folder:
