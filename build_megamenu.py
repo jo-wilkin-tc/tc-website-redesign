@@ -22,6 +22,7 @@ SECTION = {
     "data-and-tools.html": "work", "data.html": "work", "tools.html": "work",
     "data-explorer.html": "work", "communities.html": "work",
     "community-story.html": "work", "projects.html": "work",
+    "priority-areas.html": "work", "priority-area.html": "work",
     "resources.html": "resources", "topics.html": "resources",
     "topic.html": "resources", "resource-article.html": "resources",
     "about.html": "who", "work-with-us.html": "who",
@@ -37,6 +38,12 @@ def col(title, links):
     return ('        <div class="mm-col">\n          <p class="mm-title">%s</p>\n'
             '          %s\n        </div>\n' % (title, "\n          ".join(links)))
 
+def col_tail(title, links, tail_href, tail_label):
+    """A column whose links carry no description, closed by an arrow link."""
+    return ('        <div class="mm-col mm-areas">\n          <p class="mm-title">%s</p>\n'
+            '          %s\n          <a class="link-arrow" href="%s">%s</a>\n'
+            '        </div>\n' % (title, "\n          ".join(links), tail_href, tail_label))
+
 def feature(img, title, text, href, cta):
     return ('        <div class="mm-col mm-feature">\n'
             '          <p class="mm-title">Featured</p>\n'
@@ -47,7 +54,14 @@ def feature(img, title, text, href, cta):
             '        </div>\n' % (href, img, title, text, href, cta))
 
 # ---------------------------------------------------------------- panels ----
-PANEL_WORK = col("Data &amp; Tools", [
+PANEL_WORK = col_tail("Priority areas", [
+        link("priority-area.html", "Air quality"),
+        link("priority-area.html", "Climate resilience"),
+        link("priority-area.html", "Extreme heat"),
+        link("priority-area.html", "Pesticides"),
+        link("priority-area.html", "Sickle cell disease"),
+        link("priority-area.html", "Water quality"),
+    ], "priority-areas.html", "All priority areas") + col("Data &amp; Tools", [
         link("data-and-tools.html", "Find your data", "Answer two questions, get the right dataset or tool"),
         link("data.html", "Our Data", "What we collect, and how to get at it"),
         link("tools.html", "Our Tools", "Explorers, maps and viewers"),
@@ -60,9 +74,7 @@ PANEL_WORK = col("Data &amp; Tools", [
         link("projects.html#current", "Current projects", "What we have running right now"),
         link("projects.html#previous", "Previous projects", "Completed work and what came of it"),
         link("projects.html", "All projects", "The full portfolio"),
-    ]) + feature("../assets/tools/data-explorer.png", "Explore California health data",
-        "Map annual PM2.5, ozone and asthma rates down to the census tract.",
-        "data-explorer.html", "Open the Data Explorer")
+    ])
 
 PANEL_RESOURCES = col("Read", [
         link("resources.html?filter=news", "News &amp; press releases", "Announcements and data briefs"),
@@ -95,7 +107,7 @@ PANEL_WHO = ('        <div class="mm-col">\n          <p class="mm-title">Who we
           '          <a class="link-arrow" href="about.html">More about us</a>\n'
           '        </div>\n')
 
-PANELS = [("work", "Our Work", PANEL_WORK, ""),
+PANELS = [("work", "Our Work", PANEL_WORK, " cols-4"),
           ("resources", "Our Resources", PANEL_RESOURCES, " cols-2"),
           ("who", "Who We Are", PANEL_WHO, " cols-2")]
 
