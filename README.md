@@ -15,6 +15,8 @@ is easy for anyone to open, read, and tweak.
 | Page | File | Purpose |
 |------|------|---------|
 | Home | `index.html` | Hero + Data & Tools / Our Communities pillars, latest work, Uncover → Translate → Partner → Transform framework, priority areas, community-partner map, publications |
+| Our priority areas | `priority-areas.html` | The six areas of concentrated effort, and how they relate to Health Topics |
+| ↳ Priority area | `priority-area.html` | Per-area template (Extreme heat) pulling data + communities + projects together |
 | Our Data & Tools | `data-and-tools.html` | Landing = the "find the data or tool for you" finder, then links out to Our Data / Our Tools |
 | ↳ Our Data | `data.html` | The data page |
 | ↳ Our Tools | `tools.html` | Data Explorer embed, other/future tool cards, custom-tool CTA |
@@ -34,6 +36,7 @@ resources filter), the TC logo/symbol, and the hero image.
 
 ## Design decisions baked in
 
+- **Priority areas are a lens across the work, not a sibling of it** — the six areas each pull together data, community partnerships and projects, so they lead the Our Work mega-menu panel rather than taking a fourth top-level slot. They are distinct from the 22 Health Topics under Resources: priority areas are where staff and funding concentrate, health topics are everything we publish data on.
 - **Data & Communities lead the home page** — the Data & Tools / Our Communities pillars open the page, followed by the Uncover → Translate → Partner → Transform positioning framework.
 - **A funder/partner pathway** is its own page (`work-with-us.html`, in the About dropdown): reasons to partner (community partnerships, data know-how, public-health networks, agency & academic record) and what makes a good fit.
 - **Nav dropdowns list standalone pages only** — no anchor links into a page. Dropdowns are Data & Tools (→ Our Data, Our Tools), Resources (→ Our Library, Health Topics), and About (→ About Us, Work with us); Communities and Projects are plain links. "Data" leads "Tools" throughout.
@@ -54,7 +57,7 @@ compared side by side:
 
 It restructures five top-level items into three, each opening a full-width panel:
 
-- **Our Work** — Data & Tools · Communities · Projects
+- **Our Work** — Priority areas · Data & Tools · Communities · Projects
 - **Our Resources** — Read (news, articles & reports, newsletters) · Browse (videos, health
   topics, full library)
 - **Who We Are** — About Us, staff, partners · Work with us · TC in numbers
