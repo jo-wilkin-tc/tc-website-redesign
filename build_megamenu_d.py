@@ -62,7 +62,7 @@ def foot(title, areas, tail):
             '        </div>\n' % (title, pills, tail[0], tail[1]))
 
 AREAS = [("Air quality", "priority-area.html"), ("Climate resilience", "priority-area.html"),
-         ("Extreme heat", "priority-area.html"), ("Pesticides", "priority-area.html"),
+         ("Extreme heat", "priority-area.html"), ("Pesticides", "area-pesticides.html"),
          ("Sickle cell disease", "priority-area.html"), ("Water quality", "priority-area.html"),
          ("Health services", "#")]
 

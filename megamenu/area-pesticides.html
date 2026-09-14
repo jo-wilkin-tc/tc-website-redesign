@@ -3,17 +3,17 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Our Data & Tools — Tracking California</title>
-<meta name="description" content="Explore California public health, climate, and environmental data through interactive explorers, maps, query tools, and about-the-data fact sheets.">
+<title>Pesticides — Tracking California</title>
+<meta name="description" content="Pesticides as a Tracking California focus area — mapping agricultural pesticide use and proximity to homes, schools and pregnant residents.">
 <link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 <link rel="stylesheet" href="../assets/styles.css">
 <link rel="stylesheet" href="../assets/megamenu.css">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Our Data & Tools — Tracking California">
-<meta property="og:description" content="Explore California public health, climate, and environmental data through interactive explorers, maps, query tools, and about-the-data fact sheets.">
+<meta property="og:title" content="Pesticides — Tracking California">
+<meta property="og:description" content="Pesticides as a Tracking California focus area — mapping agricultural pesticide use and proximity to homes, schools and pregnant residents.">
 <meta property="og:image" content="https://jo-wilkin-tc.github.io/tc-website-redesign/assets/hero.jpg">
-<meta property="og:url" content="https://jo-wilkin-tc.github.io/tc-website-redesign/data-and-tools.html">
+<meta property="og:url" content="https://jo-wilkin-tc.github.io/tc-website-redesign/area-pesticides.html">
 <meta name="twitter:card" content="summary_large_image">
 </head>
 <body>
@@ -32,7 +32,7 @@
     <nav class="nav mm-nav">
       <a href="index.html" class="mm-top">Home</a>
       <div class="mm-item">
-        <button class="mm-trigger active" id="mm-t-work" aria-expanded="false" aria-controls="mm-p-work">Our Work <span class="caret">▾</span></button>
+        <button class="mm-trigger" id="mm-t-work" aria-expanded="false" aria-controls="mm-p-work">Our Work <span class="caret">▾</span></button>
         <div class="mm-panel" id="mm-p-work" role="region" aria-labelledby="mm-t-work">
       <div class="wrap mm-inner cols-4">
         <div class="mm-col mm-areas">
@@ -129,63 +129,97 @@
 </header>
 
 <main id="main" data-pagefind-body>
+  <div class="wrap">
 
-  <!-- BANNER -->
-  <section class="page-banner data">
-    <div class="wrap">
-      <p class="eyebrow">Our Data &amp; Tools</p>
-      <h1>Find the data or tool for you</h1>
-      <p class="lead">Tell us what you want to explore and where &mdash; we'll point you to the right data or tool.</p>
-    </div>
-  </section>
+    <p class="breadcrumb"><a href="index.html">Home</a> / <a href="priority-areas.html">Focus areas</a> / Pesticides</p>
 
-  <!-- FIND THE DATA OR TOOL FOR YOU (interactive) -->
-  <section class="section">
-    <div class="wrap">
-      <div class="explorer" style="max-width:1160px; margin:0 auto;">
-        <div class="explorer-controls">
-          <label>I want to explore
-            <select id="ex-topic">
-              <option value="air">Air quality</option>
-              <option value="asthma">Asthma</option>
-              <option value="traffic">Traffic &amp; roads</option>
-              <option value="water">Drinking water</option>
-              <option value="pesticides">Pesticides</option>
-            </select>
-          </label>
-          <label>for
-            <select id="ex-scope">
-              <option value="the whole state">the whole state</option>
-              <option value="a county">a county</option>
-              <option value="my neighborhood">my neighborhood</option>
-            </select>
-          </label>
-        </div>
-        <div class="explorer-preview">
-          <img id="ex-img" src="../assets/tools/data-explorer.png" alt="Tool preview">
-          <div class="explorer-info">
-            <div class="ex-text">
-              <span class="tag" id="ex-tag">Data Explorer</span>
-              <h3 id="ex-title">Air quality</h3>
-              <p id="ex-desc"></p>
-            </div>
-            <a class="btn btn-primary" id="ex-link" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener">Open <span class="arrow"></span></a>
+    <div class="split">
+
+      <aside class="sidenav">
+        <p class="grouptitle">Focus areas</p>
+        <a href="priority-area.html">Air quality</a>
+        <a href="priority-area.html">Climate resilience</a>
+        <a href="priority-area.html">Extreme heat</a>
+        <a href="area-pesticides.html" class="on">Pesticides</a>
+        <a href="priority-area.html">Sickle cell disease</a>
+        <a href="priority-area.html">Water quality</a>
+        <p class="grouptitle">On this page</p>
+        <a href="#data">Our data &amp; tools</a>
+        <a href="#communities">In communities</a>
+        <a href="#projects">Projects &amp; research</a>
+        <a href="#news">In the news</a>
+        <p class="grouptitle">Related topics</p>
+        <a href="topic.html">Pesticides</a>
+        <a href="topic.html">Air Quality</a>
+        <a href="topic.html">Maternal &amp; Infant Health</a>
+      </aside>
+
+      <!-- CONTENT -->
+      <div>
+        <p class="eyebrow">Focus area</p>
+        <h2 class="sec-title">Pesticides</h2>
+
+        <img src="../assets/img/ej-kids.jpg" alt="Children outdoors at a California school" style="width:100%; border-radius:10px; margin:0 0 24px;">
+
+        <div class="prose">
+          <p>California applies more agricultural pesticide than any other state, and the people living closest to it are rarely the people deciding how it is used. Homes, schools and workplaces sit alongside treated fields, and until use is mapped at the scale people actually live at, proximity is impossible to discuss with any precision.</p>
+          <p>We turn the state&rsquo;s pesticide-use reporting into something usable: mapped to the field, linked to the places that matter, and open to anyone who needs it. That work underpins research on exposure near schools and during pregnancy, and it gives community advocates and local agencies the same evidence base the state has.</p>
+
+          <div class="callout">
+            <p>Pesticides show why the data and the partnerships belong together. The mapping makes exposure legible; the community work establishes which questions are worth asking; and the research turns both into evidence that regulators and school districts can act on.</p>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
 
-  <!-- WHERE TO NEXT -->
-  <section class="section tint">
-    <div class="wrap">
-      <div class="grid g2">
-        <a class="tile" href="data.html"><div class="ic"><i class="fa-solid fa-database"></i></div><h3>Our Data</h3><p>Browse the datasets behind our tools and research &mdash; air, water, climate, pesticides, and health.</p></a>
-        <a class="tile" href="tools.html"><div class="ic"><i class="fa-solid fa-toolbox"></i></div><h3>Our Tools</h3><p>Explore the Data Explorer, mapping tools, and downloads for working with the data yourself.</p></a>
-      </div>
-    </div>
-  </section>
+        <h3 style="margin-top:2.6em;">Why it matters</h3>
+        <div class="grid g3">
+          <div class="finding"><div class="fbig"><span class="tbc">figure to confirm</span></div><h4>Fields mapped</h4><p>Agricultural pesticide use mapped at field level across California.</p></div>
+          <div class="finding"><div class="fbig"><span class="tbc">figure to confirm</span></div><h4>Near schools</h4><p>Share of public schools within a quarter mile of reported application.</p></div>
+          <div class="finding"><div class="fbig"><span class="tbc">figure to confirm</span></div><h4>Years of data</h4><p>Pesticide-use reporting processed into a consistent statewide series.</p></div>
+        </div>
 
+        <h3 id="data" style="margin-top:2.6em;">Our data &amp; tools</h3>
+        <div class="prose">
+          <p>Field-level agricultural pesticide use, derived from California&rsquo;s Pesticide Use Reporting system and mapped to the land it was applied to — plus a linkage service that joins it to study locations, and the open code behind both.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-ghost" href="tools.html"><i class="fa-solid fa-map-location-dot"></i> Pesticide Mapping Tool</a>
+          <a class="btn btn-ghost" href="tools.html"><i class="fa-solid fa-link"></i> Pesticide Linkage Service</a>
+          <a class="btn btn-ghost" href="data.html"><i class="fa-brands fa-github"></i> Field-Level Mapping code</a>
+          <a class="btn btn-ghost" href="data-and-tools.html"><i class="fa-solid fa-compass"></i> Find your data</a>
+        </div>
+
+        <h3 id="communities" style="margin-top:2.6em;">In communities</h3>
+        <div class="grid g3">
+          <a class="card" href="communities.html"><div class="thumb"><img src="../assets/img/community-partnership.jpg" alt=""></div><div class="pad"><span class="tag green">Communities</span><h3>All our community work</h3><p>Where we work, who we work with, and how to bring us a question.</p></div></a>
+        </div>
+        <p class="prose tbc-note">Partner stories for this area are still to be chosen — two would sit here.</p>
+
+        <h3 id="projects" style="margin-top:2.6em;">Projects &amp; research</h3>
+        <div class="grid g3">
+          <a class="card" href="projects.html"><div class="thumb"><img src="../assets/img/ej-kids.jpg" alt=""></div><div class="pad"><span class="tag">Current project</span><h3>Agricultural Pesticides Near Public Schools</h3><p>Which schools sit closest to reported application, and who attends them.</p></div></a>
+          <a class="card" href="resources.html?filter=paper"><div class="thumb"><img src="../assets/img/infographic.png" alt=""></div><div class="pad"><span class="tag orange">Publication</span><h3>Temporal trends of organophosphate use</h3><p>Peer-reviewed analysis of agricultural organophosphate use and proximity across California.</p></div></a>
+          <a class="card" href="resources.html?filter=video"><div class="thumb"><img src="../assets/img/data-insight-1.png" alt=""></div><div class="pad"><span class="tag">Video</span><h3>Using the Pesticide Mapping Tool</h3><p>A walkthrough of the tool, from a first question to a mapped answer.</p></div></a>
+        </div>
+
+        <h3 id="news" style="margin-top:2.6em;">In the news</h3>
+        <div class="prose news-list">
+          <a class="link-arrow" href="news-eu-plans-to-ban-cholorothalonil.html">EU Plans to Ban Chlorothalonil</a>
+          <a class="link-arrow" href="news-unique-data.html">Tracking Awareness Week: Unique Data</a>
+        </div>
+
+        <h3 style="margin-top:2.6em;">Work with us on pesticides</h3>
+        <div class="prose">
+          <p>If you are researching pesticide exposure, planning around application near schools or housing, or need use data linked to your own study locations, we can help you find it and build the partnership around it.</p>
+        </div>
+        <div class="btn-row">
+          <a class="btn btn-primary" href="work-with-us.html">Start a conversation</a>
+          <a class="btn btn-ghost" href="priority-areas.html">All focus areas</a>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
 </main>
 
 <footer class="site-footer">
