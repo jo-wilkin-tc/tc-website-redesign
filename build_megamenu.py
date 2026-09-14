@@ -58,7 +58,7 @@ PANEL_WORK = col_tail("Priority areas", [
         link("priority-area.html", "Air quality"),
         link("priority-area.html", "Climate resilience"),
         link("priority-area.html", "Extreme heat"),
-        link("priority-area.html", "Pesticides"),
+        link("area-pesticides.html", "Pesticides"),
         link("priority-area.html", "Sickle cell disease"),
         link("priority-area.html", "Water quality"),
     ], "priority-areas.html", "All priority areas") + col("Data &amp; Tools", [

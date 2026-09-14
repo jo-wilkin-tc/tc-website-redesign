@@ -28,10 +28,10 @@ Diane's scenario: *someone wants to know about pesticide use and what Tracking
 does about it — where do they land?* Today every focus area links to the same
 generic `priority-area.html`, which is hard-coded to Extreme heat.
 
-- [ ] **[BUILD]** Generalize `priority-area.html` into per-area pages driven by
-      one content block per area, so adding an area is a data edit, not a copy
-      of the HTML. Update the variant build scripts to link to the real pages.
-- [ ] **[BUILD]** Wire the pesticides page from content that already exists:
+- [x] **[BUILD]** Generalize `priority-area.html` into per-area pages driven by
+      one content block per area (`build_focus_areas.py`), so adding an area is a
+      data edit. Variant build scripts now link Pesticides to the real page.
+- [x] **[BUILD]** Wire the pesticides page from content that already exists:
       - Tools — Pesticide Mapping Tool · Pesticide Linkage Service ·
         New Pesticide Mapping Tool (forthcoming)
       - Data & code — Pesticide Field-Level Mapping
@@ -40,9 +40,19 @@ generic `priority-area.html`, which is hard-coded to Extreme heat.
         use in California" · Pesticide Mapping Tool video tutorial
       - News — EU Plans to Ban Chlorothalonil · Tracking Awareness Week 2020
       - Topic page — Pesticides
-- [ ] **[JW]** Supply the only two things not already on the site:
-      - three "why it matters" figures, with sources
-      - ~60 words of framing, and which community stories belong here
+- [ ] **[JW]** Supply the things that are not on the site and cannot be invented
+      — `area-pesticides.html` is built and linked, with these marked in place:
+      - three "why it matters" figures, with sources — currently rendered as
+        conspicuous **FIGURE TO CONFIRM** chips rather than invented numbers
+      - the framing paragraphs — a draft is in `build_focus_areas.py`, written
+        to be replaced with the program's own words
+      - which two partner stories belong under "In communities" (none of the
+        existing stories are pesticide-specific)
+      - whether the hero image is right: there is no pesticide photograph in
+        `assets/`, so it currently uses the school-field image
+- [ ] **[BUILD]** The other five focus areas still point at `priority-area.html`
+      (hard-coded to Extreme heat). Each needs a block in `build_focus_areas.py`
+      once its content exists — porting Extreme heat over is the easy first one.
 - [ ] **[TC]** Confirm the seven focus areas are final — "Health services" is
       new in the committee mockup and has nothing behind it.
 

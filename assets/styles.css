@@ -704,3 +704,18 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
   .brand img { height: 34px; }
   .g4 { grid-template-columns: 1fr; }
 }
+
+/* ---------- focus-area pages ----------
+   .tbc marks a figure the program still has to supply. It is deliberately
+   conspicuous: a placeholder that looks like content is worse than no
+   placeholder at all, because it gets shipped by accident. */
+.tbc {
+  display: inline-block; font-family: 'Open Sans', sans-serif;
+  font-size: .78rem; font-weight: 700; letter-spacing: .4px;
+  text-transform: uppercase; color: #A06403;
+  background: #fdf3e0; border: 1px dashed #d9a441;
+  border-radius: 6px; padding: .3em .7em; line-height: 1.2;
+}
+.tbc-note { color: var(--grey); font-size: .9rem; font-style: italic; margin-top: 14px; }
+.news-list { display: flex; flex-direction: column; gap: 10px; align-items: flex-start; }
+

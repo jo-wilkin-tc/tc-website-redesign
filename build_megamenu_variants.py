@@ -67,7 +67,7 @@ def foot(title, body, tail):
 # The seven focus areas. Six have a page; "Health services" is new in the
 # colleague's mockup and has nothing behind it yet.
 AREAS = [("Air quality", "priority-area.html"), ("Climate resilience", "priority-area.html"),
-         ("Extreme heat", "priority-area.html"), ("Pesticides", "priority-area.html"),
+         ("Extreme heat", "priority-area.html"), ("Pesticides", "area-pesticides.html"),
          ("Sickle cell disease", "priority-area.html"), ("Water quality", "priority-area.html")]
 AREAS_PLUS = AREAS + [("Health services", "#")]
 
