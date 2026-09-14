@@ -57,6 +57,7 @@ compared side by side. Same content throughout — the question each one answers
 | Variant A — three sections | `…github.io/tc-website-redesign/megamenu/` |
 | Variant B — five sections | `…github.io/tc-website-redesign/megamenu-b/` |
 | Variant C — data-first | `…github.io/tc-website-redesign/megamenu-c/` |
+| **Variant D — post-committee** | `…github.io/tc-website-redesign/megamenu-d/` |
 
 ### Variant A — three sections
 
@@ -92,16 +93,47 @@ Both B and C are **navigation mockups**: links to pages that do not exist yet (t
 programs EHTP / SCDC, the Impacts section, fee-for-service, funding, Español) go to `#`. They
 carry `class="todo"` in the markup as a marker for the build, but no visual treatment.
 
+### Variant D — the consolidation (current proposal)
+
+Built from the core-committee meeting of 2026-09-14, which asked for the three earlier variants to
+be reduced to one. Four top-level items, three columns per panel:
+
+**Our Work** · **Data & Tools** · **Projects & Partners** · **Our Program**
+
+The structural move is that *Our Work* stops listing the things we own and starts describing what
+we do — **Data & surveillance**, **Research & analysis**, **Capacity building & support** — with
+focus areas as a strip across the foot. That is what settles the long-running "are we a data
+program that works with communities, or a community program that makes data?" question: data leads
+the work without communities being demoted, because the panel is about capability, not property.
+
+Dropped along the way: *Resources* as a word (data and tools are resources too), *Communities* as a
+top-level label (it named a virtue, not the work), *Impacts* as a top-level slot (folded into Our
+Program), and the standalone *Work with us* page, whose substance is now a capability under Our
+Work. Data & Tools is second on the bar and set apart in colour so it is not buried.
+
+Variant D also carries two fixes that the earlier variants do not:
+
+- **Accessible column labels.** TC Orange on white is 1.85:1 — far short of the 4.5:1 WCAG AA needs
+  at that size, and the labels were set at 11.8px. They now use `--tc-orange-text` (`#A06403`), the
+  same hue and saturation darkened to 4.86:1, at 12.8px. `#FBB036` remains correct for large type
+  and non-text accents.
+- **Drill-down navigation on phones.** `styles.css` turns `.nav` into a fixed sheet below 1100px but
+  never gave it a height or an overflow, so a tall menu ran off the screen and the page behind
+  scrolled instead. The sheet now scrolls, and each panel slides in over it with a back button and
+  swipe-right to return.
+
 ```bash
 python3 build_megamenu.py             # regenerate megamenu/            (idempotent)
 python3 build_megamenu_variants.py    # regenerate megamenu-b/ and -c/  (idempotent)
-rm -rf megamenu/ megamenu-b/ megamenu-c/   # bin them
+python3 build_megamenu_d.py           # regenerate megamenu-d/          (idempotent)
+rm -rf megamenu/ megamenu-b/ megamenu-c/ megamenu-d/   # bin them
 ```
 
 Both scripts work the same way: each root page is copied into the variant folder, the header
 block is swapped wholesale, and asset paths are rewritten to `../` so `assets/` (29 MB) and
 `pagefind/` are **shared, not duplicated** — each variant adds roughly 560 KB. Styling lives in
-`assets/megamenu.css` (all variants) plus `assets/megamenu-variants.css` (B and C only), loaded
+`assets/megamenu.css` (all variants) plus `assets/megamenu-variants.css` (B and C) and
+`assets/megamenu-d.css` / `assets/megamenu-d.js` (D only), loaded
 only by the variant pages, so `styles.css` and `main.js` are untouched and neither the standard
 prototype nor the other variants can regress. Edit the panel content in the build script and
 rerun.

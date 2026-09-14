@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Air Quality Explorer — Tracking California</title>
+<meta name="description" content="A demo of the Tracking California Air Quality Explorer — map and chart air pollution and asthma measures by region and year across California.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/megamenu.css">
+<link rel="stylesheet" href="../assets/megamenu-d.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Air Quality Explorer — Tracking California">
+<meta property="og:description" content="A demo of the Tracking California Air Quality Explorer — map and chart air pollution and asthma measures by region and year across California.">
+<meta property="og:image" content="https://jo-wilkin-tc.github.io/tc-website-redesign/assets/hero.jpg">
+<meta property="og:url" content="https://jo-wilkin-tc.github.io/tc-website-redesign/data-explorer.html">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<div class="proto-ribbon"><strong>Mega-menu variant D</strong> — four sections; &ldquo;Our Work&rdquo; describes what we do rather than what we own. <a href="../megamenu-b/index.html">Variant B →</a> · <a href="../megamenu-c/index.html">Variant C →</a> · <a href="../index.html">Standard version →</a></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Tracking California home">
+      <img class="brand-logo" src="../assets/tc-logo.svg" alt="Tracking California">
+    </a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav mm-nav">
+      <div class="mm-item">
+        <button class="mm-trigger" id="mm-t-work" aria-expanded="false" aria-controls="mm-p-work">Our Work <span class="caret">▾</span></button>
+        <div class="mm-panel" id="mm-p-work" role="region" aria-labelledby="mm-t-work">
+      <div class="wrap mm-inner cols-3eq">
+        <div class="mm-col">
+          <p class="mm-title">Data &amp; surveillance</p>
+          <a class="mm-link" href="#">Statewide tracking<span class="mm-desc">Environmental health surveillance across California</span></a>
+          <a class="mm-link" href="#">Sickle Cell Data Collection<span class="mm-desc">Twenty years of linked patient data</span></a>
+          <a class="mm-link" href="#">Health &amp; environment indicators<span class="mm-desc">The measures we maintain and publish</span></a>
+          <a class="mm-link" href="#">Primary data collection<span class="mm-desc">Monitoring and sampling in the field</span></a>
+          <a class="link-arrow" href="data.html">See the data</a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Research &amp; analysis</p>
+          <a class="mm-link" href="#">Community-based research<span class="mm-desc">Questions set with the people they affect</span></a>
+          <a class="mm-link" href="#">Epidemiology<span class="mm-desc">Who is affected, where, and how much</span></a>
+          <a class="mm-link" href="#">Spatial analysis &amp; mapping<span class="mm-desc">Exposure, access and risk across place</span></a>
+          <a class="mm-link" href="#">Data linkage<span class="mm-desc">Joining health, environmental and place data</span></a>
+          <a class="link-arrow" href="resources.html?filter=paper">Read our research</a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Capacity building &amp; support</p>
+          <a class="mm-link" href="#">Training &amp; instruction<span class="mm-desc">Teaching partners to work with their own data</span></a>
+          <a class="mm-link" href="work-with-us.html">Technical assistance<span class="mm-desc">Hands-on help with a question you are stuck on</span></a>
+          <a class="mm-link" href="work-with-us.html#contact">Bespoke data &amp; analysis<span class="mm-desc">Commissioned work, costed and scoped</span></a>
+          <a class="mm-link" href="tools.html">Decision-support tools<span class="mm-desc">Built for the people who have to act</span></a>
+          <a class="link-arrow" href="work-with-us.html">Work with us</a>
+        </div>
+        <div class="mm-foot">
+          <p class="mm-title">Focus areas</p>
+          <div class="mm-pills"><a href="priority-area.html">Air quality</a><a href="priority-area.html">Climate resilience</a><a href="priority-area.html">Extreme heat</a><a href="priority-area.html">Pesticides</a><a href="priority-area.html">Sickle cell disease</a><a href="priority-area.html">Water quality</a><a href="#">Health services</a></div>
+          <a class="link-arrow" href="priority-areas.html">All focus areas</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      <div class="mm-item">
+        <button class="mm-trigger mm-accent active" id="mm-t-data" aria-expanded="false" aria-controls="mm-p-data">Data &amp; Tools <span class="caret">▾</span></button>
+        <div class="mm-panel" id="mm-p-data" role="region" aria-labelledby="mm-t-data">
+      <div class="wrap mm-inner cols-3eq">
+        <div class="mm-col">
+          <p class="mm-title">Start here</p>
+          <a class="mm-link" href="data-and-tools.html">Find your data<span class="mm-desc">Answer two questions, get the right dataset or tool</span></a>
+          <a class="mm-link" href="data-explorer.html">Data Explorer<span class="mm-desc">Air, water, heat and health, mapped to your community</span></a>
+          <a class="link-arrow" href="data-and-tools.html">Not sure what you need?</a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Our tools</p>
+          <a class="mm-link" href="tools.html">All our tools<span class="mm-desc">Explorers, maps and viewers</span></a>
+          <a class="mm-link" href="tools.html">Pesticide Mapping Tool<span class="mm-desc">Agricultural pesticide use across California</span></a>
+          <a class="mm-link" href="tools.html">Water Quality Viewer<span class="mm-desc">Contaminant levels in water systems statewide</span></a>
+          <a class="mm-link" href="tools.html">Healthcare Accessibility Map<span class="mm-desc">Distance to emergency and maternity care</span></a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Data &amp; open science</p>
+          <a class="mm-link" href="data.html">Our data<span class="mm-desc">What we collect, and how to get at it</span></a>
+          <a class="mm-link" href="data.html">Datasets &amp; downloads<span class="mm-desc">Open data, ready to use</span></a>
+          <a class="mm-link" href="#">Code &amp; repositories<span class="mm-desc">How we built it, on GitHub</span></a>
+          <a class="mm-link" href="#">Data insights<span class="mm-desc">What the numbers are telling us</span></a>
+          <a class="link-arrow" href="data.html">All our data</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      <div class="mm-item">
+        <button class="mm-trigger" id="mm-t-projects" aria-expanded="false" aria-controls="mm-p-projects">Projects &amp; Partners <span class="caret">▾</span></button>
+        <div class="mm-panel" id="mm-p-projects" role="region" aria-labelledby="mm-t-projects">
+      <div class="wrap mm-inner cols-2">
+        <div class="mm-col">
+          <p class="mm-title">Projects</p>
+          <a class="mm-link" href="projects.html#current">Current projects<span class="mm-desc">What we have running right now</span></a>
+          <a class="mm-link" href="projects.html#previous">Previous projects<span class="mm-desc">Completed work and what came of it</span></a>
+          <a class="mm-link" href="priority-areas.html">Projects by focus area<span class="mm-desc">Pesticides, heat, water, air and more</span></a>
+          <a class="link-arrow" href="projects.html">All projects</a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Partnerships</p>
+          <a class="mm-link" href="communities.html">Where we work<span class="mm-desc">The map of who we work with, and on what</span></a>
+          <a class="mm-link" href="community-story.html">Partner stories<span class="mm-desc">The work described by the people in it</span></a>
+          <a class="mm-link" href="communities.html#involved">Get involved<span class="mm-desc">Bring us a question from your community</span></a>
+        </div>
+        <div class="mm-col mm-feature">
+          <p class="mm-title">Latest</p>
+          <a class="mm-link" href="projects.html#current">FRESSCA<span class="mm-desc">Farmworker resilience to heat and pesticide exposure</span></a>
+          <div class="mm-stats">
+            <div><span class="n">45+</span><span class="l">partner organizations</span></div>
+            <div><span class="n">24</span><span class="l">active &amp; recent projects</span></div>
+          </div>
+          <a class="link-arrow" href="projects.html">See what is running now</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      <div class="mm-item">
+        <button class="mm-trigger" id="mm-t-program" aria-expanded="false" aria-controls="mm-p-program">Our Program <span class="caret">▾</span></button>
+        <div class="mm-panel" id="mm-p-program" role="region" aria-labelledby="mm-t-program">
+      <div class="wrap mm-inner cols-3eq">
+        <div class="mm-col">
+          <p class="mm-title">Who we are</p>
+          <a class="mm-link" href="about.html">About Tracking California<span class="mm-desc">Our mission and what sets us apart</span></a>
+          <a class="mm-link" href="about.html">Our approach<span class="mm-desc">How we work, from question to change</span></a>
+          <a class="mm-link" href="about.html#team">Our staff<span class="mm-desc">The people behind the program</span></a>
+          <a class="mm-link" href="about.html#partners">Our partners<span class="mm-desc">Community, agency and academic</span></a>
+          <a class="mm-link" href="about.html#contact">Contact us<span class="mm-desc">Get in touch with the team</span></a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Our impact</p>
+          <a class="mm-link" href="#">Impact stories<span class="mm-desc">What changed for communities because of the work</span></a>
+          <a class="mm-link" href="#">Policy &amp; practice outcomes<span class="mm-desc">Decisions and regulations our data informed</span></a>
+          <a class="mm-link" href="resources.html?filter=news">In the press<span class="mm-desc">Coverage, announcements and releases</span></a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Publications &amp; news</p>
+          <a class="mm-link" href="resources.html?filter=paper">Articles &amp; reports<span class="mm-desc">Peer-reviewed research and technical reports</span></a>
+          <a class="mm-link" href="resources.html?filter=news">Data briefs<span class="mm-desc">Short summaries for non-technical readers</span></a>
+          <a class="mm-link" href="resources.html?filter=newsletter">Newsletters<span class="mm-desc">Program highlights, a few times a year</span></a>
+          <a class="mm-link" href="resources.html?filter=video">Videos<span class="mm-desc">Webinars, partner stories and overviews</span></a>
+          <a class="mm-link" href="topics.html">Health topics<span class="mm-desc">Asthma, pesticides, water, heat and more</span></a>
+          <a class="link-arrow" href="resources.html">The full library</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      <a class="nav-search" href="search.html" aria-label="Search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        Search
+      </a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" data-pagefind-body>
+
+  <div class="wrap">
+    <nav class="breadcrumb"><a href="index.html">Home</a> / <a href="data-and-tools.html">Data &amp; Tools</a> / Air Quality Explorer</nav>
+  </div>
+
+  <!-- TITLE -->
+  <section class="section" style="padding-top:24px; padding-bottom:0;">
+    <div class="wrap">
+      <p class="eyebrow">Air Quality Explorer · Demo</p>
+      <h1 class="text-blue" style="max-width:18ch;">Air Quality Explorer</h1>
+      <p class="lead" style="max-width:60ch;">Map and chart air pollution and asthma measures by region and year across California. This is a demo — the controls below are illustrative and don't load live data.</p>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE PANEL -->
+  <section class="section" style="padding-top:32px;">
+    <div class="wrap">
+      <div class="filters">
+        <span class="label">Region</span>
+        <button class="pill on">Statewide</button>
+        <button class="pill">San Joaquin Valley</button>
+        <button class="pill">Bay Area</button>
+        <button class="pill">Los Angeles County</button>
+      </div>
+      <div class="filters">
+        <span class="label">Year</span>
+        <button class="pill on">2024</button>
+        <button class="pill">2020</button>
+        <button class="pill">2015</button>
+        <button class="pill">2010</button>
+      </div>
+      <div class="filters">
+        <span class="label">Measure</span>
+        <button class="pill on">PM2.5 annual average</button>
+        <button class="pill">Ozone (days over standard)</button>
+        <button class="pill">Childhood asthma ED visits</button>
+      </div>
+
+      <!-- faux map/chart area -->
+      <div style="background:var(--tc-tint); border:1px solid var(--line); border-radius:var(--radius); overflow:hidden;">
+        <img src="../assets/tools/data-explorer.png" alt="Tracking California Data Explorer" style="width:100%; height:auto; display:block; border-radius:8px;">
+      </div>
+    </div>
+  </section>
+
+  <!-- RESULTS / INSIGHT -->
+  <section class="section tint">
+    <div class="wrap narrow">
+      <p class="eyebrow">What the data shows</p>
+      <h2>Reading this view</h2>
+      <p>Statewide, annual average PM2.5 has trended down over the past decade, but the burden remains uneven. Communities in the San Joaquin Valley and parts of Los Angeles County still see levels above the statewide average, and those areas tend to report higher rates of childhood asthma emergency-department visits.</p>
+
+      <div class="callout">
+        <p class="eyebrow" style="color:var(--tc-orange)">About this data</p>
+        <p>PM2.5 estimates combine regulatory monitor readings with modeled surface data; asthma measures come from emergency-department records. Definitions, sources, and caveats are in the about-the-data fact sheet.</p>
+        <p style="margin-bottom:0;"><a class="link-arrow" href="#">Read the Air Quality fact sheet</a></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- RELATED -->
+  <section class="section">
+    <div class="wrap">
+      <div class="grid g2" style="align-items:start; gap:48px;">
+        <div>
+          <p class="eyebrow">Related topics</p>
+          <h2 style="margin-bottom:18px;">Dig deeper</h2>
+          <div class="grid" style="gap:14px;">
+            <a class="tile" href="topic.html"><div class="ic"><i class="fa-solid fa-smog"></i></div><h3>Air Quality</h3><p>All air pollution &amp; asthma measures and fact sheets</p></a>
+            <a class="tile" href="topics.html"><div class="ic"><i class="fa-solid fa-temperature-half"></i></div><h3>Climate &amp; Health</h3><p>Wildfire smoke, heat, and extreme events</p></a>
+          </div>
+        </div>
+        <div>
+          <p class="eyebrow" style="color:var(--tc-green-d)">Related community work</p>
+          <h2 style="margin-bottom:18px;">Data put to work</h2>
+          <div class="grid" style="gap:14px;">
+            <article class="card" style="flex-direction:row;">
+              <div class="pad">
+                <span class="tag green">Community story</span>
+                <h3><a href="community-story.html">Community air monitoring in the field</a></h3>
+                <p>How local trackers fill the gaps official monitors leave behind.</p>
+                <div class="card-foot"><a class="link-arrow" href="community-story.html">Read the story</a></div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p class="footer-label">Stay informed</p>
+        <p>Program updates and the latest research and insights, a few times a year.</p>
+        <form class="signup-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter email address" aria-label="Email address">
+          <button class="btn btn-primary" type="submit">Sign up</button>
+        </form>
+      </div>
+      <div>
+        <p class="footer-label">Connect with us</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/trackingcalifornia" target="_blank" rel="noopener" aria-label="Tracking California on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/trackingca" target="_blank" rel="noopener" aria-label="Tracking California on X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <p style="margin-top:14px;"><a href="about.html#contact" class="link-arrow">Contact us</a></p>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Explore</h4>
+        <a href="priority-areas.html">Priority areas</a>
+        <a href="data.html">Our Data</a>
+        <a href="tools.html">Our Tools</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="communities.html">Our Communities</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="resources.html">Our Library</a>
+        <a href="topics.html">Health Topics</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="about.html">About Us</a>
+        <a href="work-with-us.html">Work with us</a>
+        <a href="about.html#partners">Our Partners</a>
+        <a href="about.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <img src="../assets/tc-logo.svg" alt="Tracking California">
+      <span>© 2026 Tracking California · Design prototype for internal review.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script src="../assets/megamenu.js"></script>
+<script src="../assets/megamenu-d.js"></script>
+</body>
+</html>
