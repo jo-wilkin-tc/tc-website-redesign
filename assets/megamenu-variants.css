@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Tracking California — MEGA MENU VARIANTS B and C
+   Loaded only by pages under /megamenu-b/ and /megamenu-c/, on top of
+   megamenu.css. Nothing here affects /megamenu/ or the site root.
+   ========================================================================== */
+
+/* five-column panel, for the data-first Our Work panel in variant C */
+.mm-inner.cols-5 { grid-template-columns: repeat(5, minmax(0, 1fr)); }
+
+/* ---------- focus-area pills ----------
+   Focus areas are a flat subject list, not a hierarchy, so they read better
+   as pills than as another column of stacked links. */
+.mm-pills { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 4px; }
+.mm-pills a {
+  display: inline-block; padding: .3em .78em; border-radius: 20px;
+  background: var(--tc-tint); color: var(--tc-blue);
+  font-size: .86rem; font-weight: 600; line-height: 1.3;
+}
+.mm-pills a:hover { background: var(--tc-blue); color: #fff; }
+
+/* a full-width strip closing a panel — used in variant C so focus areas cut
+   across the whole of Our Work rather than sitting in one column of it */
+.mm-foot {
+  grid-column: 1 / -1; display: flex; flex-wrap: wrap;
+  align-items: center; gap: 10px 16px;
+  border-top: 1px solid var(--line); padding-top: 18px; margin-top: 4px;
+}
+.mm-foot .mm-title { margin: 0; white-space: nowrap; }
+.mm-foot .link-arrow { font-size: .88rem; white-space: nowrap; }
+
+/* a sub-list under one link, for the surveillance programs */
+.mm-sub { margin: .1em 0 .5em .9em; padding-left: .8em; border-left: 2px solid var(--tc-ltblue); }
+.mm-sub a.mm-link { font-weight: 500; font-size: .88rem; padding: .22em 0; }
+
+/* Español, sitting beside Search in the nav bar */
+.nav-lang { font-size: .88rem; font-weight: 600; color: var(--tc-blue); white-space: nowrap; }
+.nav-lang:hover { text-decoration: underline; }
+
+/* links with nothing behind them yet: these variants are nav mockups, and a
+   dotted underline is an honest signal that the page does not exist */
+/* the decoration goes on a span around the label, not the anchor: an anchor
+   rule would propagate onto the block-level .mm-desc and underline that too */
+.mm-link .mm-lbl { text-decoration: underline dotted var(--tc-orange);
+  text-underline-offset: 3px; text-decoration-thickness: 1px; }
+.mm-pills a.todo { border-bottom: 1px dotted var(--tc-orange); }
+
+@media (max-width: 1080px) {
+  .mm-inner.cols-5 { grid-template-columns: 1fr; }
+  .mm-foot { border-top: 1px solid var(--line); padding-top: 16px; }
+}

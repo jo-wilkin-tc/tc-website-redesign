@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tracking California — Public health data Californians can actually use</title>
+<meta name="description" content="Tracking California turns public health, climate, and environmental data into tools and partnerships that help communities take action.">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="../assets/styles.css">
+<link rel="stylesheet" href="../assets/megamenu.css">
+<link rel="stylesheet" href="../assets/megamenu-variants.css">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Tracking California — Public health data Californians can actually use">
+<meta property="og:description" content="Tracking California turns public health, climate, and environmental data into tools and partnerships that help communities take action.">
+<meta property="og:image" content="https://jo-wilkin-tc.github.io/tc-website-redesign/assets/hero.jpg">
+<meta property="og:url" content="https://jo-wilkin-tc.github.io/tc-website-redesign/index.html">
+<meta name="twitter:card" content="summary_large_image">
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+<div class="watermark" aria-hidden="true"></div>
+
+<div class="proto-ribbon"><strong>Mega-menu variant C</strong> — data-first: Data &amp; Tools folded into Our Work, and leading it. <a href="../megamenu-b/index.html">Variant B: data alongside →</a> · <a href="../megamenu/index.html">Variant A →</a> · <a href="../index.html">Standard version →</a></div>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="index.html" aria-label="Tracking California home">
+      <img class="brand-logo" src="../assets/tc-logo.svg" alt="Tracking California">
+    </a>
+    <button class="nav-toggle" aria-label="Menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+    </button>
+    <nav class="nav mm-nav">
+      <div class="mm-item">
+        <button class="mm-trigger" id="mm-t-work" aria-expanded="false" aria-controls="mm-p-work">Our Work <span class="caret">▾</span></button>
+        <div class="mm-panel" id="mm-p-work" role="region" aria-labelledby="mm-t-work">
+      <div class="wrap mm-inner cols-4">
+        <div class="mm-col">
+          <p class="mm-title">Public health data</p>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Surveillance</span><span class="mm-desc">Long-running statewide data programs</span></a>
+          <div class="mm-sub">
+            <a class="mm-link todo" href="#"><span class="mm-lbl">Environmental Health Tracking (EHTP)</span></a>
+            <a class="mm-link todo" href="#"><span class="mm-lbl">Sickle Cell Data Collection (SCDC)</span></a>
+            <a class="mm-link todo" href="#"><span class="mm-lbl">CalEnviroScreen indicators (CES)</span></a>
+          </div>
+          <a class="mm-link" href="data.html">Our data<span class="mm-desc">What we collect, and how to get at it</span></a>
+          <a class="mm-link" href="data-and-tools.html">Find your data<span class="mm-desc">Answer two questions, get the right dataset</span></a>
+          <a class="link-arrow" href="data.html">All our data</a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Tools</p>
+          <a class="mm-link" href="data-explorer.html">Data Explorer<span class="mm-desc">Air, water, heat, health — mapped to your community</span></a>
+          <a class="mm-link" href="tools.html">Our tools<span class="mm-desc">Explorers, maps, and viewers</span></a>
+          <a class="mm-link" href="tools.html">Pesticide Mapping Tool<span class="mm-desc">Agricultural pesticide use across California</span></a>
+          <a class="mm-link" href="tools.html">Water Quality Viewer<span class="mm-desc">Contaminant levels statewide</span></a>
+          <a class="link-arrow" href="tools.html">All our tools</a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Communities</p>
+          <a class="mm-link" href="communities.html">Where we work<span class="mm-desc">Map of Tracking's community partnerships</span></a>
+          <a class="mm-link" href="community-story.html">Community stories<span class="mm-desc">Partnerships in their own words</span></a>
+          <a class="mm-link" href="communities.html#involved">Get involved<span class="mm-desc">Bring us a question from your community</span></a>
+          <a class="mm-link" href="work-with-us.html">Work with us<span class="mm-desc">Fee-for-service and technical assistance</span></a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Projects</p>
+          <a class="mm-link" href="projects.html#current">Current projects<span class="mm-desc">What we have running right now</span></a>
+          <a class="mm-link" href="projects.html#previous">Previous projects<span class="mm-desc">Completed work and what came of it</span></a>
+          <a class="link-arrow" href="projects.html">All projects</a>
+        </div>
+        <div class="mm-foot">
+          <p class="mm-title">Focus areas</p>
+          <div class="mm-pills"><a href="priority-area.html">Air quality</a><a href="priority-area.html">Climate resilience</a><a href="priority-area.html">Extreme heat</a><a href="priority-area.html">Pesticides</a><a href="priority-area.html">Sickle cell disease</a><a href="priority-area.html">Water quality</a><a href="#">Health services</a></div>
+          <a class="link-arrow" href="priority-areas.html">All focus areas</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      <div class="mm-item">
+        <button class="mm-trigger" id="mm-t-impacts" aria-expanded="false" aria-controls="mm-p-impacts">Impacts <span class="caret">▾</span></button>
+        <div class="mm-panel" id="mm-p-impacts" role="region" aria-labelledby="mm-t-impacts">
+      <div class="wrap mm-inner cols-2">
+        <div class="mm-col">
+          <p class="mm-title">What changed</p>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Impact stories</span><span class="mm-desc">What shifted for communities because of our work</span></a>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Policy outcomes</span><span class="mm-desc">Regulations and decisions our data informed</span></a>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Community outcomes</span><span class="mm-desc">Capacity built, practices changed, local action taken</span></a>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Tools adopted</span><span class="mm-desc">Where our data is being used beyond Tracking</span></a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">In the press</p>
+          <a class="mm-link" href="resources.html?filter=news">News &amp; press releases<span class="mm-desc">Announcements, data releases, program updates</span></a>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Media coverage</span><span class="mm-desc">How our work has been covered and cited</span></a>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Awards &amp; recognition</span><span class="mm-desc">External recognition of Tracking's work</span></a>
+        </div>
+        <div class="mm-col mm-feature">
+          <p class="mm-title">In practice</p>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Agricultural pesticides near schools</span><span class="mm-desc">Policy outcome — new state regulations followed our research</span></a>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">FRESSCA: farmworkers breathing cleaner air</span><span class="mm-desc">Community outcome — heat and pesticide resilience</span></a>
+        </div>
+      </div>
+        </div>
+      </div>
+      <div class="mm-item">
+        <button class="mm-trigger" id="mm-t-resources" aria-expanded="false" aria-controls="mm-p-resources">Resources <span class="caret">▾</span></button>
+        <div class="mm-panel" id="mm-p-resources" role="region" aria-labelledby="mm-t-resources">
+      <div class="wrap mm-inner cols-2">
+        <div class="mm-col">
+          <p class="mm-title">Read</p>
+          <a class="mm-link" href="resources.html?filter=paper">Articles &amp; reports<span class="mm-desc">Peer-reviewed research and technical reports</span></a>
+          <a class="mm-link" href="resources.html?filter=news">Data briefs<span class="mm-desc">Accessible summaries for non-technical audiences</span></a>
+          <a class="mm-link" href="resources.html?filter=newsletter">Newsletters<span class="mm-desc">Program highlights, a few times a year</span></a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Watch &amp; explore</p>
+          <a class="mm-link" href="resources.html?filter=video">Videos<span class="mm-desc">Webinars, community stories, project overviews</span></a>
+          <a class="mm-link" href="topics.html">Health topics<span class="mm-desc">Asthma, pesticides, water, heat and more</span></a>
+          <a class="mm-link" href="resources.html">Full library<span class="mm-desc">Everything, filterable by topic and type</span></a>
+        </div>
+        <div class="mm-col mm-feature">
+          <p class="mm-title">Recent</p>
+          <a class="mm-link" href="resources.html?filter=paper">Temporal trends of agricultural organophosphate pesticide use in California<span class="mm-desc">Peer-reviewed · 2025</span></a>
+          <div class="mm-stats">
+            <div><span class="n">120+</span><span class="l">publications</span></div>
+          </div>
+          <a class="link-arrow" href="resources.html?filter=paper">See all publications</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      <div class="mm-item">
+        <button class="mm-trigger" id="mm-t-about" aria-expanded="false" aria-controls="mm-p-about">About <span class="caret">▾</span></button>
+        <div class="mm-panel" id="mm-p-about" role="region" aria-labelledby="mm-t-about">
+      <div class="wrap mm-inner cols-2">
+        <div class="mm-col">
+          <p class="mm-title">Who we are</p>
+          <a class="mm-link" href="about.html">About Tracking<span class="mm-desc">Our mission and what sets us apart</span></a>
+          <a class="mm-link" href="about.html#team">Our staff<span class="mm-desc">The people behind the program</span></a>
+          <a class="mm-link" href="about.html#partners">Our partners<span class="mm-desc">Community, agency, and academic partners</span></a>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Funding</span><span class="mm-desc">How our work is supported</span></a>
+          <a class="mm-link" href="about.html#contact">Contact us<span class="mm-desc">Get in touch with the team</span></a>
+        </div>
+        <div class="mm-col">
+          <p class="mm-title">Work with us</p>
+          <a class="mm-link" href="work-with-us.html">Why partner with us<span class="mm-desc">Community reach, data expertise, a 25-year record</span></a>
+          <a class="mm-link todo" href="#"><span class="mm-lbl">Fee-for-service</span><span class="mm-desc">Bespoke data, analysis, and technical assistance</span></a>
+          <a class="mm-link" href="work-with-us.html#contact">Start a conversation<span class="mm-desc">Tell us what you're trying to find out</span></a>
+        </div>
+        <div class="mm-col mm-feature">
+          <p class="mm-title">In numbers</p>
+          <div class="mm-stats">
+            <div><span class="n">25+</span><span class="l">years active</span></div>
+            <div><span class="n">45+</span><span class="l">community partners</span></div>
+            <div><span class="n">120+</span><span class="l">publications</span></div>
+          </div>
+          <a class="link-arrow" href="about.html">More about us</a>
+        </div>
+      </div>
+        </div>
+      </div>
+      <a class="nav-search" href="search.html" aria-label="Search">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+        Search
+      </a>
+      <a class="nav-lang" href="#">Espa&ntilde;ol</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" data-pagefind-body>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <p class="eyebrow">Informing action for healthier communities</p>
+        <h1>Public health data Californians can <span class="accent">actually use.</span></h1>
+        <p class="lead">We pair deep data and research expertise with decades of community trust &mdash; turning public health, climate, and environmental data into evidence and tools Californians can act on.</p>
+      </div>
+      <div class="hero-media">
+        <img src="../assets/hero.jpg" alt="California landscape">
+      </div>
+    </div>
+  </section>
+
+  <!-- DUAL PILLARS -->
+  <section class="section" style="padding-top:12px;">
+    <div class="wrap">
+      <div class="pillars">
+        <div class="pillar data">
+          <p class="eyebrow">Explore the data</p>
+          <h2>Data &amp; Tools</h2>
+          <p>Interactive explorers, maps, and datasets covering air, water, climate, pesticides, and health across California.</p>
+          <div class="btn-row">
+            <a class="btn btn-primary" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener">Open the Data Explorer <span class="arrow"></span></a>
+            <a class="btn btn-ghost" href="data-and-tools.html">Other data and tools <span class="arrow"></span></a>
+          </div>
+        </div>
+        <div class="pillar comm">
+          <p class="eyebrow">Take action</p>
+          <h2>Our Communities</h2>
+          <p>The partnerships, trainings, and tools that turn data into change on the ground &mdash; built alongside the people most affected.</p>
+          <div class="btn-row">
+            <a class="btn btn-green" href="communities.html">See our community work <span class="arrow"></span></a>
+            <a class="btn btn-ghost-green" href="communities.html#involved">Get involved <span class="arrow"></span></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OUR LATEST WORK (carousel) -->
+  <section class="section tint">
+    <div class="wrap">
+      <div class="carousel-head">
+        <h2 class="sec-title"><a href="projects.html" style="color:inherit; text-decoration:none;">Read about our latest work</a></h2>
+        <div class="carousel-nav">
+          <button class="car-btn" data-car="prev" aria-label="Previous">&lsaquo;</button>
+          <button class="car-btn" data-car="next" aria-label="Next">&rsaquo;</button>
+        </div>
+      </div>
+      <div class="carousel" id="latest-carousel">
+        <article class="card lwcard"><div class="thumb"><img src="../assets/img/community-4.jpg" alt=""></div><div class="pad"><span class="tag green">Project</span><h3><a href="communities.html">Achieving Resilient Communities (ARC)</a></h3><p>Helping rural communities build climate resilience through local partnerships and planning.</p><div class="card-foot"><a class="link-arrow" href="communities.html">Learn more</a></div></div></article>
+        <article class="card lwcard"><div class="thumb"><img src="../assets/tools/data-explorer.png" alt=""></div><div class="pad"><span class="tag ">Tool</span><h3><a href="https://data.trackingcalifornia.org" target="_blank" rel="noopener">Data Explorer</a></h3><p>Map air, water, climate, and health indicators down to the community level.</p><div class="card-foot"><a class="link-arrow" href="https://data.trackingcalifornia.org" target="_blank" rel="noopener">Learn more</a></div></div></article>
+        <article class="card lwcard"><div class="thumb"><img src="../assets/tools/traffic.jpg" alt=""></div><div class="pad"><span class="tag ">Data</span><h3><a href="https://ext.trackingcalifornia.org/traffic" target="_blank" rel="noopener">Statewide traffic dataset</a></h3><p>A high-resolution dataset of traffic volumes across California for exposure research.</p><div class="card-foot"><a class="link-arrow" href="https://ext.trackingcalifornia.org/traffic" target="_blank" rel="noopener">Learn more</a></div></div></article>
+        <article class="card lwcard"><div class="thumb"><img src="../assets/img/community-1.jpg" alt=""></div><div class="pad"><span class="tag green">Project</span><h3><a href="communities.html">CHARM Lake County</a></h3><p>Community-led monitoring of harmful algal blooms in Clear Lake.</p><div class="card-foot"><a class="link-arrow" href="communities.html">Learn more</a></div></div></article>
+        <article class="card lwcard"><div class="thumb"><img src="../assets/img/infographic.png" alt=""></div><div class="pad"><span class="tag orange">Publication</span><h3><a href="resources.html">Traffic pollution & childhood asthma</a></h3><p>New evidence linking traffic-related air pollution to childhood asthma in California.</p><div class="card-foot"><a class="link-arrow" href="resources.html">Learn more</a></div></div></article>
+        <article class="card lwcard"><div class="thumb"><img src="../assets/img/community-2.jpg" alt=""></div><div class="pad"><span class="tag green">Project</span><h3><a href="communities.html">FRESSCA</a></h3><p>Building farmworker resilience to extreme heat and pesticide exposure.</p><div class="card-foot"><a class="link-arrow" href="communities.html">Learn more</a></div></div></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK — POSITIONING FRAMEWORK -->
+  <section class="section">
+    <div class="wrap">
+      <div class="section-head" style="max-width:75%;">
+        <p class="eyebrow">How we work</p>
+        <h2 class="sec-title">From hidden data to community change</h2>
+      </div>
+      <div class="framework">
+        <div class="fw-step">
+          <p class="fw-verb">Uncover</p>
+          <p class="fw-line">We make the invisible visible.</p>
+          <p>We build data infrastructure, curate novel datasets, and conduct interdisciplinary research to reveal patterns and insights hidden in &mdash; or ignored by &mdash; standard systems.</p>
+        </div>
+        <div class="fw-step">
+          <p class="fw-verb">Translate</p>
+          <p class="fw-line">We make evidence accessible and actionable.</p>
+          <p>We communicate complex data and science in ways that are relevant and meaningful, building the knowledge and capacity communities need to protect and advocate for their wellbeing.</p>
+        </div>
+        <div class="fw-step">
+          <p class="fw-verb">Partner</p>
+          <p class="fw-line">We co-create with communities.</p>
+          <p>We work alongside Tribal nations, rural, urban, and farmworker communities, and environmental justice organizations as co-investigators to build effective solutions to local challenges.</p>
+        </div>
+      </div>
+      <div class="fw-outcome boxed">
+        <p class="fw-arrow">The outcome of our work together</p>
+        <h3>Transform</h3>
+        <p>Communities that are safer, better informed, and better equipped to advocate for their health &mdash; and data and science that shift what decision-makers pay attention to.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIORITY AREAS -->
+  <section class="section tint" id="priority-areas">
+    <div class="wrap">
+      <div class="section-head" style="max-width:75%;">
+        <p class="eyebrow">Where we're focused</p>
+        <h2 class="sec-title">Our priority areas</h2>
+        <p>The environmental health challenges where our data, research, and partnerships can do the most for California's most affected communities.</p>
+      </div>
+      <div class="grid g3 centered-tiles">
+        <a class="tile" href="priority-area.html"><div class="ic"><i class="fa-solid fa-smog"></i></div><h3>Air quality</h3><p>Community monitoring networks, PM2.5 and smoke exposure surveillance, and technical assistance for AB 617 communities.</p></a>
+        <a class="tile" href="priority-area.html"><div class="ic"><i class="fa-solid fa-earth-americas"></i></div><h3>Climate resilience</h3><p>Community-driven planning and local capacity building to prepare rural and frontline communities for a changing climate.</p></a>
+        <a class="tile" href="priority-area.html"><div class="ic"><i class="fa-solid fa-temperature-high"></i></div><h3>Extreme heat</h3><p>Heat-related illness surveillance, impacts on vulnerable populations, and heat-action planning and resilience.</p></a>
+        <a class="tile" href="priority-area.html"><div class="ic"><i class="fa-solid fa-spray-can-sparkles"></i></div><h3>Pesticides</h3><p>Mapping agricultural pesticide use and proximity to homes, schools, and pregnant residents across California.</p></a>
+        <a class="tile" href="priority-area.html"><div class="ic"><i class="fa-solid fa-dna"></i></div><h3>Sickle cell disease</h3><p>Disease surveillance and health services research to improve care and outcomes for people living with sickle cell disease.</p></a>
+        <a class="tile" href="priority-area.html"><div class="ic"><i class="fa-solid fa-droplet"></i></div><h3>Water quality</h3><p>Drinking water surveillance, exposure assessment for PFAS and harmful algal blooms, and support for small water systems.</p></a>
+      </div>
+      <p class="muted" style="margin-top:22px; max-width:75%;">Alongside these, we sustain deep work in environmental epidemiology, health services research, and emerging hazards such as lithium extraction.</p>
+      <div style="margin-top:24px;"><a class="link-arrow" href="priority-areas.html">Explore all our priority areas</a></div>
+    </div>
+  </section>
+
+  <!-- OUR COMMUNITY WORK (partner map) — WHO WE WORK WITH -->
+  <section class="section">
+    <div class="wrap">
+      <p class="eyebrow">Who we work with</p>
+      <h2 class="sec-title">Building capacity across communities</h2>
+      <p class="lead">We build data, tools, research, and networks alongside the communities most affected by environmental hazards. Select a partner on the map to see the work we do together.</p>
+      <div class="map-filters" id="map-filters">
+        <button class="pill on" data-worktype="all">All work</button>
+        <button class="pill" data-worktype="Air quality monitoring">Air quality monitoring</button>
+        <button class="pill" data-worktype="Resilience building">Resilience building</button>
+        <button class="pill" data-worktype="Grant planning">Grant planning</button>
+        <button class="pill" data-worktype="Technical assistance">Technical assistance</button>
+        <button class="pill" data-worktype="Training &amp; capacity building">Training &amp; capacity building</button>
+        <button class="pill" data-worktype="Community reporting">Community reporting</button>
+      </div>
+      <div class="map-row">
+        <div id="ca-map" class="ca-map" role="img" aria-label="Map of California showing Tracking California community partners"></div>
+        <div class="map-panel" id="map-panel"></div>
+      </div>
+      <div style="margin-top:24px;"><a class="link-arrow" href="communities.html">Read more about our community work</a></div>
+    </div>
+  </section>
+
+  <!-- PUTTING OUR DATA TO WORK -->
+  <section class="section tint">
+    <div class="wrap">
+      <div class="section-head" style="max-width:none;">
+        <h2 class="sec-title">Putting our data to work</h2>
+        <p>Peer-reviewed research, reports, and commentary that turn our data into evidence for action.</p>
+      </div>
+      <div class="grid g3">
+        <article class="card"><div class="thumb"><img src="../assets/tools/pesticide.png" alt=""></div><div class="pad"><span class="tag orange">Peer-reviewed paper</span><h3><a href="https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-025-23939-y" target="_blank" rel="noopener">Temporal trends of agricultural organophosphate pesticide use in California and proximity to pregnant people in 2021</a></h3><p class="meta">Peer-reviewed research &middot; 2025</p></div></article>
+        <article class="card"><div class="thumb"><img src="../assets/img/infographic.png" alt=""></div><div class="pad"><span class="tag orange">Peer-reviewed paper</span><h3><a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1029/2024GH001070" target="_blank" rel="noopener">Upstream Oil and Gas Production and Community COVID-19 Case and Mortality Rates in California, USA</a></h3><p class="meta">Peer-reviewed research &middot; 2024</p></div></article>
+        <article class="card"><div class="thumb"><img src="../assets/img/topic-water.jpg" alt=""></div><div class="pad"><span class="tag orange">Peer-reviewed paper</span><h3><a href="https://www.sciencedirect.com/science/article/pii/S0048969724062235?via%3Dihub" target="_blank" rel="noopener">Per- and polyfluoroalkyl substances (PFAS) in drinking water in Southeast Los Angeles: Industrial legacy and environmental justice</a></h3><p class="meta">Peer-reviewed research &middot; 2024</p></div></article>
+      </div>
+      <div class="section-foot"><a class="link-arrow" href="resources.html">Browse all publications</a></div>
+    </div>
+  </section>
+
+  <!-- CONNECT WITH US -->
+  <section class="section">
+    <div class="wrap">
+      <h2 class="sec-title">Connect with us</h2>
+      <p class="lead" style="max-width:75%; margin:0 0 26px;">Funders and partners looking for a rigorous, community-trusted research partner. Communities who want to build resilience or track local hazards. Anyone who needs bespoke data. We do all this at Tracking California.</p>
+      <div class="btn-row">
+        <a class="btn btn-primary" href="work-with-us.html">Work with us <span class="arrow"></span></a>
+        <a class="btn btn-ghost" href="communities.html#involved">Get involved <span class="arrow"></span></a>
+        <a class="btn btn-ghost" href="about.html#contact">Contact us <span class="arrow"></span></a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-top">
+      <div>
+        <p class="footer-label">Stay informed</p>
+        <p>Program updates and the latest research and insights, a few times a year.</p>
+        <form class="signup-form" onsubmit="return false;">
+          <input type="email" placeholder="Enter email address" aria-label="Email address">
+          <button class="btn btn-primary" type="submit">Sign up</button>
+        </form>
+      </div>
+      <div>
+        <p class="footer-label">Connect with us</p>
+        <div class="socials">
+          <a href="https://www.facebook.com/trackingcalifornia" target="_blank" rel="noopener" aria-label="Tracking California on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="https://twitter.com/trackingca" target="_blank" rel="noopener" aria-label="Tracking California on X (Twitter)"><i class="fa-brands fa-x-twitter"></i></a>
+        </div>
+        <p style="margin-top:14px;"><a href="about.html#contact" class="link-arrow">Contact us</a></p>
+      </div>
+    </div>
+    <div class="footer-cols">
+      <div>
+        <h4>Explore</h4>
+        <a href="priority-areas.html">Priority areas</a>
+        <a href="data.html">Our Data</a>
+        <a href="tools.html">Our Tools</a>
+        <a href="projects.html">Our Projects</a>
+        <a href="communities.html">Our Communities</a>
+      </div>
+      <div>
+        <h4>Resources</h4>
+        <a href="resources.html">Our Library</a>
+        <a href="topics.html">Health Topics</a>
+      </div>
+      <div>
+        <h4>About</h4>
+        <a href="about.html">About Us</a>
+        <a href="work-with-us.html">Work with us</a>
+        <a href="about.html#partners">Our Partners</a>
+        <a href="about.html#contact">Contact</a>
+      </div>
+    </div>
+    <div class="footer-legal">
+      <img src="../assets/tc-logo.svg" alt="Tracking California">
+      <span>© 2026 Tracking California · Design prototype for internal review.</span>
+    </div>
+  </div>
+</footer>
+
+<script src="../assets/main.js"></script>
+<script src="../assets/megamenu.js"></script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+(function () {
+  if (!window.L || !document.getElementById('ca-map')) return;
+  var PARTNERS = [
+    { id:'ccejn', name:'Central California Environmental Justice Network', short:'CCEJN', loc:'Central Valley',
+      logo:'../assets/logos/ccejn.png', coords:[36.746,-119.772],
+      types:['Air quality monitoring','Resilience building','Technical assistance','Training & capacity building'],
+      projects:[['FRESSCA','communities.html'],['San Joaquin Valley Heat','communities.html'],['Community Air Monitoring','communities.html']] },
+    { id:'ccv', name:'Comit\u00e9 C\u00edvico del Valle', short:'CCV', loc:'Brawley, Imperial County',
+      logo:'../assets/logos/ccv.png', coords:[32.978,-115.530],
+      types:['Air quality monitoring','Community reporting','Technical assistance','Grant planning'],
+      projects:[['Brawley Health ACTION','communities.html'],['Imperial Air (IVAN)','communities.html'],['AIRE Digital Stories','communities.html']] },
+    { id:'bigvalley', name:'Big Valley Band of Pomo Indians', short:'Big Valley', loc:'Clear Lake, Lake County',
+      logo:'../assets/logos/big-valley.png', coords:[39.020,-122.915],
+      types:['Resilience building','Grant planning','Technical assistance'],
+      projects:[['CHARM Lake County','communities.html'],['MLS-TRIAD','communities.html']] },
+    { id:'micop', name:'Mixteco/Ind\u00edgena Community Organizing Project (MICOP)', short:'MICOP', loc:'Oxnard, Ventura County',
+      logo:'../assets/logos/micop.png', coords:[34.197,-119.177],
+      types:['Air quality monitoring','Training & capacity building','Technical assistance'], projects:[] },
+    { id:'cause', name:'Central Coast Alliance United for a Sustainable Economy (CAUSE)', short:'CAUSE', loc:'Ventura & Santa Barbara',
+      logo:'../assets/logos/cause.png', coords:[34.275,-119.293],
+      types:['Resilience building','Grant planning','Technical assistance'], projects:[] },
+    { id:'nbjwj', name:'North Bay Jobs with Justice', short:'NBJwJ', loc:'Santa Rosa, Sonoma County',
+      logo:'../assets/logos/nbjwj.png', coords:[38.440,-122.714],
+      types:['Resilience building','Grant planning','Training & capacity building'],
+      projects:[['MLS-TRIAD','communities.html']] },
+    { id:'cfase', name:'Coalition for a Safe Environment', short:'CFASE', loc:'Wilmington, Los Angeles',
+      logo:'../assets/logos/cfase.png', coords:[33.780,-118.264],
+      types:['Air quality monitoring','Community reporting','Technical assistance'], projects:[] },
+    { id:'casa', name:'Casa Familiar', short:'Casa Familiar', loc:'San Ysidro, San Diego County',
+      logo:'../assets/logos/casa.png', coords:[32.551,-117.043],
+      types:['Resilience building','Technical assistance','Grant planning'], projects:[] }
+  ];
+  var map = L.map('ca-map', { scrollWheelZoom:false }).setView([37.3,-119.4], 6);
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png',
+    { attribution:'&copy; OpenStreetMap &copy; CARTO', maxZoom:18 }).addTo(map);
+  var markers = {};
+  PARTNERS.forEach(function (p) {
+    var m = L.circleMarker(p.coords, { radius:9, color:'#fff', weight:2, fillColor:'#4B72B8', fillOpacity:1 });
+    m.bindTooltip(p.short, { direction:'top', offset:[0,-6] });
+    m.on('click', function () { select(p.id); });
+    markers[p.id] = m;
+  });
+  function byId(id){ for (var i=0;i<PARTNERS.length;i++){ if(PARTNERS[i].id===id) return PARTNERS[i]; } }
+  function select(id) {
+    var sel = byId(id);
+    PARTNERS.forEach(function (p) {
+      if (!map.hasLayer(markers[p.id])) return;
+      var on = p.id === id;
+      markers[p.id].setStyle({ fillColor: on ? '#FBB036' : '#4B72B8', radius: on ? 12 : 9 });
+    });
+    var html = '<div class="mp-head"><img src="' + sel.logo + '" alt="' + sel.name + '" class="mp-logo"><div><h3>' + sel.name + '</h3><p class="meta">' + sel.loc + '</p></div></div>' +
+      '<p class="mp-label">Areas of work</p><div class="mp-areas">' +
+      sel.types.map(function (t) { return '<span class="tag">' + t + '</span>'; }).join('') + '</div>';
+    if (sel.projects.length) {
+      html += '<p class="mp-label">Projects together</p><p class="mp-projects-inline">' +
+        sel.projects.map(function (pr) { return '<a href="' + pr[1] + '">' + pr[0] + '</a>'; }).join(' &middot; ') + '</p>';
+    }
+    document.getElementById('map-panel').innerHTML = html;
+  }
+  function applyFilter(type) {
+    var visible = [];
+    PARTNERS.forEach(function (p) {
+      var show = type === 'all' || p.types.indexOf(type) >= 0;
+      if (show) { if (!map.hasLayer(markers[p.id])) markers[p.id].addTo(map); visible.push(markers[p.id]); }
+      else if (map.hasLayer(markers[p.id])) map.removeLayer(markers[p.id]);
+    });
+    if (visible.length) map.fitBounds(L.featureGroup(visible).getBounds().pad(0.25));
+  }
+  document.getElementById('map-filters').addEventListener('click', function (e) {
+    var b = e.target.closest('.pill[data-worktype]'); if (!b) return;
+    this.querySelectorAll('.pill').forEach(function (x) { x.classList.remove('on'); });
+    b.classList.add('on');
+    applyFilter(b.dataset.worktype);
+  });
+  applyFilter('all');
+  select('ccejn');
+})();
+</script>
+</body>
+</html>
