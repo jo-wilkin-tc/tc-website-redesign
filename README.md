@@ -45,98 +45,59 @@ resources filter), the TC logo/symbol, and the hero image.
 - **Resources has no landing page** — the dropdown goes straight to Our Library (publications/news) or Health Topics.
 - TC brand palette, Open Sans, US spellings, clean and text-forward.
 
-## Mega-menu variants
+## Navigation — the mega menu
 
-Three alternative navigations are published alongside the standard prototype so they can be
-compared side by side. Same content throughout — the question each one answers differently is
-**where public health data sits in the hierarchy**.
-
-| | URL |
-|---|---|
-| Standard nav | `…github.io/tc-website-redesign/` |
-| Variant A — three sections | `…github.io/tc-website-redesign/megamenu/` |
-| Variant B — five sections | `…github.io/tc-website-redesign/megamenu-b/` |
-| Variant C — data-first | `…github.io/tc-website-redesign/megamenu-c/` |
-| **Variant D — post-committee** | `…github.io/tc-website-redesign/megamenu-d/` |
-
-### Variant A — three sections
-
-Restructures five top-level items into three, each opening a full-width panel:
-
-- **Our Work** — Priority areas · Data & Tools · Communities · Projects
-- **Our Resources** — Read (news, articles & reports, newsletters) · Browse (videos, health
-  topics, full library)
-- **Who We Are** — About Us, staff, partners · Work with us · TC in numbers
-
-Same content throughout — nothing is added or removed, only regrouped. The Resources links use
-`resources.html?filter=news|paper|newsletter|video` deep links into the existing library filter,
-so no pages were split.
-
-### Variant B — five sections, data standing alone
-
-A port of the core-committee mockup (`docs/TC_MegaMenu_revised_4.html`) into TC brand and
-content: **Our Work** (focus areas · communities · projects) · **Impacts** · **Data & Tools** ·
-**Resources** · **About**. Data & Tools keeps its own top-level slot, third in the order.
-
-### Variant C — data-first hybrid
-
-Folds Data & Tools back *into* Our Work and puts it first, so public health data sits at the same
-level as communities and projects rather than below them: **Our Work** (public health data ·
-tools · communities · projects, with focus areas as a strip across the foot of the panel) ·
-**Impacts** · **Resources** · **About**.
-
-The trade-off between B and C is the open positioning question — *are we a data program that
-works with communities, or a community-based program that also makes data?* B says data is a
-peer of the work; C says data leads it.
-
-Both B and C are **navigation mockups**: links to pages that do not exist yet (the surveillance
-programs EHTP / SCDC, the Impacts section, fee-for-service, funding, Español) go to `#`. They
-carry `class="todo"` in the markup as a marker for the build, but no visual treatment.
-
-### Variant D — the consolidation (current proposal)
-
-Built from the core-committee meeting of 2026-09-14, which asked for the three earlier variants to
-be reduced to one. Four top-level items, three columns per panel:
+The site navigation is a full-width mega menu with four top-level items:
 
 **Our Work** · **Data & Tools** · **Projects & Partners** · **Our Program**
 
-The structural move is that *Our Work* stops listing the things we own and starts describing what
-we do — **Data & surveillance**, **Research & analysis**, **Capacity building & support** — with
-focus areas as a strip across the foot. That is what settles the long-running "are we a data
-program that works with communities, or a community program that makes data?" question: data leads
-the work without communities being demoted, because the panel is about capability, not property.
+The structural idea is that *Our Work* describes what we do rather than listing what we own —
+**Data & surveillance**, **Research & analysis**, **Capacity building & support** — with focus
+areas as a strip across the foot of the panel. That is what settles the long-running "are we a
+data program that works with communities, or a community program that makes data?" question:
+data leads the work without communities being demoted, because the panel is about capability,
+not property.
 
-Dropped along the way: *Resources* as a word (data and tools are resources too), *Communities* as a
+Deliberately absent: *Resources* as a word (data and tools are resources too), *Communities* as a
 top-level label (it named a virtue, not the work), *Impacts* as a top-level slot (folded into Our
-Program), and the standalone *Work with us* page, whose substance is now a capability under Our
-Work. Data & Tools is second on the bar and set apart in colour so it is not buried.
+Program), and a standalone *Work with us* page, whose substance is a capability under Our Work.
+Data & Tools sits second and is set apart in colour so it is not buried.
 
-Variant D also carries two fixes that the earlier variants do not:
+Two details worth knowing:
 
-- **Accessible column labels.** TC Orange on white is 1.85:1 — far short of the 4.5:1 WCAG AA needs
-  at that size, and the labels were set at 11.8px. They now use `--tc-orange-text` (`#A06403`), the
-  same hue and saturation darkened to 4.86:1, at 12.8px. `#FBB036` remains correct for large type
-  and non-text accents.
-- **Drill-down navigation on phones.** `styles.css` turns `.nav` into a fixed sheet below 1100px but
-  never gave it a height or an overflow, so a tall menu ran off the screen and the page behind
-  scrolled instead. The sheet now scrolls, and each panel slides in over it with a back button and
+- **Column labels use `--tc-orange-text` (`#A06403`), not TC Orange.** `#FBB036` on white is
+  1.85:1 — far short of the 4.5:1 WCAG AA needs at label size. `#A06403` is the same hue and
+  saturation darkened to 4.86:1. `#FBB036` remains correct for large type and non-text accents.
+  Note the same problem still applies to the site's orange `.eyebrow` labels, which have not been
+  changed — that is a brand decision, not a build one.
+- **Phones drill in rather than scroll.** `styles.css` turns `.nav` into a fixed sheet below
+  1100px but never gave it a height or an overflow, so a tall menu ran off the screen and the page
+  behind scrolled. The sheet now scrolls, and each panel slides in over it with a back button and
   swipe-right to return.
 
+### Changing the nav
+
+The repo has no templating — the header is duplicated verbatim into every page — so the nav is
+applied by a script. Edit the panel definitions at the top of `build_nav.py` and rerun it:
+
 ```bash
-python3 build_megamenu.py             # regenerate megamenu/            (idempotent)
-python3 build_megamenu_variants.py    # regenerate megamenu-b/ and -c/  (idempotent)
-python3 build_megamenu_d.py           # regenerate megamenu-d/          (idempotent)
-rm -rf megamenu/ megamenu-b/ megamenu-c/ megamenu-d/   # bin them
+python3 build_nav.py          # apply the nav to every root page (idempotent)
+python3 build_focus_areas.py  # regenerate the focus-area landing pages
 ```
 
-Both scripts work the same way: each root page is copied into the variant folder, the header
-block is swapped wholesale, and asset paths are rewritten to `../` so `assets/` (29 MB) and
-`pagefind/` are **shared, not duplicated** — each variant adds roughly 560 KB. Styling lives in
-`assets/megamenu.css` (all variants) plus `assets/megamenu-variants.css` (B and C) and
-`assets/megamenu-d.css` / `assets/megamenu-d.js` (D only), loaded
-only by the variant pages, so `styles.css` and `main.js` are untouched and neither the standard
-prototype nor the other variants can regress. Edit the panel content in the build script and
-rerun.
+**Order matters.** `build_nav.py` rewrites `resources.html`, which `build_content.py` and
+`build_projects.py` take their page chrome from — so it must run *before* them, never after, or a
+content rebuild reverts the nav.
+
+Styling lives in `assets/meganav.css` and behaviour in `assets/meganav.js`, both loaded by every
+page alongside `styles.css` and `main.js`.
+
+### History
+
+The menu was chosen by trialling four variants side by side (A: three sections; B: a port of the
+committee's own mockup; C: a data-first hybrid; D: the consolidation). The core committee adopted
+D on 2026-09-14, and the variants were retired once it was promoted to the main site. They are in
+git history if the comparison is ever needed again — see the commits around `feature/megamenu-d`.
 
 ## Viewing locally
 
