@@ -45,17 +45,22 @@ resources filter), the TC logo/symbol, and the hero image.
 - **Resources has no landing page** — the dropdown goes straight to Our Library (publications/news) or Health Topics.
 - TC brand palette, Open Sans, US spellings, clean and text-forward.
 
-## Mega-menu trial
+## Mega-menu variants
 
-An alternative navigation is published alongside the standard prototype so the two can be
-compared side by side:
+Three alternative navigations are published alongside the standard prototype so they can be
+compared side by side. Same content throughout — the question each one answers differently is
+**where public health data sits in the hierarchy**.
 
 | | URL |
 |---|---|
 | Standard nav | `…github.io/tc-website-redesign/` |
-| Mega-menu trial | `…github.io/tc-website-redesign/megamenu/` |
+| Variant A — three sections | `…github.io/tc-website-redesign/megamenu/` |
+| Variant B — five sections | `…github.io/tc-website-redesign/megamenu-b/` |
+| Variant C — data-first | `…github.io/tc-website-redesign/megamenu-c/` |
 
-It restructures five top-level items into three, each opening a full-width panel:
+### Variant A — three sections
+
+Restructures five top-level items into three, each opening a full-width panel:
 
 - **Our Work** — Priority areas · Data & Tools · Communities · Projects
 - **Our Resources** — Read (news, articles & reports, newsletters) · Browse (videos, health
@@ -66,16 +71,40 @@ Same content throughout — nothing is added or removed, only regrouped. The Res
 `resources.html?filter=news|paper|newsletter|video` deep links into the existing library filter,
 so no pages were split.
 
+### Variant B — five sections, data standing alone
+
+A port of the core-committee mockup (`docs/TC_MegaMenu_revised_4.html`) into TC brand and
+content: **Our Work** (focus areas · communities · projects) · **Impacts** · **Data & Tools** ·
+**Resources** · **About**. Data & Tools keeps its own top-level slot, third in the order.
+
+### Variant C — data-first hybrid
+
+Folds Data & Tools back *into* Our Work and puts it first, so public health data sits at the same
+level as communities and projects rather than below them: **Our Work** (public health data ·
+tools · communities · projects, with focus areas as a strip across the foot of the panel) ·
+**Impacts** · **Resources** · **About**.
+
+The trade-off between B and C is the open positioning question — *are we a data program that
+works with communities, or a community-based program that also makes data?* B says data is a
+peer of the work; C says data leads it.
+
+Both B and C are **navigation mockups**: links to pages that do not exist yet (the surveillance
+programs EHTP / SCDC / CES, the Impacts section, fee-for-service, funding, Español) go to `#`
+and carry a dotted orange underline.
+
 ```bash
-python3 build_megamenu.py    # regenerate megamenu/ (idempotent)
-rm -rf megamenu/             # bin the trial
+python3 build_megamenu.py             # regenerate megamenu/            (idempotent)
+python3 build_megamenu_variants.py    # regenerate megamenu-b/ and -c/  (idempotent)
+rm -rf megamenu/ megamenu-b/ megamenu-c/   # bin them
 ```
 
-`build_megamenu.py` copies each root page into `megamenu/`, swaps the header, and rewrites asset
-paths to `../` so `assets/` (29 MB) and `pagefind/` are **shared, not duplicated** — the trial
-adds ~560 KB. Trial styling lives in `assets/megamenu.css` / `assets/megamenu.js`, loaded only by
-`megamenu/` pages, so `styles.css` and `main.js` are untouched and the standard prototype cannot
-regress. Edit the panel content in `build_megamenu.py` and rerun.
+Both scripts work the same way: each root page is copied into the variant folder, the header
+block is swapped wholesale, and asset paths are rewritten to `../` so `assets/` (29 MB) and
+`pagefind/` are **shared, not duplicated** — each variant adds roughly 560 KB. Styling lives in
+`assets/megamenu.css` (all variants) plus `assets/megamenu-variants.css` (B and C only), loaded
+only by the variant pages, so `styles.css` and `main.js` are untouched and neither the standard
+prototype nor the other variants can regress. Edit the panel content in the build script and
+rerun.
 
 ## Viewing locally
 
