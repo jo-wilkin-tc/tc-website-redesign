@@ -256,7 +256,7 @@ def header_for(v, section):
               'stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>',
               '        Search',
               '      </a>',
-              '      <a class="nav-lang" href="#">Espa&ntilde;ol</a>',
+              '      <a class="nav-lang" href="#" lang="es" hreflang="es">Espa&ntilde;ol</a>',
               '    </nav>',
               '  </div>',
               '</header>']

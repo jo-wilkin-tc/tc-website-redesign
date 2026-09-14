@@ -32,10 +32,6 @@
 .mm-sub { margin: .1em 0 .5em .9em; padding-left: .8em; border-left: 2px solid var(--tc-ltblue); }
 .mm-sub a.mm-link { font-weight: 500; font-size: .88rem; padding: .22em 0; }
 
-/* Español, sitting beside Search in the nav bar */
-.nav-lang { font-size: .88rem; font-weight: 600; color: var(--tc-blue); white-space: nowrap; }
-.nav-lang:hover { text-decoration: underline; }
-
 /* Links with nothing behind them yet keep class="todo" as a marker for the
    build, but carry no visual treatment — the dotted underline read as a
    defect rather than a note in review. */

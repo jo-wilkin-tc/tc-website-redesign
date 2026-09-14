@@ -81,7 +81,25 @@ generic `priority-area.html`, which is hard-coded to Extreme heat.
 - [ ] **[BUILD]** Apply the phone drill-down and the nav-sheet scroll fix to
       whichever variant survives — it currently lives in `megamenu-d.css` only.
 
-## 5. Known issues
+## 5. Spanish
+
+- [x] **[BUILD]** Restore the Español toggle in variant D — it was in B and C
+      but was dropped when D was built. Now carries `lang`/`hreflang` so screen
+      readers announce it in Spanish. *(done)*
+- [ ] **[TC]** The toggle points at `#`. **There is no Spanish content in the
+      prototype at all.** For a program working with farmworker and
+      Spanish-speaking communities this is a real gap, not a nav detail — decide
+      what is translated (whole site? key landing pages? tools?) before the
+      toggle can do anything.
+- [ ] **[TC/BUILD]** The standard prototype and variant A have no toggle at all.
+      If Spanish is a requirement it belongs in the shared sitewide nav, not
+      only in the mega-menu variants — a ~34-page nav edit plus the
+      `resources.html` template that the generated pages are built from.
+- [ ] **[JW]** Check what the live trackingcalifornia.org does today — the
+      library already has a tool tutorial marked "[English]", which implies a
+      Spanish counterpart exists somewhere.
+
+## 6. Known issues
 
 - [x] Horizontal overflow and off-screen hamburger below 385px. *(fixed)*
 - [ ] **[BUILD]** `priority-area.html` is one page serving six areas — every
