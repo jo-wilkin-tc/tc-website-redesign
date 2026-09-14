@@ -669,3 +669,38 @@ h1, h2, .sec-title, .sec-eyebrow { font-family: 'Roboto Slab', Georgia, serif; f
 .finding .fbig { font-family: 'Roboto Slab', Georgia, serif; font-size: 2.3rem; font-weight: 700; color: var(--tc-blue); line-height: 1; margin-bottom: 8px; }
 .finding h4 { margin: 0 0 8px; font-size: 1.02rem; color: var(--ink); }
 .finding p { margin: 0; font-size: .92rem; color: var(--body); }
+
+/* ---------- narrow phones ----------
+   The brand logo is a fixed-height SVG about 297px wide, and .brand was
+   flex-shrink: 0, so the header could not lay out below ~385px. On a 320-375px
+   phone that forced the whole page to scroll sideways and pushed the hamburger
+   off-screen, leaving no way to open the nav. Below 480px the logo scales with
+   the header instead, and the gutters tighten to buy it room. */
+@media (max-width: 480px) {
+  .wrap { padding: 0 18px; }
+  .header-inner { gap: 12px; }
+  /* The logo keeps flex-shrink: 0 — it is an SVG with no intrinsic width, so
+     letting it shrink collapses it to nothing. Scale it by height instead:
+     it is 6.45:1, so 40px tall is 258px wide and 34px tall is 219px, which
+     clears the 42px hamburger and 18px gutters on a 320px screen. */
+  .brand img { height: 40px; }
+
+  /* Grid and flex items default to min-width: auto, so the footer columns
+     could not shrink below the min-content width of the signup field plus
+     its button (~309px). Let them shrink, and stack the form at this size. */
+  .footer-top > *, .footer-cols > *, .footer-main .cols > * { min-width: 0; }
+  .signup-form { flex-direction: column; border-radius: 22px; padding: 10px; }
+  .signup-form input { width: 100%; min-width: 0; }
+  .signup-form .btn { justify-content: center; }
+
+  /* the data finder's selects carry a hard min-width: 220px */
+  .explorer-controls label { width: 100%; }
+  .explorer-controls select { min-width: 0; width: 100%; }
+}
+
+/* .g4 (the topic and priority-area tiles) stops at two columns, which needs
+   352px of content box — more than a 320px phone has. */
+@media (max-width: 400px) {
+  .brand img { height: 34px; }
+  .g4 { grid-template-columns: 1fr; }
+}
