@@ -36,13 +36,9 @@
 .nav-lang { font-size: .88rem; font-weight: 600; color: var(--tc-blue); white-space: nowrap; }
 .nav-lang:hover { text-decoration: underline; }
 
-/* links with nothing behind them yet: these variants are nav mockups, and a
-   dotted underline is an honest signal that the page does not exist */
-/* the decoration goes on a span around the label, not the anchor: an anchor
-   rule would propagate onto the block-level .mm-desc and underline that too */
-.mm-link .mm-lbl { text-decoration: underline dotted var(--tc-orange);
-  text-underline-offset: 3px; text-decoration-thickness: 1px; }
-.mm-pills a.todo { border-bottom: 1px dotted var(--tc-orange); }
+/* Links with nothing behind them yet keep class="todo" as a marker for the
+   build, but carry no visual treatment — the dotted underline read as a
+   defect rather than a note in review. */
 
 @media (max-width: 1080px) {
   .mm-inner.cols-5 { grid-template-columns: 1fr; }

@@ -18,7 +18,7 @@ root prototype and /megamenu/ are never touched.
 
 These are navigation mockups. Links to pages that do not exist yet (the
 surveillance programs, impacts, fee-for-service, Espanol) are href="#" and
-carry class="todo", which draws a dotted orange underline.
+carry class="todo", which is a marker for the build only — no visual treatment.
 
 Run:  python3 build_megamenu_variants.py     (idempotent — rerun any time)
 Bin:  rm -rf megamenu-b/ megamenu-c/
@@ -30,10 +30,10 @@ ROOT = os.path.dirname(os.path.abspath(__file__))
 # --------------------------------------------------------------- helpers ---
 def link(href, label, desc=None, todo=False):
     d = '<span class="mm-desc">%s</span>' % desc if desc else ""
-    # a dotted orange underline marks a link with no page behind it yet
-    lbl = '<span class="mm-lbl">%s</span>' % label if todo else label
+    # todo = no page behind it yet. Marked in the markup for the build's sake,
+    # but deliberately given no visual treatment.
     c = "mm-link todo" if todo else "mm-link"
-    return '<a class="%s" href="%s">%s%s</a>' % (c, href, lbl, d)
+    return '<a class="%s" href="%s">%s%s</a>' % (c, href, label, d)
 
 def sub(links):
     """A nested list under the link above it, with a light blue rule."""
@@ -167,7 +167,6 @@ C_WORK = col("Public health data", [
         sub([
             link("#", "Environmental Health Tracking (EHTP)", todo=True),
             link("#", "Sickle Cell Data Collection (SCDC)", todo=True),
-            link("#", "CalEnviroScreen indicators (CES)", todo=True),
         ]),
         link("data.html", "Our data", "What we collect, and how to get at it"),
         link("data-and-tools.html", "Find your data", "Answer two questions, get the right dataset"),

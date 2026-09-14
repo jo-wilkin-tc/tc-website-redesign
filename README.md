@@ -89,8 +89,8 @@ works with communities, or a community-based program that also makes data?* B sa
 peer of the work; C says data leads it.
 
 Both B and C are **navigation mockups**: links to pages that do not exist yet (the surveillance
-programs EHTP / SCDC / CES, the Impacts section, fee-for-service, funding, Español) go to `#`
-and carry a dotted orange underline.
+programs EHTP / SCDC, the Impacts section, fee-for-service, funding, Español) go to `#`. They
+carry `class="todo"` in the markup as a marker for the build, but no visual treatment.
 
 ```bash
 python3 build_megamenu.py             # regenerate megamenu/            (idempotent)
