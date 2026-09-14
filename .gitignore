@@ -13,3 +13,7 @@
 docs/
 *.docx
 *.pdf
+
+# build artifact from build_content.py
+.content_latest.json
+
