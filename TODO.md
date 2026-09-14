@@ -65,8 +65,9 @@ generic `priority-area.html`, which is hard-coded to Extreme heat.
       recognition would have more than two entries.
 - [ ] **[TC]** How to categorize projects — Michelle has not settled a scheme,
       so it is deliberately not in the nav yet.
-- [ ] **[BUILD]** Retire variants A/B/C once D is agreed, or keep them behind a
-      comparison link. Three live variants will confuse external testers.
+- [x] **[BUILD]** Retire variants A/B/C and promote D to the main URL.
+      *(done — D is now the site nav; the variant folders, their build scripts
+      and their CSS/JS are deleted, recoverable from git history.)*
 
 ## 4. Accessibility — partly done
 
@@ -78,8 +79,8 @@ generic `priority-area.html`, which is hard-coded to Extreme heat.
       fails too.** Changing a brand colour is a committee call, not a build one.
 - [ ] **[BUILD]** Keyboard and screen-reader pass over the mega menu before
       external testing.
-- [ ] **[BUILD]** Apply the phone drill-down and the nav-sheet scroll fix to
-      whichever variant survives — it currently lives in `megamenu-d.css` only.
+- [x] **[BUILD]** Apply the phone drill-down and the nav-sheet scroll fix
+      sitewide — now in `assets/meganav.css`, loaded by every page. *(done)*
 
 ## 5. Spanish
 
@@ -91,10 +92,8 @@ generic `priority-area.html`, which is hard-coded to Extreme heat.
       Spanish-speaking communities this is a real gap, not a nav detail — decide
       what is translated (whole site? key landing pages? tools?) before the
       toggle can do anything.
-- [ ] **[TC/BUILD]** The standard prototype and variant A have no toggle at all.
-      If Spanish is a requirement it belongs in the shared sitewide nav, not
-      only in the mega-menu variants — a ~34-page nav edit plus the
-      `resources.html` template that the generated pages are built from.
+- [x] **[BUILD]** The toggle is now in the shared sitewide nav on all 34 pages,
+      since the adopted menu *is* the site nav. *(done)*
 - [ ] **[JW]** Check what the live trackingcalifornia.org does today — the
       library already has a tool tutorial marked "[English]", which implies a
       Spanish counterpart exists somewhere.
@@ -104,8 +103,8 @@ generic `priority-area.html`, which is hard-coded to Extreme heat.
 - [x] Horizontal overflow and off-screen hamburger below 385px. *(fixed)*
 - [ ] **[BUILD]** `priority-area.html` is one page serving six areas — every
       focus-area link in every variant goes to the Extreme heat page.
-- [ ] **[BUILD]** Variant A still shows a "Home" item; B, C and D do not. Pick
-      one convention before testing.
+- [x] **[BUILD]** The "Home" nav item question is settled — the adopted nav has
+      no Home item; the logo is the home link. *(done)*
 
 ## Later — after the navigation settles
 

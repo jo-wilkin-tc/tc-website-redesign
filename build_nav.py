@@ -1,40 +1,21 @@
 #!/usr/bin/env python3
-"""Generate mega-menu variant D into megamenu-d/.
+"""Apply the site navigation to every root page.
 
-Variant D is the consolidation of A, B and C after the core-committee meeting
-of 2026-09-14. Four top-level items instead of five, three columns per panel
-instead of four.
+This is the mega menu that was trialled as variant D and adopted by the core
+committee. The nav is duplicated verbatim into every *.html page (the repo has
+no templating), so this script is how it gets changed: edit the panels below
+and rerun.
 
-The structural move is that "Our Work" stops listing the things we own and
-starts describing what we do, across the whole spectrum from surveillance to
-teaching. That is what dissolves the data-shop-versus-community-organisation
-question: data leads the work without communities being demoted, because the
-panel is about capability, not property.
+resources.html matters more than the others — build_content.py and
+build_projects.py take everything before <main> from it as their page chrome,
+so a nav change that misses it is reverted the next time those run. Because
+this script rewrites resources.html too, run it BEFORE them, not after.
 
-  Our Work           Data & surveillance | Research & analysis |
-                     Capacity building & support, with focus areas as a strip
-  Data & Tools       second on the bar and set apart, so it is not buried
-  Projects & Partners  the work in place; "communities" is no longer a header
-  Our Program        who we are, our impact, publications & news
-
-Dropped from earlier variants: "Resources" as a word (data and tools are
-resources too), "Communities" as a top-level label, "Impacts" as a top-level
-slot, and the standalone "Work with us" page, whose substance is now a
-capability under Our Work.
-
-Follows the /megamenu/ pattern: root pages copied in with the header swapped
-and asset paths rewritten to ../ so assets/ and pagefind/ are SHARED. Trial
-styling is confined to assets/megamenu-d.css and assets/megamenu-d.js.
-
-These are navigation mockups. Links to pages that do not exist yet go to "#".
-
-Run:  python3 build_megamenu_d.py     (idempotent — rerun any time)
-Bin:  rm -rf megamenu-d/
+Run:  python3 build_nav.py        (idempotent — rerun any time)
 """
-import os, re, glob, shutil
+import os, re, glob
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-OUT  = os.path.join(ROOT, "megamenu-d")
 
 def link(href, label, desc=None):
     d = '<span class="mm-desc">%s</span>' % desc if desc else ""
@@ -139,6 +120,8 @@ PANELS = [("work",     "Our Work",            PANEL_WORK,     " cols-3eq", False
           ("projects", "Projects &amp; Partners", PANEL_PROJECTS, " cols-2", False),
           ("program",  "Our Program",         PANEL_PROGRAM,  " cols-3eq", False)]
 
+
+# Which top-level item each page belongs to, for the active state.
 SECTION = {
     "index.html": "home",
     "data-and-tools.html": "data", "data.html": "data", "tools.html": "data",
@@ -150,14 +133,10 @@ SECTION = {
     "about.html": "program", "resources.html": "program", "topics.html": "program",
     "topic.html": "program", "resource-article.html": "program",
 }
+for p in glob.glob(os.path.join(ROOT, "area-*.html")):
+    SECTION[os.path.basename(p)] = "work"
 for p in glob.glob(os.path.join(ROOT, "news-*.html")):
     SECTION[os.path.basename(p)] = "program"
-
-RIBBON = ('<div class="proto-ribbon"><strong>Mega-menu variant D</strong> — four sections; '
-  '&ldquo;Our Work&rdquo; describes what we do rather than what we own. '
-  '<a href="../megamenu-b/index.html">Variant B →</a> · '
-  '<a href="../megamenu-c/index.html">Variant C →</a> · '
-  '<a href="../index.html">Standard version →</a></div>')
 
 def header_for(section):
     def cls(key):
@@ -165,7 +144,7 @@ def header_for(section):
     parts = ['<header class="site-header">',
              '  <div class="wrap header-inner">',
              '    <a class="brand" href="index.html" aria-label="Tracking California home">',
-             '      <img class="brand-logo" src="../assets/tc-logo.svg" alt="Tracking California">',
+             '      <img class="brand-logo" src="assets/tc-logo.svg" alt="Tracking California">',
              '    </a>',
              '    <button class="nav-toggle" aria-label="Menu">',
              '      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">'
@@ -175,7 +154,7 @@ def header_for(section):
     for key, label, body, extra, accent in PANELS:
         parts += ['      <div class="mm-item">',
                   '        <button class="mm-trigger%s%s" id="mm-t-%s" aria-expanded="false" '
-                  'aria-controls="mm-p-%s">%s <span class="caret">▾</span></button>'
+                  'aria-controls="mm-p-%s">%s <span class="caret">\u25be</span></button>'
                   % (" mm-accent" if accent else "", cls(key), key, key, label),
                   '        <div class="mm-panel" id="mm-p-%s" role="region" aria-labelledby="mm-t-%s">'
                   % (key, key),
@@ -195,28 +174,31 @@ def header_for(section):
               '</header>']
     return "\n".join(parts)
 
-# ------------------------------------------------------------------ build ---
-if os.path.isdir(OUT):
-    shutil.rmtree(OUT)
-os.makedirs(OUT)
+# ------------------------------------------------------------------ apply ---
+changed = 0
+for path in sorted(glob.glob(os.path.join(ROOT, "*.html"))):
+    name = os.path.basename(path)
+    s = open(path).read()
+    before = s
 
-pages = sorted(os.path.basename(p) for p in glob.glob(os.path.join(ROOT, "*.html")))
-for name in pages:
-    s = open(os.path.join(ROOT, name)).read()
-    s = re.sub(r'(?<=["\'(])(assets|pagefind)/', r'../\1/', s)
     s, n = re.subn(r'<header class="site-header">.*?</header>',
                    lambda m: header_for(SECTION.get(name, "")), s, count=1, flags=re.S)
     if not n:
         print("  ! no header found in", name)
-    s = re.sub(r'<div class="proto-ribbon">.*?</div>', lambda m: RIBBON, s, count=1, flags=re.S)
-    s = s.replace('<link rel="stylesheet" href="../assets/styles.css">',
-                  '<link rel="stylesheet" href="../assets/styles.css">\n'
-                  '<link rel="stylesheet" href="../assets/megamenu.css">\n'
-                  '<link rel="stylesheet" href="../assets/megamenu-d.css">', 1)
-    s = s.replace('<script src="../assets/main.js"></script>',
-                  '<script src="../assets/main.js"></script>\n'
-                  '<script src="../assets/megamenu.js"></script>\n'
-                  '<script src="../assets/megamenu-d.js"></script>', 1)
-    open(os.path.join(OUT, name), "w").write(s)
+        continue
 
-print("variant D built: %d pages -> megamenu-d/" % len(pages))
+    # the nav's stylesheet and script, once each, right after the base ones
+    if "assets/meganav.css" not in s:
+        s = s.replace('<link rel="stylesheet" href="assets/styles.css">',
+                      '<link rel="stylesheet" href="assets/styles.css">\n'
+                      '<link rel="stylesheet" href="assets/meganav.css">', 1)
+    if "assets/meganav.js" not in s:
+        s = s.replace('<script src="assets/main.js"></script>',
+                      '<script src="assets/main.js"></script>\n'
+                      '<script src="assets/meganav.js"></script>', 1)
+
+    if s != before:
+        open(path, "w").write(s)
+        changed += 1
+
+print("navigation applied to %d pages" % changed)
