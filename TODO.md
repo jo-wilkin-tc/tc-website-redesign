@@ -1,114 +1,99 @@
 # Website redesign — working to-do
 
-Live list for the navigation phase. Dates anchor to the two fixed points:
+Last updated 14 Sep 2026. Two fixed points ahead:
 **staff retreat ~30 Sep 2026** and **external user testing by ~15 Oct 2026**.
 
 Key: **[JW]** Joanna · **[TC]** team/committee decision · **[BUILD]** code work
 
 ---
 
-## 1. Retreat kit — due before 30 Sep  ⬅ the hard deadline
+## Where things stand
+
+The navigation is **settled and live**. The core committee adopted the mega menu
+on 14 Sep; it was promoted to the main URL the same day and the four trial
+variants were retired.
+
+**Our Work** · **Data & Tools** · **Projects & Partners** · **Our Program**
+
+<https://jo-wilkin-tc.github.io/tc-website-redesign/>
+
+To change it: edit the panel definitions at the top of `build_nav.py` and rerun.
+**`build_nav.py` must run BEFORE `build_content.py` / `build_projects.py`** — it
+rewrites `resources.html`, which those two take their page chrome from, so
+running it after silently reverts the nav.
+
+---
+
+## 1. Retreat kit — due before 30 Sep  ⬅ the only dated work
 
 - [ ] **[BUILD]** Card-sort stimulus: the four column headers *only*, no links
       beneath them — Michelle's exercise ("what would you expect to find here?
-      where would your stuff be?"). Needs to work **on paper**, since she
-      explicitly wants to avoid people needing a laptop.
-- [ ] **[BUILD]** Scenario cards — walk-throughs for: a funder, a local health
-      department, a community partner, a researcher after a dataset, a staff
-      member looking for their own project.
-- [ ] **[BUILD]** Printable one-page handout of Variant D's structure.
-- [ ] **[JW]** Agree the session shape with Diane (she is pitching it to Susan
-      as the day-two impacts slot; Shubhayu wants it moved earlier in day two).
+      where would your stuff be?"). Must work **on paper**; she explicitly wants
+      to avoid people needing a laptop.
+- [ ] **[BUILD]** Scenario cards — a funder, a local health department, a
+      community partner, a researcher after a dataset, a staff member looking
+      for their own project.
+- [ ] **[BUILD]** Printable one-page handout of the nav structure.
+- [ ] **[JW]** Agree the session shape with Diane — she is pitching it to Susan
+      as the day-two impacts slot; Shubhayu wants it earlier in day two.
 - [ ] **[TC]** Decide what "community" means — community / community-engaged /
-      community-based. Blocks the final name of the third nav item.
+      community-based. Still blocks the final name of "Projects & Partners".
 
-## 2. Pesticides landing page — proves the focus-area model
+## 2. The nav is ahead of the content
 
-Diane's scenario: *someone wants to know about pesticide use and what Tracking
-does about it — where do they land?* Today every focus area links to the same
-generic `priority-area.html`, which is hard-coded to Extreme heat.
+Fourteen nav links point at `#`. This is the gap the content build has to fill,
+and it is the main risk for external testing — people click, and nothing happens.
 
-- [x] **[BUILD]** Generalize `priority-area.html` into per-area pages driven by
-      one content block per area (`build_focus_areas.py`), so adding an area is a
-      data edit. Variant build scripts now link Pesticides to the real page.
-- [x] **[BUILD]** Wire the pesticides page from content that already exists:
-      - Tools — Pesticide Mapping Tool · Pesticide Linkage Service ·
-        New Pesticide Mapping Tool (forthcoming)
-      - Data & code — Pesticide Field-Level Mapping
-      - Project — Agricultural Pesticides Near Public Schools
-      - Library — "Temporal trends of agricultural organophosphate pesticide
-        use in California" · Pesticide Mapping Tool video tutorial
-      - News — EU Plans to Ban Chlorothalonil · Tracking Awareness Week 2020
-      - Topic page — Pesticides
-- [ ] **[JW]** Supply the things that are not on the site and cannot be invented
-      — `area-pesticides.html` is built and linked, with these marked in place:
-      - three "why it matters" figures, with sources — currently rendered as
-        conspicuous **FIGURE TO CONFIRM** chips rather than invented numbers
-      - the framing paragraphs — a draft is in `build_focus_areas.py`, written
-        to be replaced with the program's own words
-      - which two partner stories belong under "In communities" (none of the
-        existing stories are pesticide-specific)
-      - whether the hero image is right: there is no pesticide photograph in
-        `assets/`, so it currently uses the school-field image
-- [ ] **[BUILD]** The other five focus areas still point at `priority-area.html`
-      (hard-coded to Extreme heat). Each needs a block in `build_focus_areas.py`
-      once its content exists — porting Extreme heat over is the easy first one.
-- [ ] **[TC]** Confirm the seven focus areas are final — "Health services" is
-      new in the committee mockup and has nothing behind it.
+- [ ] **[TC]** **Our Work** — Statewide tracking · Sickle Cell Data Collection ·
+      Health & environment indicators · Primary data collection ·
+      Community-based research · Epidemiology · Spatial analysis & mapping ·
+      Data linkage · Training & instruction
+- [ ] **[TC]** **Data & Tools** — Code & repositories · Data insights
+- [ ] **[TC]** **Our Program** — Impact stories · Policy & practice outcomes.
+      Michelle doubts there is enough here to justify the section; decide before
+      building it.
+- [ ] **[TC]** **Español** — the toggle exists but points at `#`. There is no
+      Spanish content in the prototype at all. For a program working with
+      farmworker and Spanish-speaking communities this is a real gap, not a nav
+      detail. Check what the live site does today: the library already has a
+      tool tutorial marked "[English]".
 
-## 3. Navigation follow-ups
+## 3. Focus-area landing pages
 
-- [ ] **[TC]** Library placement: four top-level items puts the full library
-      under Our Program. Fallback is five items with Publications & News
-      standing alone. Michelle said either works.
-- [ ] **[TC]** Is the Impacts content worth building? Michelle doubts awards &
-      recognition would have more than two entries.
-- [ ] **[TC]** How to categorize projects — Michelle has not settled a scheme,
-      so it is deliberately not in the nav yet.
-- [x] **[BUILD]** Retire variants A/B/C and promote D to the main URL.
-      *(done — D is now the site nav; the variant folders, their build scripts
-      and their CSS/JS are deleted, recoverable from git history.)*
+`build_focus_areas.py` generates a curated page per area from one content block.
+Only **pesticides** exists (`area-pesticides.html`); the other five still fall
+back to `priority-area.html`, which is hard-coded to Extreme heat.
 
-## 4. Accessibility — partly done
+- [ ] **[JW]** Finish the pesticides page — three "why it matters" figures with
+      sources (currently visible **FIGURE TO CONFIRM** chips, not invented
+      numbers), the framing paragraphs (a draft is in the script, written to be
+      replaced), which two partner stories belong under "In communities", and
+      whether the hero image is right (there is no pesticide photograph in
+      `assets/`, so it borrows the school-field one).
+- [ ] **[BUILD]** Port Extreme heat into the script — the cheap next one, its
+      content is already written in `priority-area.html`.
+- [ ] **[TC]** Confirm the seven focus areas are final. "Health services" is new
+      and has nothing behind it — its nav pill currently goes to `#`.
 
-- [x] **[BUILD]** Mega-menu column labels: TC Orange on white is 1.85:1 and
-      fails WCAG AA. Variant D uses `--tc-orange-text` `#A06403` (4.86:1) at
-      12.8px. *(done — variant D only)*
-- [ ] **[TC]** Brand-wide: the same orange is used for `.eyebrow` labels across
-      the whole site, with the same failure. **TC Green `#8CA083` is 2.81:1 and
-      fails too.** Changing a brand colour is a committee call, not a build one.
+## 4. Accessibility
+
+- [x] **[BUILD]** Mega-menu column labels now use `--tc-orange-text` `#A06403`
+      (4.86:1) at 12.8px. TC Orange on white was 1.85:1 and failed WCAG AA.
+- [x] **[BUILD]** Phone drill-down and the nav-sheet scroll fix, sitewide.
+- [x] **[BUILD]** Horizontal overflow / off-screen hamburger below 385px.
+- [ ] **[TC]** **Brand-wide colour problem.** The same orange is used for
+      `.eyebrow` labels across the whole site, with the same failure. **TC Green
+      `#8CA083` is 2.81:1 and fails too.** Changing a brand colour is a
+      committee call, not a build one — worth putting to them.
 - [ ] **[BUILD]** Keyboard and screen-reader pass over the mega menu before
       external testing.
-- [x] **[BUILD]** Apply the phone drill-down and the nav-sheet scroll fix
-      sitewide — now in `assets/meganav.css`, loaded by every page. *(done)*
 
-## 5. Spanish
+## 5. Later — after the content settles
 
-- [x] **[BUILD]** Restore the Español toggle in variant D — it was in B and C
-      but was dropped when D was built. Now carries `lang`/`hreflang` so screen
-      readers announce it in Spanish. *(done)*
-- [ ] **[TC]** The toggle points at `#`. **There is no Spanish content in the
-      prototype at all.** For a program working with farmworker and
-      Spanish-speaking communities this is a real gap, not a nav detail — decide
-      what is translated (whole site? key landing pages? tools?) before the
-      toggle can do anything.
-- [x] **[BUILD]** The toggle is now in the shared sitewide nav on all 34 pages,
-      since the adopted menu *is* the site nav. *(done)*
-- [ ] **[JW]** Check what the live trackingcalifornia.org does today — the
-      library already has a tool tutorial marked "[English]", which implies a
-      Spanish counterpart exists somewhere.
-
-## 6. Known issues
-
-- [x] Horizontal overflow and off-screen hamburger below 385px. *(fixed)*
-- [ ] **[BUILD]** `priority-area.html` is one page serving six areas — every
-      focus-area link in every variant goes to the Extreme heat page.
-- [x] **[BUILD]** The "Home" nav item question is settled — the adopted nav has
-      no Home item; the logo is the home link. *(done)*
-
-## Later — after the navigation settles
-
-- [ ] Content build. Diane's note: this is the biggest piece of work, and it
-      cannot start until the nav is agreed.
-- [ ] Design directions — colourways, type, layout — for the retreat. Next
-      committee meeting is just before the retreat and is meant to cover design.
+- [ ] **Content build.** Diane's note: the biggest piece of work, and it could
+      not start until the nav was agreed. It is agreed now.
+- [ ] **Design directions** — colourways, type, layout — for the retreat. The
+      next committee meeting is just before the retreat and is meant to cover
+      design.
+- [ ] Pre-existing broken links inherited from the live CMS: absolute paths like
+      `/topics/pfas/`, `/projects/imperial-air`, `/about/advisory-group`.
