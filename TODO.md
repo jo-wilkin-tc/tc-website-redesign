@@ -41,17 +41,31 @@ running it after silently reverts the nav.
 
 ## 2. The nav is ahead of the content
 
-Fourteen nav links point at `#`. This is the gap the content build has to fill,
-and it is the main risk for external testing — people click, and nothing happens.
+Was fourteen dead links. Now **three**. `build_work_pages.py` generates a page
+behind each of the other eleven — visibly *in development*, not dummy content:
+real title, the nav's own agreed description, a conspicuous `page in
+development` chip, and outbound links that all point at pages that exist.
+Nothing is invented, for the same reason the focus-area figures are not.
 
-- [ ] **[TC]** **Our Work** — Statewide tracking · Sickle Cell Data Collection ·
-      Health & environment indicators · Primary data collection ·
-      Community-based research · Epidemiology · Spatial analysis & mapping ·
-      Data linkage · Training & instruction
-- [ ] **[TC]** **Data & Tools** — Code & repositories · Data insights
+Run `python3 build_work_pages.py && python3 build_nav.py` (nav second, so the
+new pages pick up the nav and the active state).
+
+- [x] **[BUILD]** **Our Work** — all nine now have pages.
+- [x] **[BUILD]** **Data & Tools** — Data insights (stub) and Code &
+      repositories (real structure: the ten tools, their languages).
+- [ ] **[JW]** **Repo URLs for Code & repositories.** The page lists the tools
+      but every link is *to confirm*, because **we have not decided where the
+      code is hosted** — the Bitbucket/GitHub question, with health-department
+      laptops that cannot use GitHub. The nav description currently says "on
+      GitHub" and may be wrong. Fill in `REPOS` in `build_work_pages.py` once
+      it is settled.
+- [ ] **[JW]** Write the real content for the nine. The pages are honest about
+      being empty, which buys time, but only until testing.
 - [ ] **[TC]** **Our Program** — Impact stories · Policy & practice outcomes.
-      Michelle doubts there is enough here to justify the section; decide before
-      building it.
+      Deliberately **not** built. Michelle doubts there is enough here to
+      justify the section; building pages would pre-empt that call.
+- [ ] **[TC]** **Health services** — deliberately not built. Still points at
+      `#` because the seven focus areas are not confirmed final.
 - [ ] **[TC]** **Español** — the toggle exists but points at `#`. There is no
       Spanish content in the prototype at all. For a program working with
       farmworker and Spanish-speaking communities this is a real gap, not a nav
